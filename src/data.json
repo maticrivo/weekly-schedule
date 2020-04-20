@@ -125,6 +125,12 @@
         "assignments": [
           {
             "link": {
+              "label": "דף עבודה",
+              "href": "http://www.files.org.il/BRPortalStorage/a/4/17/01/29-KQ59aoTmQx.docx"
+            }
+          },
+          {
+            "link": {
               "label": "מוזיקה מרגיעה",
               "href": "https://www.youtube.com/watch?v=D_DTs7StMWk"
             }
