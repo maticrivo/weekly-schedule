@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import dayjs from 'dayjs'
 import { Helmet } from 'react-helmet-async'
 import {
@@ -16,6 +16,7 @@ import {
   NonIdealState,
   Intent,
   Alignment,
+  FocusStyleManager,
 } from '@blueprintjs/core'
 
 import data from './data.json'
@@ -31,6 +32,10 @@ function App() {
     setSelectedDay(selectDay)
     setDayData(data?.[selectDay])
   }
+
+  useEffect(() => {
+    FocusStyleManager.onlyShowFocusOnTabs()
+  }, [])
 
   const toggleOpenWeekly = () => {
     setOpenWeekly(!openWeekly)
