@@ -72,7 +72,7 @@ function App() {
                   onClick={toggleOpenWeekly}
                 />
               </H3>
-              <Collapse isOpen={openWeekly}>
+              <Collapse isOpen={openWeekly} keepChildrenMounted>
                 {data.tasks.map((weeklyTask, idx) => (
                   <Callout intent={Intent.PRIMARY} icon={null} key={idx}>
                     <H4>{weeklyTask.title}</H4>
