@@ -19,6 +19,7 @@ import {
 } from '@blueprintjs/core'
 
 import data from './data.json'
+import TaskAssignment from './TaskAssignment'
 
 function App() {
   const [selectedDay, setSelectedDay] = useState(dayjs().format('D'))
@@ -79,19 +80,7 @@ function App() {
                     {weeklyTask?.assignments && (
                       <ul>
                         {weeklyTask.assignments.map((assignment, jdx) => (
-                          <li key={jdx}>
-                            {assignment?.link && (
-                              <a
-                                href={assignment.link.href}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                              >
-                                {assignment.link?.label || assignment.link.href}
-                              </a>
-                            )}
-                            {assignment?.mark && <mark>{assignment.mark}</mark>}
-                            {typeof assignment === 'string' && assignment}
-                          </li>
+                          <TaskAssignment key={jdx} assignment={assignment} />
                         ))}
                       </ul>
                     )}
@@ -147,19 +136,7 @@ function App() {
                       <H6>משימות:</H6>
                       <ul>
                         {task.assignments.map((assignment, jdx) => (
-                          <li key={jdx}>
-                            {assignment?.link && (
-                              <a
-                                href={assignment.link.href}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                              >
-                                {assignment.link?.label || assignment.link.href}
-                              </a>
-                            )}
-                            {assignment?.mark && <mark>{assignment.mark}</mark>}
-                            {typeof assignment === 'string' && assignment}
-                          </li>
+                          <TaskAssignment key={jdx} assignment={assignment} />
                         ))}
                       </ul>
                     </>
