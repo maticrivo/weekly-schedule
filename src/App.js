@@ -14,6 +14,8 @@ import {
   NonIdealState,
   Callout,
   H3,
+  Collapse,
+  Button,
 } from '@blueprintjs/core'
 
 import data from './data.json'
@@ -21,11 +23,16 @@ import data from './data.json'
 function App() {
   const [selectedDay, setSelectedDay] = useState(dayjs().format('D'))
   const [dayData, setDayData] = useState(data?.[selectedDay])
+  const [openWeekly, setOpenWeekly] = useState(true)
 
   const onDateChange = (event) => {
     const selectDay = event.currentTarget.value
     setSelectedDay(selectDay)
     setDayData(data?.[selectDay])
+  }
+
+  const toggleOpenWeekly = () => {
+    setOpenWeekly(!openWeekly)
   }
 
   return (
@@ -57,31 +64,40 @@ function App() {
         <div className="container">
           {data?.tasks && (
             <>
-              <H3>משימות שבועיות:</H3>
-              {data.tasks.map((weeklyTask, idx) => (
-                <Callout intent={Intent.PRIMARY} icon={null} key={idx}>
-                  <H4>{weeklyTask.title}</H4>
-                  {weeklyTask?.assignments && (
-                    <ul>
-                      {weeklyTask.assignments.map((assignment, jdx) => (
-                        <li key={jdx}>
-                          {assignment?.link && (
-                            <a
-                              href={assignment.link.href}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              {assignment.link?.label || assignment.link.href}
-                            </a>
-                          )}
-                          {assignment?.mark && <mark>{assignment.mark}</mark>}
-                          {typeof assignment === 'string' && assignment}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </Callout>
-              ))}
+              <H3>
+                משימות שבועיות:
+                <Button
+                  minimal
+                  icon={openWeekly ? 'chevron-down' : 'chevron-left'}
+                  onClick={toggleOpenWeekly}
+                />
+              </H3>
+              <Collapse isOpen={openWeekly}>
+                {data.tasks.map((weeklyTask, idx) => (
+                  <Callout intent={Intent.PRIMARY} icon={null} key={idx}>
+                    <H4>{weeklyTask.title}</H4>
+                    {weeklyTask?.assignments && (
+                      <ul>
+                        {weeklyTask.assignments.map((assignment, jdx) => (
+                          <li key={jdx}>
+                            {assignment?.link && (
+                              <a
+                                href={assignment.link.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                {assignment.link?.label || assignment.link.href}
+                              </a>
+                            )}
+                            {assignment?.mark && <mark>{assignment.mark}</mark>}
+                            {typeof assignment === 'string' && assignment}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </Callout>
+                ))}
+              </Collapse>
             </>
           )}
           <H3>משימות להיום:</H3>
