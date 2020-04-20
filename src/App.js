@@ -33,28 +33,26 @@ function App() {
       <Helmet>
         <title>למידה מרחוק ב׳-3</title>
       </Helmet>
-      <header>
-        <Navbar>
-          <div className="container">
-            <Navbar.Group align={Alignment.RIGHT}>
-              <Navbar.Heading>למידה מרחוק ב׳-3</Navbar.Heading>
-            </Navbar.Group>
-            <Navbar.Group align={Alignment.LEFT}>
-              <HTMLSelect
-                value={selectedDay}
-                options={[
-                  { value: '19', label: 'יום ראשון 19/4' },
-                  { value: '20', label: 'יום שני 20/4' },
-                  { value: '21', label: 'יום שלישי 21/4' },
-                  { value: '22', label: 'יום רביעי 22/4' },
-                  { value: '23', label: 'יום חמישי 23/4' },
-                ]}
-                onChange={onDateChange}
-              />
-            </Navbar.Group>
-          </div>
-        </Navbar>
-      </header>
+      <Navbar fixedToTop>
+        <div className="container">
+          <Navbar.Group align={Alignment.RIGHT}>
+            <Navbar.Heading>למידה מרחוק ב׳-3</Navbar.Heading>
+          </Navbar.Group>
+          <Navbar.Group align={Alignment.LEFT}>
+            <HTMLSelect
+              value={selectedDay}
+              options={[
+                { value: '19', label: 'יום ראשון 19/4' },
+                { value: '20', label: 'יום שני 20/4' },
+                { value: '21', label: 'יום שלישי 21/4' },
+                { value: '22', label: 'יום רביעי 22/4' },
+                { value: '23', label: 'יום חמישי 23/4' },
+              ]}
+              onChange={onDateChange}
+            />
+          </Navbar.Group>
+        </div>
+      </Navbar>
       <main>
         <div className="container">
           {data?.tasks && (
