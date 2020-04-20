@@ -24,8 +24,13 @@ main {
   margin: 0 auto;
 }
 
-.bp3-card {
-  margin-top: 10px;
+.bp3-card,
+.bp3-callout {
+  margin-bottom: 10px;
+}
+
+.bp3-card:last-child {
+  margin-bottom: 0;
 }
 
 .bp3-html-select select,

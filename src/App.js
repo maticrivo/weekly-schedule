@@ -13,6 +13,7 @@ import {
   AnchorButton,
   NonIdealState,
   Callout,
+  H3,
 } from '@blueprintjs/core'
 
 import data from './data.json'
@@ -56,15 +57,40 @@ function App() {
       </header>
       <main>
         <div className="container">
-          {data?.story && (
-            <Callout intent={Intent.PRIMARY} icon={null}>
-              <H4>סיפור שבועי</H4>
-              <div>
-                <H5>{data.story.title}</H5>
-                <p>{data.story.description}</p>
-              </div>
-            </Callout>
+          {data?.tasks && (
+            <>
+              <H3>משימות שבועיות:</H3>
+              {data.tasks.map((weeklyTask, idx) => (
+                <Callout intent={Intent.PRIMARY} icon={null} key={idx}>
+                  <H4>{weeklyTask.title}</H4>
+                  {weeklyTask?.assignments && (
+                    <ul>
+                      {weeklyTask.assignments.map((assignment, jdx) => {
+                        if (typeof assignment === 'string') {
+                          return <li key={jdx}>{assignment}</li>
+                        }
+                        if (assignment?.link) {
+                          return (
+                            <li key={jdx}>
+                              <a
+                                href={assignment.link.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                {assignment.link?.label || assignment.link.href}
+                              </a>
+                            </li>
+                          )
+                        }
+                        return null
+                      })}
+                    </ul>
+                  )}
+                </Callout>
+              ))}
+            </>
           )}
+          <H3>משימות להיום:</H3>
           {dayData ? (
             <>
               <Card>
