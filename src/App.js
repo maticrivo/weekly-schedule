@@ -6,12 +6,13 @@ import {
   Alignment,
   HTMLSelect,
   Card,
+  H4,
   H5,
+  H6,
   Intent,
   AnchorButton,
   NonIdealState,
-  Elevation,
-  H6,
+  Callout,
 } from '@blueprintjs/core'
 
 import data from './data.json'
@@ -55,9 +56,18 @@ function App() {
       </header>
       <main>
         <div className="container">
+          {data?.story && (
+            <Callout intent={Intent.PRIMARY} icon={null}>
+              <H4>סיפור שבועי</H4>
+              <div>
+                <H5>{data.story.title}</H5>
+                <p>{data.story.description}</p>
+              </div>
+            </Callout>
+          )}
           {dayData ? (
             <>
-              <Card elevation={Elevation.ONE}>
+              <Card>
                 <H5>בדיקת נוכחות</H5>
                 <p>
                   <AnchorButton
@@ -71,7 +81,7 @@ function App() {
                 </p>
               </Card>
               {dayData?.tasks?.map((task, idx) => (
-                <Card key={idx} elevation={Elevation.ONE}>
+                <Card key={idx}>
                   <H5>{task.title}</H5>
                   {task.description && <p>{task.description}</p>}
                   {task.zoom && (

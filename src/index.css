@@ -25,11 +25,7 @@ main {
 }
 
 .bp3-card {
-  margin-bottom: 10px;
-}
-
-.bp3-card:last-child {
-  margin-bottom: 0;
+  margin-top: 10px;
 }
 
 .bp3-html-select select,
