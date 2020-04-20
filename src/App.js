@@ -63,25 +63,21 @@ function App() {
                   <H4>{weeklyTask.title}</H4>
                   {weeklyTask?.assignments && (
                     <ul>
-                      {weeklyTask.assignments.map((assignment, jdx) => {
-                        if (typeof assignment === 'string') {
-                          return <li key={jdx}>{assignment}</li>
-                        }
-                        if (assignment?.link) {
-                          return (
-                            <li key={jdx}>
-                              <a
-                                href={assignment.link.href}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                              >
-                                {assignment.link?.label || assignment.link.href}
-                              </a>
-                            </li>
-                          )
-                        }
-                        return null
-                      })}
+                      {weeklyTask.assignments.map((assignment, jdx) => (
+                        <li key={jdx}>
+                          {assignment?.link && (
+                            <a
+                              href={assignment.link.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              {assignment.link?.label || assignment.link.href}
+                            </a>
+                          )}
+                          {assignment?.mark && <mark>{assignment.mark}</mark>}
+                          {typeof assignment === 'string' && assignment}
+                        </li>
+                      ))}
                     </ul>
                   )}
                 </Callout>
@@ -134,26 +130,21 @@ function App() {
                     <>
                       <H6>משימות:</H6>
                       <ul>
-                        {task.assignments.map((assignment, jdx) => {
-                          if (typeof assignment === 'string') {
-                            return <li key={jdx}>{assignment}</li>
-                          }
-                          if (assignment?.link) {
-                            return (
-                              <li key={jdx}>
-                                <a
-                                  href={assignment.link.href}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                >
-                                  {assignment.link?.label ||
-                                    assignment.link.href}
-                                </a>
-                              </li>
-                            )
-                          }
-                          return null
-                        })}
+                        {task.assignments.map((assignment, jdx) => (
+                          <li key={jdx}>
+                            {assignment?.link && (
+                              <a
+                                href={assignment.link.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                {assignment.link?.label || assignment.link.href}
+                              </a>
+                            )}
+                            {assignment?.mark && <mark>{assignment.mark}</mark>}
+                            {typeof assignment === 'string' && assignment}
+                          </li>
+                        ))}
                       </ul>
                     </>
                   )}
