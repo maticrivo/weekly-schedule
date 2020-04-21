@@ -17,6 +17,7 @@ import {
   Intent,
   Alignment,
   FocusStyleManager,
+  Classes,
 } from '@blueprintjs/core'
 
 import data from './data.json'
@@ -46,7 +47,7 @@ function App() {
       <Helmet>
         <title>למידה מרחוק ב׳-3</title>
       </Helmet>
-      <Navbar fixedToTop>
+      <Navbar fixedToTop className={Classes.RTL}>
         <div className="container">
           <Navbar.Group align={Alignment.RIGHT}>
             <Navbar.Heading>למידה מרחוק ב׳-3</Navbar.Heading>
@@ -66,7 +67,7 @@ function App() {
           </Navbar.Group>
         </div>
       </Navbar>
-      <main>
+      <main className={Classes.RTL}>
         <div className="container">
           {data?.tasks && (
             <>

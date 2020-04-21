@@ -25,6 +25,10 @@ main {
   margin: 0 auto;
 }
 
+.bp3-navbar-heading {
+  margin-right: 0;
+}
+
 .bp3-card,
 .bp3-callout {
   margin-bottom: 10px;
