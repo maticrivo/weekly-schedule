@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
+import Head from 'next/head'
 import dayjs from 'dayjs'
-import { Helmet } from 'react-helmet-async'
 import {
   H3,
   H4,
@@ -20,10 +20,10 @@ import {
   Classes,
 } from '@blueprintjs/core'
 
-import data from './data.json'
-import TaskAssignment from './TaskAssignment'
+import data from '../data/19-23.04.json'
+import TaskAssignment from '../components/task-assignment'
 
-function App() {
+function HomePage() {
   const [selectedDay, setSelectedDay] = useState(dayjs().format('D'))
   const [dayData, setDayData] = useState(data?.[selectedDay])
   const [openWeekly, setOpenWeekly] = useState(true)
@@ -44,9 +44,9 @@ function App() {
 
   return (
     <>
-      <Helmet>
+      <Head>
         <title>למידה מרחוק ב׳-3</title>
-      </Helmet>
+      </Head>
       <Navbar fixedToTop className={Classes.RTL}>
         <div className="container">
           <Navbar.Group align={Alignment.RIGHT}>
@@ -159,4 +159,4 @@ function App() {
   )
 }
 
-export default App
+export default HomePage
