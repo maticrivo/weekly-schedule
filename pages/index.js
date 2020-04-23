@@ -159,14 +159,8 @@ function HomePage({ today }) {
   )
 }
 
-export async function getStaticProps() {
-  const today = dayjs().format('D')
-
-  return {
-    props: {
-      today,
-    },
-  }
+HomePage.getInitialProps = async () => {
+  return { today: dayjs().format('D') }
 }
 
 export default HomePage
