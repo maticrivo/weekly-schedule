@@ -23,9 +23,9 @@ import {
 import data from '../data/19-23.04.json'
 import TaskAssignment from '../components/task-assignment'
 
-function HomePage() {
-  const [selectedDay, setSelectedDay] = useState(null)
-  const [dayData, setDayData] = useState(null)
+function HomePage({ today }) {
+  const [selectedDay, setSelectedDay] = useState(today || dayjs().format('D'))
+  const [dayData, setDayData] = useState(data?.[selectedDay])
   const [openWeekly, setOpenWeekly] = useState(true)
 
   const onDateChange = (event) => {
@@ -36,10 +36,6 @@ function HomePage() {
 
   useEffect(() => {
     FocusStyleManager.onlyShowFocusOnTabs()
-
-    const selectDay = dayjs().format('D')
-    setSelectedDay(selectDay)
-    setDayData(data?.[selectDay])
   }, [])
 
   const toggleOpenWeekly = () => {
@@ -161,6 +157,16 @@ function HomePage() {
       </main>
     </>
   )
+}
+
+export async function getStaticProps() {
+  const today = dayjs().format('D')
+
+  return {
+    props: {
+      today,
+    },
+  }
 }
 
 export default HomePage
