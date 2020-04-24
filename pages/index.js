@@ -117,7 +117,7 @@ function HomePage({ today }) {
                   {task.description && <p>{task.description}</p>}
                   {task.zoom && (
                     <>
-                      <H6>פגישת זום:</H6>
+                      <H6>פגישות זום:</H6>
                       {task.zoom.map((zoom, zdx) => (
                         <p key={zdx}>
                           {zoom.description}
