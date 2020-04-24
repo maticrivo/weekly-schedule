@@ -1,0 +1,297 @@
+{
+  "tasks": [
+    {
+      "title": "סיפור שבועי - שלום בובי/נירה הראל - עמודים 44-45",
+      "assignments": [
+        "יש לקרוא את הסיפור פעמיים ולחתום",
+        {
+          "mark": "נא לשלוח אליי למייל צילום של הסיפור עם החתימות"
+        }
+      ]
+    },
+    {
+      "title": "מילים להכתבה - מילים של קורונה",
+      "assignments": [
+        {
+          "link": {
+            "label": "קובץ מילים להכתבה",
+            "href": "http://www.files.org.il/BRPortalStorage/a/4/15/91/16-fjzUQ5y7cj.docx"
+          }
+        },
+        "סדר א״ב",
+        "לכתוב משפט לכל מילה",
+        "הגדרה מילונית: מסכה, וירוס, סגר, בידוד, גמץ",
+        "לכתוב סיפור עם 5 מילים מתוך הרשימה"
+      ]
+    }
+  ],
+  "19": {
+    "presence": "https://docs.google.com/forms/d/e/1FAIpQLSe80j93ksI4ff4hzyBMXge7W1-5UJY4suukHytGSS4T6AMe3Q/viewform?usp=sf_link",
+    "tasks": [
+      {
+        "title": "עברית",
+        "description": "המקראה שלי קטע קריאה: הכלבה שהלכה לאיבוד.",
+        "assignments": [
+          "עמודים 31-34",
+          { "mark": "עמוד 34 יש לצלם ולשלוח אליי למייל לבדיקה" }
+        ]
+      },
+      {
+        "title": "חשבון",
+        "description": "שבילים 5",
+        "assignments": [
+          "תרגילי חיבור וחיסור במאונך עם המרה עמודים בחוברת: 139-145"
+        ],
+        "zoom": [
+          {
+            "description": "תלמידים לפי הרשימה השמית הכיתתית: מטליה אגיאן ועד רני כרמלי",
+            "time": "10:00",
+            "link": "https://edu-il.zoom.us/j/96163585624?pwd=Qk1yaXFiMDYxREtPNG1kME43aGI3QT09"
+          },
+          {
+            "description": "תלמידים לפי הרשימה השמית הכיתתית: מעינב לב-רן עד אדם שוורץ",
+            "time": "10:30",
+            "link": "https://edu-il.zoom.us/j/99221134939?pwd=VCsyZUFuRDhRN1RpSGNOck51VU5Fdz09"
+          }
+        ]
+      },
+      {
+        "title": "חינוך גופני",
+        "description": "לפעילות זו יש להצטייד בזוג גרביים",
+        "assignments": [
+          {
+            "link": {
+              "label": "פעילות עם כפות הרגליים",
+              "href": "https://www.youtube.com/watch?v=C_loHbfbvNk&feature=youtu.be"
+            }
+          }
+        ]
+      },
+      {
+        "title": "מדעים",
+        "assignments": [
+          {
+            "link": {
+              "label": "מבנה השן",
+              "href": "http://www.files.org.il/BRPortalStorage/a/4/15/86/69-4IYbulvMU9.ppt"
+            }
+          },
+          {
+            "link": {
+              "label": "מבנה השן דף עבודה",
+              "href": "http://www.files.org.il/BRPortalStorage/a/4/15/86/72-ewrBvHG7lW.doc"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "20": {
+    "presence": "https://docs.google.com/forms/d/e/1FAIpQLSfw7XxiVVowWBtjFjAnKR3ha1KBwVPnNRwdLdhRONwO1-DYYg/viewform?usp=sf_link",
+    "tasks": [
+      {
+        "title": "עברית",
+        "description": "המקראה שלי קטע קריאה: הכלבה שהלכה לאיבוד.",
+        "assignments": ["עמודים 35-38"]
+      },
+      {
+        "title": "חשבון",
+        "description": "שבילים 5",
+        "assignments": [
+          "עמודים 146-151",
+          {
+            "link": {
+              "label": "חיסור וחיסור עם המרה הסבר נוסף",
+              "href": "https://www.youtube.com/watch?v=mNfOSN6WmOc"
+            }
+          }
+        ]
+      },
+      {
+        "title": "חינוך גופני",
+        "description": "רוצים לזוז??",
+        "assignments": [
+          {
+            "link": {
+              "label": "פעילות עם רגליים וידיים",
+              "href": "https://www.youtube.com/watch?v=5YCIQsGchgc&feature=youtu.be"
+            }
+          }
+        ]
+      },
+      {
+        "title": "כישורי חיים",
+        "description": "מצ״ב למייל דף עבודה דמיון מודרך",
+        "assignments": [
+          {
+            "link": {
+              "label": "דף עבודה",
+              "href": "http://www.files.org.il/BRPortalStorage/a/4/17/01/29-KQ59aoTmQx.docx"
+            }
+          },
+          {
+            "link": {
+              "label": "מוזיקה מרגיעה",
+              "href": "https://www.youtube.com/watch?v=D_DTs7StMWk"
+            }
+          }
+        ]
+      },
+      {
+        "title": "מדעים",
+        "assignments": [
+          {
+            "link": {
+              "label": "סוגי השיניים והתפקיד שלהן",
+              "href": "http://www.files.org.il/BRPortalStorage/a/4/15/86/76-Q44k2PEVXR.ppt"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "21": {
+    "presence": "https://docs.google.com/forms/d/e/1FAIpQLSdgagV7V3wYviJNysY0ZyLbrH8TXxib9rjo5XcIuMMx7I1dSQ/viewform?usp=sf_link",
+    "tasks": [
+      {
+        "title": "עברית",
+        "description": "יום השואה, יש להגיע למפגש בחולצה לבנה",
+        "zoom": [
+          {
+            "description": "שכבת ב לומדת על יום השואה",
+            "time": "10:30",
+            "link": "https://edu-il.zoom.us/j/94374177647?pwd=a2lMNzd1MmVnQkRjcEt1Q3lkZEwvZz09"
+          }
+        ]
+      },
+      {
+        "title": "עברית",
+        "description": "המקראה שלי קטע קריאה: ביום השואה והגבורה/ אלה דור און",
+        "assignments": ["עמודים 169-170", "בעמוד 170 שאלות 1,2 בלבד"]
+      },
+      { "title": "מפתח הלב", "description": "יום השואה" },
+      {
+        "title": "תיאטרון",
+        "assignments": [
+          {
+            "link": {
+              "label": "משדר תיאטרון של משרד החינוך- תלבושות מעיתונים",
+              "href": "https://www.youtube.com/watch?time_continue=298&v=BPOa2CLx2J4&feature=emb_logo"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "22": {
+    "presence": "https://docs.google.com/forms/d/e/1FAIpQLSdNoetCrN4YTqYUBi5Oz4nA4LP9oapyiwQV_sErCVUhPUeXlQ/viewform?usp=sf_link",
+    "tasks": [
+      {
+        "title": "עברית",
+        "description": "המקראה שלי קטע קריאה: הכלבה שהלכה לאיבוד",
+        "assignments": [
+          "עמודים 39-40",
+          { "mark": "עמוד 40 יש לצלם ולשלוח אליי למייל לבדיקה" }
+        ]
+      },
+      {
+        "title": "חשבון",
+        "description": "שבילים 5: חיבור וחיסור בהמרה",
+        "assignments": ["עמודים 152, 154, 156, 157, 158"]
+      },
+      {
+        "title": "מוזיקה",
+        "description": "נושא: שיר ליום הזיכרון ״הליכה לקיסריה״ - חנה סנש",
+        "assignments": [
+          "האזנה לשיר כולל משימות",
+          {
+            "link": {
+              "label": "קישור",
+              "href": "https://drive.google.com/file/d/1IRyBVu3YvMN4RdeNEsRPVg9-JvIWpnn1/view?usp=sharing"
+            }
+          }
+        ]
+      },
+      {
+        "title": "מדעים",
+        "description": "מפגש סינכרוני שכבתי בנושא מבנה השן, וסוגי השיניים (חזרה כללית)",
+        "assignments": [
+          {
+            "link": {
+              "label": "דף עבודה בנושא סוגי השיניים ותפקידן",
+              "href": "http://www.files.org.il/BRPortalStorage/a/4/15/86/77-aYbMvKcOUJ.doc"
+            }
+          }
+        ],
+        "zoom": [
+          {
+            "description": "פגישת זום עם אמנה",
+            "time": "11:00",
+            "link": "https://edu-il.zoom.us/j/91030137673?pwd=b3pXWWlka2owVWtUNHZteWRxVitWZz09"
+          }
+        ]
+      }
+    ]
+  },
+  "23": {
+    "presence": "https://docs.google.com/forms/d/e/1FAIpQLSfnOXrGjhheSUt-GTlteexp1qQfob7KHKqxG_VwgbOW0k55Cw/viewform?usp=sf_link",
+    "tasks": [
+      {
+        "title": "עברית",
+        "description": "המקראה שלי. טקסט מידעי: גורי כלבים",
+        "assignments": ["עומדים 41-43"]
+      },
+      {
+        "title": "חשבון",
+        "zoom": [
+          {
+            "description": "חזרה נוספת בחיסור ארוך",
+            "time": "10:00",
+            "link": "https://edu-il.zoom.us/j/91278616095?pwd=RFdYaEhVSmpnVldqNzFmZmV3WThVUT09"
+          }
+        ],
+        "assignments": [
+          "חזרה על כפולות 4,5,6 באופן עצמאי.",
+          "מצורף למייל משחק פאזל - לוח הכפל",
+          {
+            "link": {
+              "label": "משחק זיכרון כפל",
+              "href": "http://www.files.org.il/BRPortalStorage/a/4/15/91/11-gD5rxi7SJ4.pdf"
+            }
+          },
+          "שבילים 6 עמודים  48-53 תזכורת: תוצאה של תרגיל כפל נקראת מכפלה. כל אחד משני המספרים שבתרגיל נקרא גורם. גורם x גורם = מכפלה"
+        ]
+      },
+      {
+        "title": "מוזיקה",
+        "description": "נושא :מבוך כלי נגינה-2",
+        "assignments": [
+          {
+            "link": {
+              "label": "דף עבודה 1",
+              "href": "https://drive.google.com/file/d/1lvBNU1X-2aOZ2Jf1P3AZhZXoItIZ6MwZ/view?usp=sharing"
+            }
+          },
+          {
+            "link": {
+              "label": "דף עבודה 2",
+              "href": "https://drive.google.com/file/d/1Rq4PpFZiW8aS5feXeXNKW35XuD0NBetp/view?usp=sharing"
+            }
+          }
+        ]
+      },
+      {
+        "title": "תיאטרון",
+        "description": "יש לשלוח לי למייל ronibach@walla.com בנושא ההודעה יש לציין שם+ משפחה וכיתה",
+        "assignments": [
+          {
+            "link": {
+              "label": "תלבושת ברוח התקופה",
+              "href": "http://www.files.org.il/BRPortalStorage/a/4/15/81/38-cyjef9RmqZ.pptx"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

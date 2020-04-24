@@ -1,7 +1,7 @@
 {
   "tasks": [
     {
-      "title": "סיפור שבועי - שלום בובי/נירה הראל - עמודים 44-45",
+      "title": "סיפור על יעל בחג העצמאות לישראל / רבקה אליצור - עמודים 180-182",
       "assignments": [
         "יש לקרוא את הסיפור פעמיים ולחתום",
         {
@@ -10,59 +10,70 @@
       ]
     },
     {
-      "title": "מילים להכתבה - מילים של קורונה",
+      "title": "מילים להכתבה - יום העצמאות",
       "assignments": [
         {
           "link": {
             "label": "קובץ מילים להכתבה",
-            "href": "http://www.files.org.il/BRPortalStorage/a/4/15/91/16-fjzUQ5y7cj.docx"
+            "href": "http://dummy/$STORAGE$a/4/18/09/40-tI8DP5cWLd.docx"
           }
         },
         "סדר א״ב",
         "לכתוב משפט לכל מילה",
-        "הגדרה מילונית: מסכה, וירוס, סגר, בידוד, גמץ",
-        "לכתוב סיפור עם 5 מילים מתוך הרשימה"
+        "הגדרה מילונית: עצמאות, מדינה, עלייה, דגל, סמל",
+        "יחיד-רבים",
+        "ציירו ציור ל-5 מילים מהרשימה"
       ]
     }
   ],
-  "19": {
-    "presence": "https://docs.google.com/forms/d/e/1FAIpQLSe80j93ksI4ff4hzyBMXge7W1-5UJY4suukHytGSS4T6AMe3Q/viewform?usp=sf_link",
+  "26": {
+    "presence": "https://docs.google.com/forms/d/e/1FAIpQLScAbJwzk6icpd5UoJJMCqaW-fNhgUSLRCqg4IyJDd3Jft9_hA/viewform?usp=sf_link",
     "tasks": [
       {
         "title": "עברית",
-        "description": "המקראה שלי קטע קריאה: הכלבה שהלכה לאיבוד.",
+        "description": "מידע על ישראל, יש להשלים את המידע על פי השאלות",
         "assignments": [
-          "עמודים 31-34",
-          { "mark": "עמוד 34 יש לצלם ולשלוח אליי למייל לבדיקה" }
+          {
+            "link": {
+              "href": "",
+              "label": "דף עבודה"
+            }
+          },
+          { "mark": "יש לשלוח אליי את הדף עבודה" }
         ]
       },
       {
+        "title": "עברית",
+        "description": "סיפור על יעל בחג העצמאות לישראל / רבקה אליצור - עמודים 180-183",
+        "assignments": ["עמוד 183 שאלות 1-2"]
+      },
+      {
         "title": "חשבון",
-        "description": "שבילים 5",
+        "description": "שבילים 6",
         "assignments": [
-          "תרגילי חיבור וחיסור במאונך עם המרה עמודים בחוברת: 139-145"
+          "עמודים 54-59",
+          { "mark": "עמוד 58 יש לצלם ולשלוח אליי במייל" }
         ],
         "zoom": [
           {
-            "description": "תלמידים לפי הרשימה השמית הכיתתית: מטליה אגיאן ועד רני כרמלי",
+            "description": "על כל ילד/ה להכין את ערכת האביזרים (צהוב)  כדי שנוכל לעבוד איתם. בנוסף דף חלק עיפרון ושני צבעים.",
             "time": "10:00",
-            "link": "https://edu-il.zoom.us/j/96163585624?pwd=Qk1yaXFiMDYxREtPNG1kME43aGI3QT09"
-          },
-          {
-            "description": "תלמידים לפי הרשימה השמית הכיתתית: מעינב לב-רן עד אדם שוורץ",
-            "time": "10:30",
-            "link": "https://edu-il.zoom.us/j/99221134939?pwd=VCsyZUFuRDhRN1RpSGNOck51VU5Fdz09"
+            "link": "https://edu-il.zoom.us/j/99547159479?pwd=cSttWlg4SVowMmEza0l2UE5XR05Zdz09",
+            "meeting": {
+              "id": 99547159479,
+              "password": "7XwnJz"
+            }
           }
         ]
       },
       {
         "title": "חינוך גופני",
-        "description": "לפעילות זו יש להצטייד בזוג גרביים",
+        "description": "איזון הגוף על בסיסים שונים.",
         "assignments": [
           {
             "link": {
-              "label": "פעילות עם כפות הרגליים",
-              "href": "https://www.youtube.com/watch?v=C_loHbfbvNk&feature=youtu.be"
+              "label": "ציוד: מגבת מטבח, מזרון/שטיח, בקבוק מים",
+              "href": "https://youtu.be/h7SdUR4Czf4"
             }
           }
         ]
@@ -72,67 +83,67 @@
         "assignments": [
           {
             "link": {
-              "label": "מבנה השן",
-              "href": "http://www.files.org.il/BRPortalStorage/a/4/15/86/69-4IYbulvMU9.ppt"
+              "label": "מצגת שיניים",
+              "href": "http://www.files.org.il/BRPortalStorage/a/4/16/99/44-o7nwskjRuN.ppt"
             }
           },
           {
             "link": {
-              "label": "מבנה השן דף עבודה",
-              "href": "http://www.files.org.il/BRPortalStorage/a/4/15/86/72-ewrBvHG7lW.doc"
+              "label": "סוגי שיניים ותפקידם",
+              "href": "https://www.galim.org.il/science/unit/%D7%A1%D7%95%D7%92%D7%99-%D7%94%D7%A9%D7%99%D7%A0%D7%99%D7%99%D7%9D/3?lang=he"
             }
           }
         ]
       }
     ]
   },
-  "20": {
-    "presence": "https://docs.google.com/forms/d/e/1FAIpQLSfw7XxiVVowWBtjFjAnKR3ha1KBwVPnNRwdLdhRONwO1-DYYg/viewform?usp=sf_link",
+  "27": {
+    "presence": "https://docs.google.com/forms/d/e/1FAIpQLSc3SkY33WZQV5ZZCMXZ7toetUYEWiNrEXGNGR25EfkHa5NCcA/viewform?usp=sf_link",
     "tasks": [
       {
-        "title": "עברית",
-        "description": "המקראה שלי קטע קריאה: הכלבה שהלכה לאיבוד.",
-        "assignments": ["עמודים 35-38"]
-      },
-      {
-        "title": "חשבון",
-        "description": "שבילים 5",
-        "assignments": [
-          "עמודים 146-151",
+        "title": "מפגש בוקר",
+        "description": "שיחת מה נשמע?",
+        "zoom": [
           {
-            "link": {
-              "label": "חיסור וחיסור עם המרה הסבר נוסף",
-              "href": "https://www.youtube.com/watch?v=mNfOSN6WmOc"
+            "description": "בוקר טוב!",
+            "time": "09:00",
+            "link": "https://edu-il.zoom.us/j/99292045318?pwd=QWh3N1hRVjZ0Tllpb1NCa0J0MkFndz09",
+            "meeting": {
+              "id": 99292045318,
+              "password": "8Tv5Lz"
             }
           }
         ]
       },
       {
+        "title": "עברית",
+        "description": "המקראה שלי קטע קריאה: ההצבעה על מדינת ישראל / אורן ציבלין",
+        "assignments": ["עמודים 175-177"]
+      },
+      {
+        "title": "חשבון",
+        "description": "שבילים 6",
+        "assignments": ["עמודים 60-63", { "mark": "עמוד 62 לצלם ולשלוח לי" }]
+      },
+      {
         "title": "חינוך גופני",
-        "description": "רוצים לזוז??",
-        "assignments": [
+        "description": "ציוד: מקל מטאטא",
+        "zoom": [
           {
-            "link": {
-              "label": "פעילות עם רגליים וידיים",
-              "href": "https://www.youtube.com/watch?v=5YCIQsGchgc&feature=youtu.be"
-            }
+            "description": "בוקר טוב!",
+            "time": "12:00",
+            "link": "https://us04web.zoom.us/j/72515910188?pwd=TXZLTFRLdzY4aWV2MEgzZCtBMHdJZz09"
           }
         ]
       },
       {
         "title": "כישורי חיים",
-        "description": "מצ״ב למייל דף עבודה דמיון מודרך",
+        "description": "נשימות",
         "assignments": [
           {
             "link": {
               "label": "דף עבודה",
-              "href": "http://www.files.org.il/BRPortalStorage/a/4/17/01/29-KQ59aoTmQx.docx"
-            }
-          },
-          {
-            "link": {
-              "label": "מוזיקה מרגיעה",
-              "href": "https://www.youtube.com/watch?v=D_DTs7StMWk"
+              "href": "http://dummy/$STORAGE$a/4/18/09/44-ykOYXa8eKf.docx"
             }
           }
         ]
@@ -142,152 +153,142 @@
         "assignments": [
           {
             "link": {
-              "label": "סוגי השיניים והתפקיד שלהן",
-              "href": "http://www.files.org.il/BRPortalStorage/a/4/15/86/76-Q44k2PEVXR.ppt"
+              "label": "משימת תרגול - מכירים את השיניים",
+              "href": "https://lo.cet.ac.il/player/?document=447bae14-1803-4446-8732-5aaefc288459&language=he&sitekey=ebag"
             }
           }
         ]
       }
     ]
   },
-  "21": {
-    "presence": "https://docs.google.com/forms/d/e/1FAIpQLSdgagV7V3wYviJNysY0ZyLbrH8TXxib9rjo5XcIuMMx7I1dSQ/viewform?usp=sf_link",
+  "28": {
+    "presence": "https://docs.google.com/forms/d/e/1FAIpQLScFA2KHCgcCJscWcNCydKNvS9lwqqc4j7xhvJFh1-D2HNrlZQ/viewform?usp=sf_link",
     "tasks": [
       {
         "title": "עברית",
-        "description": "יום השואה, יש להגיע למפגש בחולצה לבנה",
+        "description": "יום הזיכרון לחללי מערכות ישראל ונפגעי פעולות האיבה, נא להגיע לשיעור בחולצה לבנה",
         "zoom": [
           {
-            "description": "שכבת ב לומדת על יום השואה",
-            "time": "10:30",
-            "link": "https://edu-il.zoom.us/j/94374177647?pwd=a2lMNzd1MmVnQkRjcEt1Q3lkZEwvZz09"
-          }
-        ]
-      },
-      {
-        "title": "עברית",
-        "description": "המקראה שלי קטע קריאה: ביום השואה והגבורה/ אלה דור און",
-        "assignments": ["עמודים 169-170", "בעמוד 170 שאלות 1,2 בלבד"]
-      },
-      { "title": "מפתח הלב", "description": "יום השואה" },
-      {
-        "title": "תיאטרון",
-        "assignments": [
-          {
-            "link": {
-              "label": "משדר תיאטרון של משרד החינוך- תלבושות מעיתונים",
-              "href": "https://www.youtube.com/watch?time_continue=298&v=BPOa2CLx2J4&feature=emb_logo"
-            }
-          }
-        ]
-      }
-    ]
-  },
-  "22": {
-    "presence": "https://docs.google.com/forms/d/e/1FAIpQLSdNoetCrN4YTqYUBi5Oz4nA4LP9oapyiwQV_sErCVUhPUeXlQ/viewform?usp=sf_link",
-    "tasks": [
-      {
-        "title": "עברית",
-        "description": "המקראה שלי קטע קריאה: הכלבה שהלכה לאיבוד",
-        "assignments": [
-          "עמודים 39-40",
-          { "mark": "עמוד 40 יש לצלם ולשלוח אליי למייל לבדיקה" }
-        ]
-      },
-      {
-        "title": "חשבון",
-        "description": "שבילים 5: חיבור וחיסור בהמרה",
-        "assignments": ["עמודים 152, 154, 156, 157, 158"]
-      },
-      {
-        "title": "מוזיקה",
-        "description": "נושא: שיר ליום הזיכרון ״הליכה לקיסריה״ - חנה סנש",
-        "assignments": [
-          "האזנה לשיר כולל משימות",
-          {
-            "link": {
-              "label": "קישור",
-              "href": "https://drive.google.com/file/d/1IRyBVu3YvMN4RdeNEsRPVg9-JvIWpnn1/view?usp=sharing"
-            }
-          }
-        ]
-      },
-      {
-        "title": "מדעים",
-        "description": "מפגש סינכרוני שכבתי בנושא מבנה השן, וסוגי השיניים (חזרה כללית)",
-        "assignments": [
-          {
-            "link": {
-              "label": "דף עבודה בנושא סוגי השיניים ותפקידן",
-              "href": "http://www.files.org.il/BRPortalStorage/a/4/15/86/77-aYbMvKcOUJ.doc"
-            }
-          }
-        ],
-        "zoom": [
-          {
-            "description": "פגישת זום עם אמנה",
+            "description": "שכבת ב' לומדת על יום הזיכרון לללי מערכות ישראל ונפגעי פעולות האיבה",
             "time": "11:00",
-            "link": "https://edu-il.zoom.us/j/91030137673?pwd=b3pXWWlka2owVWtUNHZteWRxVitWZz09"
+            "link": "https://edu-il.zoom.us/j/91714311766?pwd=NUpXZ3hSUVRzUmxvL0E3enQrWUlsQT09",
+            "meeting": {
+              "id": 91714311766,
+              "password": "6jZfci"
+            }
+          }
+        ]
+      },
+      {
+        "title": "עברית",
+        "assignments": ["מנורה וענפי זית עמוד 173", "סמל ישראל עמוד 174"]
+      },
+      {
+        "title": "חשבון",
+        "description": "שבילים 6",
+        "assignments": [
+          "עמודים 64-71",
+          { "mark": "עמוד 66 יש לצלם ולשלוח אליי" }
+        ]
+      },
+      {
+        "title": "אומנות",
+        "description": "הדגל שלי",
+        "assignments": [
+          {
+            "link": {
+              "href": "http://www.amit.org.il/yesodi/%D7%99%D7%95%D6%B9%D7%9D-%D7%94%D6%B8%D7%A2%D6%B7%D7%A6%D6%B0%D7%9E%D6%B8%D7%90%D7%95%D6%BC%D7%AA/%D7%93%D6%BC%D6%B6%D7%92%D6%B6%D7%9C-%D7%99%D6%B4%D7%A9%D7%82%D6%B0%D7%A8%D6%B8%D7%90%D6%B5%D7%9C/",
+              "label": "בואו נכיר את הדגל"
+            }
+          }
+        ]
+      },
+      { "title": "מפתח הלב", "description": "יום הזיכרון" },
+      {
+        "title": "תיאטרון",
+        "assignments": [
+          {
+            "link": {
+              "label": "תרגיל הקשבה",
+              "href": "https://docs.google.com/document/d/15a3lYepn5ORDYAGdehDMGdTyjunRdQlH7IBoJsY-h1E/edit?usp=sharing"
+            }
           }
         ]
       }
     ]
   },
-  "23": {
-    "presence": "https://docs.google.com/forms/d/e/1FAIpQLSfnOXrGjhheSUt-GTlteexp1qQfob7KHKqxG_VwgbOW0k55Cw/viewform?usp=sf_link",
+  "29": {},
+  "30": {
+    "presence": "https://docs.google.com/forms/d/e/1FAIpQLSfXKTqhi9WThH5gQgmH_HdDJBDZzbtMp7XeIuD7JoxcyJY_YA/viewform?usp=sf_link",
     "tasks": [
       {
         "title": "עברית",
-        "description": "המקראה שלי. טקסט מידעי: גורי כלבים",
-        "assignments": ["עומדים 41-43"]
+        "description": "המקראה שלי. אצלנו בחצר/ נעמי שמר",
+        "assignments": [
+          {
+            "link": {
+              "label": "השיר: אצלנו בחצר",
+              "href": "https://www.youtube.com/watch?v=ZadHWjwSXNQ"
+            }
+          },
+          "משחק זיכרון דגלים - עמודים 186-190"
+        ]
       },
       {
         "title": "חשבון",
+        "description": "יש להגיע למפגש עם הקלסר הסגול, מרקר צהוב, עיפרון ומחק.",
         "zoom": [
           {
-            "description": "חזרה נוספת בחיסור ארוך",
+            "description": "בעיות מילוליות",
             "time": "10:00",
-            "link": "https://edu-il.zoom.us/j/91278616095?pwd=RFdYaEhVSmpnVldqNzFmZmV3WThVUT09"
+            "link": "https://edu-il.zoom.us/j/99681848260?pwd=TS9XOUhpeXIrRitlM3FoQWw1OFo2QT09",
+            "meeting": {
+              "id": "99681848260",
+              "password": "7Camdy"
+            }
           }
         ],
         "assignments": [
-          "חזרה על כפולות 4,5,6 באופן עצמאי.",
-          "מצורף למייל משחק פאזל - לוח הכפל",
+          {
+            "mark": "במנילה הסגולה, יש לפתור את יער הצבים 4 שאלות (ניתן להסתכל בבעיות קודמות) לצלם ולשלוח אליי"
+          }
+        ]
+      },
+      {
+        "title": "אומנות",
+        "description": "פאזל דגל ישראל",
+        "assignments": [
           {
             "link": {
-              "label": "משחק זיכרון כפל",
-              "href": "http://www.files.org.il/BRPortalStorage/a/4/15/91/11-gD5rxi7SJ4.pdf"
+              "href": "http://www.jigzone.com/puzzles/CD055D4AF023?z=11",
+              "label": "מרכיבים את הדגל"
             }
-          },
-          "שבילים 6 עמודים  48-53 תזכורת: תוצאה של תרגיל כפל נקראת מכפלה. כל אחד משני המספרים שבתרגיל נקרא גורם. גורם x גורם = מכפלה"
+          }
         ]
       },
       {
         "title": "מוזיקה",
-        "description": "נושא :מבוך כלי נגינה-2",
+        "description": "מארש צה״ל - האזנה למארש ומענה על שאלות",
         "assignments": [
           {
             "link": {
-              "label": "דף עבודה 1",
-              "href": "https://drive.google.com/file/d/1lvBNU1X-2aOZ2Jf1P3AZhZXoItIZ6MwZ/view?usp=sharing"
+              "label": "מארש צה״ל",
+              "href": "https://www.youtube.com/watch?v=T3puJ_wVKLI"
             }
           },
-          {
-            "link": {
-              "label": "דף עבודה 2",
-              "href": "https://drive.google.com/file/d/1Rq4PpFZiW8aS5feXeXNKW35XuD0NBetp/view?usp=sharing"
-            }
-          }
+          "האזינו למארש וחישבו האם מספר כלי הנגינה המנגנים הוא גדול או קטן?",
+          "איך נקראת קבוצה גדולה של נגנים המנגנים יחדיו?",
+          "האזינו למארש בשנית, ונסו לצעוד לפי הקצב.",
+          "מה הרגשות והתחושות העולות אצליכם בזמן האזנה למארש?"
         ]
       },
       {
         "title": "תיאטרון",
-        "description": "יש לשלוח לי למייל ronibach@walla.com בנושא ההודעה יש לציין שם+ משפחה וכיתה",
         "assignments": [
           {
             "link": {
-              "label": "תלבושת ברוח התקופה",
-              "href": "http://www.files.org.il/BRPortalStorage/a/4/15/81/38-cyjef9RmqZ.pptx"
+              "label": "משימת מקום",
+              "href": "https://docs.google.com/document/d/1qs_6rnQ0NlQuDh8BzNeMcb485Jz3o6yQ7F542MMWp8Y/edit?usp=sharing"
             }
           }
         ]

@@ -56,11 +56,12 @@ function App() {
             <HTMLSelect
               value={selectedDay}
               options={[
-                { value: '19', label: 'יום ראשון 19/4' },
-                { value: '20', label: 'יום שני 20/4' },
-                { value: '21', label: 'יום שלישי 21/4' },
-                { value: '22', label: 'יום רביעי 22/4' },
-                { value: '23', label: 'יום חמישי 23/4' },
+                { value: '', label: '' },
+                { value: '26', label: 'יום ראשון 26/4' },
+                { value: '27', label: 'יום שני 27/4' },
+                { value: '28', label: 'יום שלישי 28/4' },
+                { value: '29', label: 'יום רביעי 29/4' },
+                { value: '30', label: 'יום חמישי 30/4' },
               ]}
               onChange={onDateChange}
             />
