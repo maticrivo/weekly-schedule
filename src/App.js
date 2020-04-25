@@ -28,7 +28,9 @@ import { ReactComponent as IsraelFlag } from './israel-flag.svg'
 function App() {
   const [selectedDay, setSelectedDay] = useState(dayjs().format('D'))
   const [dayData, setDayData] = useState(data?.[selectedDay])
-  const [openWeekly, setOpenWeekly] = useState(dayData?.special ? false : true)
+  const [openWeekly, setOpenWeekly] = useState(
+    !dayData || dayData?.special ? false : true,
+  )
   const manualClose = useRef(false)
 
   const onDateChange = (event) => {
