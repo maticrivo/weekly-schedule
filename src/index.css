@@ -42,3 +42,12 @@ main {
 .bp3-select select {
   font-size: 16px;
 }
+
+.card-flag {
+  padding: 0;
+}
+
+.flag {
+  width: 100%;
+  height: auto;
+}

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import dayjs from 'dayjs'
 import { Helmet } from 'react-helmet-async'
 import {
@@ -18,20 +18,30 @@ import {
   Alignment,
   FocusStyleManager,
   Classes,
+  Elevation,
 } from '@blueprintjs/core'
 
 import data from './data.json'
 import TaskAssignment from './TaskAssignment'
+import { ReactComponent as IsraelFlag } from './israel-flag.svg'
 
 function App() {
   const [selectedDay, setSelectedDay] = useState(dayjs().format('D'))
   const [dayData, setDayData] = useState(data?.[selectedDay])
-  const [openWeekly, setOpenWeekly] = useState(true)
+  const [openWeekly, setOpenWeekly] = useState(dayData?.special ? false : true)
+  const manualClose = useRef(false)
 
   const onDateChange = (event) => {
     const selectDay = event.currentTarget.value
     setSelectedDay(selectDay)
     setDayData(data?.[selectDay])
+    if (data?.[selectDay]?.special) {
+      setOpenWeekly(false)
+    } else {
+      if (!manualClose.current) {
+        setOpenWeekly(true)
+      }
+    }
   }
 
   useEffect(() => {
@@ -39,6 +49,7 @@ function App() {
   }, [])
 
   const toggleOpenWeekly = () => {
+    manualClose.current = openWeekly
     setOpenWeekly(!openWeekly)
   }
 
@@ -99,26 +110,33 @@ function App() {
           <H3>משימות להיום:</H3>
           {dayData ? (
             <>
-              <Card>
-                <H5>בדיקת נוכחות</H5>
-                <p>
-                  <AnchorButton
-                    href={dayData.presence}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    intent={Intent.PRIMARY}
-                  >
-                    לחצו כאן
-                  </AnchorButton>
-                </p>
-              </Card>
+              {!dayData.special ? (
+                <Card>
+                  <H5>בדיקת נוכחות</H5>
+                  <p>
+                    <AnchorButton
+                      href={dayData.presence}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      intent={Intent.PRIMARY}
+                    >
+                      לחצו כאן
+                    </AnchorButton>
+                  </p>
+                </Card>
+              ) : (
+                <Card elevation={Elevation.THREE} className="card-flag">
+                  <IsraelFlag className="flag" />
+                </Card>
+              )}
+
               {dayData?.tasks?.map((task, idx) => (
                 <Card key={idx}>
                   <H5>{task.title}</H5>
                   {task.description && <p>{task.description}</p>}
                   {task.zoom && (
                     <>
-                      <H6>פגישות זום:</H6>
+                      <H6>פגישת זום:</H6>
                       {task.zoom.map((zoom, zdx) => (
                         <p key={zdx}>
                           {zoom.description}

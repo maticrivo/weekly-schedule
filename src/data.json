@@ -217,7 +217,29 @@
       }
     ]
   },
-  "29": {},
+  "29": {
+    "special": true,
+    "tasks": [
+      {
+        "title": "יום העצמאות",
+        "description": "הכנת פאלפל 😊 מכינים, מצלמים ושולחים לכולם!!",
+        "assignments": [
+          {
+            "link": {
+              "label": "מתכון כתוב להכנת פלאפל",
+              "href": "http://dummy/$STORAGE$a/4/18/10/58-w3XZofdOMu.docx"
+            }
+          },
+          {
+            "link": {
+              "label": "מתכון מצולם",
+              "href": "https://www.youtube.com/watch?v=sgLibb93mps"
+            }
+          }
+        ]
+      }
+    ]
+  },
   "30": {
     "presence": "https://docs.google.com/forms/d/e/1FAIpQLSfXKTqhi9WThH5gQgmH_HdDJBDZzbtMp7XeIuD7JoxcyJY_YA/viewform?usp=sf_link",
     "tasks": [
