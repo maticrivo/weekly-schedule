@@ -20,10 +20,15 @@ import {
   Classes,
   Elevation,
   Code,
+  Toast,
+  Position,
+  Tooltip,
 } from '@blueprintjs/core'
+import { CopyToClipboard } from 'react-copy-to-clipboard'
 
 import data from './data.json'
 import TaskAssignment from './TaskAssignment'
+import { AppToasterSuccess, AppToasterFail } from './AppToaster'
 import { ReactComponent as IsraelFlag } from './israel-flag.svg'
 
 function App() {
@@ -54,6 +59,14 @@ function App() {
   const toggleOpenWeekly = () => {
     manualClose.current = openWeekly
     setOpenWeekly(!openWeekly)
+  }
+
+  const onCopy = (message, result) => {
+    if (result) {
+      AppToasterSuccess.show({ message: 'הועתק בהצלחה' })
+    } else {
+      AppToasterFail.show({ message: 'העתקה נכשלה' })
+    }
   }
 
   return (
@@ -158,13 +171,36 @@ function App() {
                             </AnchorButton>
                             {zoom?.meeting?.id && (
                               <p>
-                                <strong>ישיבה מספר:</strong>{' '}
-                                <Code>{zoom.meeting.id}</Code>
+                                <strong>ID ישיבה:</strong>{' '}
+                                <Code>{zoom.meeting.id}</Code>{' '}
+                                <Tooltip content="העתק" position={Position.TOP}>
+                                  <CopyToClipboard
+                                    text={zoom.meeting.id}
+                                    onCopy={onCopy}
+                                  >
+                                    <Button icon="duplicate" small minimal />
+                                  </CopyToClipboard>
+                                </Tooltip>
                                 <br />
                                 {zoom.meeting.password && (
                                   <>
                                     <strong>סיסמה:</strong>{' '}
-                                    <Code>{zoom.meeting.password}</Code>
+                                    <Code>{zoom.meeting.password}</Code>{' '}
+                                    <Tooltip
+                                      content="העתק"
+                                      position={Position.TOP}
+                                    >
+                                      <CopyToClipboard
+                                        text={zoom.meeting.password}
+                                        onCopy={onCopy}
+                                      >
+                                        <Button
+                                          icon="duplicate"
+                                          small
+                                          minimal
+                                        />
+                                      </CopyToClipboard>
+                                    </Tooltip>
                                   </>
                                 )}
                               </p>
