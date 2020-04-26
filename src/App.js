@@ -19,6 +19,7 @@ import {
   FocusStyleManager,
   Classes,
   Elevation,
+  Code,
 } from '@blueprintjs/core'
 
 import data from './data.json'
@@ -140,21 +141,36 @@ function App() {
                     <>
                       <H6>פגישת זום:</H6>
                       {task.zoom.map((zoom, zdx) => (
-                        <p key={zdx}>
-                          {zoom.description}
-                          <br />
-                          בשעה: {zoom.time}
-                          <br />
-                          <AnchorButton
-                            outlined
-                            intent={Intent.PRIMARY}
-                            href={zoom.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            לחצו כאן
-                          </AnchorButton>
-                        </p>
+                        <>
+                          <p key={zdx}>
+                            {zoom.description}
+                            <br />
+                            בשעה: {zoom.time}
+                            <br />
+                            <AnchorButton
+                              outlined
+                              intent={Intent.PRIMARY}
+                              href={zoom.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              לחצו כאן
+                            </AnchorButton>
+                            {zoom?.meeting?.id && (
+                              <p>
+                                <strong>ישיבה מספר:</strong>{' '}
+                                <Code>{zoom.meeting.id}</Code>
+                                <br />
+                                {zoom.meeting.password && (
+                                  <>
+                                    <strong>סיסמא:</strong>{' '}
+                                    <Code>{zoom.meeting.password}</Code>
+                                  </>
+                                )}
+                              </p>
+                            )}
+                          </p>
+                        </>
                       ))}
                     </>
                   )}
