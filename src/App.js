@@ -163,7 +163,7 @@ function App() {
                                 <br />
                                 {zoom.meeting.password && (
                                   <>
-                                    <strong>סיסמא:</strong>{' '}
+                                    <strong>סיסמה:</strong>{' '}
                                     <Code>{zoom.meeting.password}</Code>
                                   </>
                                 )}
