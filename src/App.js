@@ -20,7 +20,6 @@ import {
   Classes,
   Elevation,
   Code,
-  Toast,
   Position,
   Tooltip,
 } from '@blueprintjs/core'
