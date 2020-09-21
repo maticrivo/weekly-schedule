@@ -68,26 +68,45 @@ function App() {
     }
   }
 
+  const renderDescription = (description) => {
+    if (typeof description === 'string') {
+      return <p>{description}</p>
+    }
+
+    if (description?.link) {
+      return (
+        <a
+          href={description.link.href}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {description.link?.label || description.link.href}
+        </a>
+      )
+    }
+
+    return null
+  }
+
   return (
     <>
       <Helmet>
-        <title>למידה מרחוק ב׳-3</title>
+        <title>למידה מרחוק ג׳-3</title>
       </Helmet>
       <Navbar fixedToTop className={Classes.RTL}>
         <div className="container">
           <Navbar.Group align={Alignment.RIGHT}>
-            <Navbar.Heading>למידה מרחוק ב׳-3</Navbar.Heading>
+            <Navbar.Heading>למידה מרחוק ג׳-3</Navbar.Heading>
           </Navbar.Group>
           <Navbar.Group align={Alignment.LEFT}>
             <HTMLSelect
               value={selectedDay}
               options={[
                 { value: '', label: '' },
-                { value: '26', label: 'יום ראשון 26/4' },
-                { value: '27', label: 'יום שני 27/4' },
-                { value: '28', label: 'יום שלישי 28/4' },
-                { value: '29', label: 'יום רביעי 29/4' },
-                { value: '30', label: 'יום חמישי 30/4' },
+                { value: '21', label: 'יום שני 21/9' },
+                { value: '22', label: 'יום שלישי 22/9' },
+                { value: '23', label: 'יום רביעי 23/9' },
+                { value: '24', label: 'יום חמישי 24/9' },
               ]}
               onChange={onDateChange}
             />
@@ -113,7 +132,10 @@ function App() {
                     {weeklyTask?.assignments && (
                       <ul>
                         {weeklyTask.assignments.map((assignment, jdx) => (
-                          <TaskAssignment key={jdx} assignment={assignment} />
+                          <TaskAssignment
+                            key={`weekly-${idx}-task-${jdx}`}
+                            assignment={assignment}
+                          />
                         ))}
                       </ul>
                     )}
@@ -146,15 +168,16 @@ function App() {
               )}
 
               {dayData?.tasks?.map((task, idx) => (
-                <Card key={idx}>
+                <Card key={`task-${idx}`}>
+                  {console.log({ task })}
                   <H5>{task.title}</H5>
-                  {task.description && <p>{task.description}</p>}
+                  {task.description && renderDescription(task.description)}
                   {task.zoom && (
                     <>
                       <H6>פגישת זום:</H6>
                       {task.zoom.map((zoom, zdx) => (
                         <>
-                          <p key={zdx}>
+                          <div key={`task-${idx}-zoom-${zdx}`}>
                             {zoom.description}
                             <br />
                             בשעה: {zoom.time}
@@ -204,7 +227,7 @@ function App() {
                                 )}
                               </p>
                             )}
-                          </p>
+                          </div>
                         </>
                       ))}
                     </>
@@ -214,7 +237,10 @@ function App() {
                       <H6>משימות:</H6>
                       <ul>
                         {task.assignments.map((assignment, jdx) => (
-                          <TaskAssignment key={jdx} assignment={assignment} />
+                          <TaskAssignment
+                            key={`task-${idx}-assignment-${jdx}`}
+                            assignment={assignment}
+                          />
                         ))}
                       </ul>
                     </>
