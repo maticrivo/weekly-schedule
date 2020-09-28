@@ -32,10 +32,13 @@ import { AppToasterSuccess, AppToasterFail } from './AppToaster'
 import { ReactComponent as IsraelFlag } from './israel-flag.svg'
 
 const weekDays = [
-  { value: '21', label: 'יום שני 21/9' },
-  { value: '22', label: 'יום שלישי 22/9' },
-  { value: '23', label: 'יום רביעי 23/9' },
-  { value: '24', label: 'יום חמישי 24/9' },
+  { value: '21/9', label: 'יום שני 21/9' },
+  { value: '22/9', label: 'יום שלישי 22/9' },
+  { value: '23/9', label: 'יום רביעי 23/9' },
+  { value: '24/9', label: 'יום חמישי 24/9' },
+  { value: '29/9', label: 'יום שלישי 29/9' },
+  { value: '30/9', label: 'יום רביעי 30/9' },
+  { value: '1/10', label: 'יום חמישי 1/10' },
 ]
 
 function App() {
@@ -98,6 +101,10 @@ function App() {
           {description.link?.label || description.link.href}
         </a>
       )
+    }
+
+    if (description?.mark) {
+      return <mark>{description.mark}</mark>
     }
 
     return null

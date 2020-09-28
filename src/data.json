@@ -1,6 +1,6 @@
 {
   "tasks": [],
-  "21": {
+  "21/9": {
     "presence": "https://docs.google.com/forms/d/e/1FAIpQLSdPlFKfRX8KHAZLXRAyW_7onEJE9nUrgRPTmBiRvXU6wRHT4w/viewform?usp=sf_link",
     "tasks": [
       {
@@ -51,7 +51,7 @@
       }
     ]
   },
-  "22": {
+  "22/9": {
     "presence": "https://docs.google.com/forms/d/e/1FAIpQLScncOiAindni6bdQZ113n_qESHMbhDBZ5Qa_r3Kq2GXsIRPRA/viewform?usp=sf_link",
     "tasks": [
       {
@@ -94,7 +94,7 @@
       }
     ]
   },
-  "23": {
+  "23/9": {
     "presence": "https://docs.google.com/forms/d/e/1FAIpQLSeesi9Hn5pLL-LQB8BTyB6kB7MWJ1ONVT3-w6SKMfZ45HcLWQ/viewform?usp=sf_link",
     "tasks": [
       {
@@ -151,7 +151,7 @@
       }
     ]
   },
-  "24": {
+  "24/9": {
     "presence": "https://docs.google.com/forms/d/e/1FAIpQLSfQ48wA7euZveiPyTtcPiBg9gPl1l--KvVt5jjKwUtfr2mu_g/viewform?usp=sf_link",
     "tasks": [
       {
@@ -213,6 +213,235 @@
           "עמודים 53, 57-58",
           "עמוד 59 שאלה 6א",
           { "mark": "עמוד 57 לשלוח אלי לבדיקה למייל. tali.itzhak@gmail.com" }
+        ]
+      }
+    ]
+  },
+  "29/9": {
+    "presence": "https://docs.google.com/forms/d/e/1FAIpQLSfxxZmKKJQDohq7EiFm0uGdMceMU5gewI4fXdNF0bIw4u4V4g/viewform",
+    "tasks": [
+      {
+        "title": "חשבון",
+        "description": "לפני המפגש יש לעשות בחוברת עמודים 60-61",
+        "zoom": [
+          {
+            "description": "במהלך המפגש נעבוד בעמ' 64 שאלות 3-4",
+            "time": "09:15",
+            "link": "https://us04web.zoom.us/j/2998248582?pwd=NXMrZ3NRRWVNMWplY2QyQVNSLzg1Zz09"
+          }
+        ],
+        "assignments": [
+          "עמ' 65, 66, 67  (*ללא הסעיפים של מה דומה ומה שונה)",
+          { "mark": "לשלוח אלי את עמ' 66 לבדיקה למייל tali.itzhak@gmail.com" }
+        ]
+      },
+      {
+        "title": "חינוך גופני",
+        "description": "מערכת שידורים לאומית",
+        "assignments": [
+          {
+            "link": {
+              "label": "אימון בנושא כושר גופני כללי",
+              "href": "https://youtu.be/MhkNbsbpHSw"
+            }
+          }
+        ]
+      },
+      {
+        "title": "עברית",
+        "description": {
+          "mark": "לשלוח אליי לבדיקה"
+        },
+        "assignments": [
+          {
+            "link": {
+              "label": "דף עבודה הבנת הנקרא סוכות",
+              "href": "https://drive.google.com/file/d/1SmBpkDeUISksgQS2YXVv6mjpSn3gqQnj/view?usp=sharing"
+            }
+          }
+        ]
+      },
+      {
+        "title": "מדעים",
+        "zoom": [
+          {
+            "time": "11:00",
+            "link": "https://us04web.zoom.us/j/74377374457?pwd=S1V4QmRicjdhQUVmVnpkbEhUMDNmQT09",
+            "meeting": {
+              "id": 74377374457,
+              "password": "2K1wGw"
+            }
+          }
+        ]
+      },
+      {
+        "title": "אנגלית",
+        "zoom": [
+          {
+            "description": "יש להביא את החוברת קליק 1",
+            "time": "12:30",
+            "link": "https://edu-il.zoom.us/j/91537723566?pwd=Z3IzZ1JyajU2Q3U0ZHlIdmYxZnR4Zz09"
+          }
+        ]
+      }
+    ]
+  },
+  "30/9": {
+    "presence": "https://docs.google.com/forms/d/14w4cw5N6tjndznLzXyCDbbhDEFwAwI-70dOjkaDilao/viewform",
+    "tasks": [
+      {
+        "title": "מפגש כיתתי",
+        "zoom": [
+          {
+            "description": "סוכות",
+            "time": "09:00",
+            "link": "https://edu-il.zoom.us/j/96117604870?pwd=VFdxSjJJcXpYM2N3SXVoZjd3Rm1tZz09",
+            "meeting": {
+              "id": 96117604870,
+              "password": "831668"
+            }
+          }
+        ],
+        "assignments": [
+          {
+            "link": {
+              "label": "משימה לחג סוכות",
+              "href": "https://lo.cet.ac.il/player/?task=64fa9251-0ac3-4ba7-85dd-5903fe09a8bd"
+            }
+          }
+        ]
+      },
+      {
+        "title": "עברית",
+        "assignments": [
+          "מילה טובה עמודים 18-19",
+          { "mark": "שאלה 2 לענות במחברת ולשלוח אליי לבדיקה" },
+          {
+            "link": {
+              "label": "דף עבודה מקימים סוכה",
+              "href": "https://drive.google.com/file/d/1kmizip7jRB59UhrLvryaNv0vwRIR5y3N/view?usp=sharing"
+            }
+          },
+          { "mark": "לשלוח אליי לבדיקה את דף העבודה" }
+        ]
+      },
+      {
+        "title": "חינוך גופני",
+        "description": "מערכת שידורים לאומית",
+        "assignments": [
+          {
+            "link": {
+              "label": "אימון בנושא זריקה ותפיסה",
+              "href": "https://www.youtube.com/watch?v=oZNq5zHdVy8"
+            }
+          }
+        ]
+      },
+      {
+        "title": "זום - קפסולה 2 - אור-לי + רונית",
+        "description": "איתמר, עינב, יובל, נועה, אלה ק., אלה ג., עומר, יואל, שחר, גל, רז ואוליביה",
+        "zoom": [
+          {
+            "description": "נא להצטייד : קופסת קרטון של קורנפלקס או אריזת מזון אחרת דומה מקרטון / דפים צבעוניים מגיליונות מגזינים משומשים. חשוב נייר דבק שקוף או שדכן קלמר מלא",
+            "time": "11:00",
+            "link": "https://edu-il.zoom.us/j/98680129597?pwd=VVpLc2lEeG1pSFRDQjl6WjcydGpnZz09",
+            "meeting": {
+              "id": 98680129597,
+              "password": "426113"
+            }
+          }
+        ]
+      },
+      {
+        "title": "חשבון",
+        "description": "משימות רשות באתר גלים",
+        "assignments": [
+          {
+            "link": {
+              "label": "תרגול ומשחקים בנושא המבנה העשרוני",
+              "href": "https://www.galim.org.il/math/unit/%D7%94%D7%9E%D7%91%D7%A0%D7%94-%D7%94%D7%A2%D7%A9%D7%A8%D7%95%D7%A0%D7%99-%D7%90?lang=he"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "1/10": {
+    "presence": "https://docs.google.com/forms/d/e/1FAIpQLSe1-k706f6zrMAGJROnkXod1KzRucWVoqnrDMWRl3J2jC3TtA/viewform",
+    "tasks": [
+      {
+        "title": "עברית",
+        "description": "סוכות ויצירה - אור-לי + רונית",
+        "zoom": [
+          {
+            "description": "קופסת קרטון של קורנפלקס או אריזת מזון אחרת דומה מקרטון / דפים צבעוניים מגיליונות מגזינים משומשים. חשוב נייר דבק שקוף או שדכן קלמר מלא וחוברת מילה טובה",
+            "time": "09:00",
+            "link": "https://edu-il.zoom.us/j/99714101755?pwd=VEdLTy84VlJ0cUFZSEovTmwvbmZkdz09",
+            "meeting": {
+              "id": 99714101755,
+              "password": "098387"
+            }
+          }
+        ]
+      },
+      {
+        "title": "עברית",
+        "assignments": [
+          "מילה טובה עמודים 23-24 שאלות 1-4",
+          {
+            "mark": "לשלוח אליי את התשובות לבדיקה"
+          },
+          {
+            "link": {
+              "label": "אופק - חגי תשרי",
+              "href": "https://lo.cet.ac.il/player/?task=7943d981-8314-4c93-aeed-5ee68323fdca"
+            }
+          }
+        ]
+      },
+      {
+        "title": "מדעים",
+        "assignments": [
+          {
+            "link": {
+              "label": "מגנטיות מהי?",
+              "href": "http://dummy/$STORAGE$a/4/29/67/82-iyZTUVGYIz.ppt"
+            }
+          },
+          {
+            "link": {
+              "label": "מגנטיות",
+              "href": "https://lo.cet.ac.il/player/?task=76e66e85-0468-4c72-8021-35ae75d5730b"
+            }
+          }
+        ]
+      },
+      {
+        "title": "חשבון",
+        "zoom": [
+          {
+            "description": "רונית מצטרפת למפגש לעזרה בקבוצות",
+            "time": "11:00",
+            "link": "https://us04web.zoom.us/j/2998248582?pwd=NXMrZ3NRRWVNMWplY2QyQVNSLzg1Zz09"
+          }
+        ],
+        "assignments": [
+          "עמוד 68",
+          "עמוד 69 שאלה 2",
+          "עמוד 70 שאלה 4",
+          { "mark": "לשלוח אלי את עמוד 68 לבדיקה למייל tali.itzhak@gmail.com" }
+        ]
+      },
+      {
+        "title": "מורשת",
+        "description": "בסוכות תשבו שבעת ימים",
+        "assignments": [
+          {
+            "link": {
+              "label": "משימה באתר גלים",
+              "href": "https://www.galim.org.il/holidays/unit/%D7%A1%D7%95%D7%9B%D7%94?lang=he"
+            }
+          }
         ]
       }
     ]
