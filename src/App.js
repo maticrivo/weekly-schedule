@@ -18,7 +18,6 @@ import {
   Alignment,
   FocusStyleManager,
   Classes,
-  Elevation,
   Code,
   Position,
   Tooltip,
@@ -29,7 +28,6 @@ import { CopyToClipboard } from 'react-copy-to-clipboard'
 import data from './data.json'
 import TaskAssignment from './TaskAssignment'
 import { AppToasterSuccess, AppToasterFail } from './AppToaster'
-import { ReactComponent as IsraelFlag } from './israel-flag.svg'
 
 const weekDays = [
   { value: '21/9', label: 'יום שני 21/9' },
@@ -42,7 +40,7 @@ const weekDays = [
 ]
 
 function App() {
-  const today = dayjs().format('D')
+  const today = dayjs().format('D/M')
   const [loading, setLoading] = useState(false)
   const [selectedDay, setSelectedDay] = useState(today)
   const [dayData, setDayData] = useState(data?.[selectedDay])
@@ -62,7 +60,7 @@ function App() {
     await new Promise((resolve) => {
       setTimeout(resolve, 500)
     })
-    setDayData(data?.[selectDay])
+    setDayData(data?.[selectDay] || {})
     if (data?.[selectDay]?.special) {
       setOpenWeekly(false)
     } else {
@@ -135,117 +133,101 @@ function App() {
             <Spinner intent={Intent.PRIMARY} size={Spinner.SIZE_LARGE} />
           ) : (
             <>
-              {data?.tasks && (
+              {Object.keys(dayData).length > 0 ? (
                 <>
-                  <H3>
-                    משימות שבועיות:
-                    <Button
-                      minimal
-                      icon={openWeekly ? 'chevron-down' : 'chevron-left'}
-                      onClick={toggleOpenWeekly}
-                    />
-                  </H3>
-                  <Collapse isOpen={openWeekly} keepChildrenMounted>
-                    {data.tasks.map((weeklyTask, idx) => (
-                      <Callout intent={Intent.PRIMARY} icon={null} key={idx}>
-                        <H4>{weeklyTask.title}</H4>
-                        {weeklyTask?.assignments && (
-                          <ul>
-                            {weeklyTask.assignments.map((assignment, jdx) => (
-                              <TaskAssignment
-                                key={`weekly-${idx}-task-${jdx}`}
-                                assignment={assignment}
-                              />
-                            ))}
-                          </ul>
-                        )}
-                      </Callout>
-                    ))}
-                  </Collapse>
-                </>
-              )}
-              <H3>
-                משימות ל
-                {selectedDay === today
-                  ? 'היום'
-                  : weekDays.find((wd) => wd.value === selectedDay).label}
-              </H3>
-              {dayData ? (
-                <>
-                  {!dayData.special ? (
-                    <Card>
-                      <H5>בדיקת נוכחות</H5>
-                      <p>
-                        <AnchorButton
-                          href={dayData.presence}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          intent={Intent.PRIMARY}
-                        >
-                          לחצו כאן
-                        </AnchorButton>
-                      </p>
-                    </Card>
-                  ) : (
-                    <Card elevation={Elevation.THREE} className="card-flag">
-                      <IsraelFlag className="flag" />
-                    </Card>
+                  {data?.tasks && (
+                    <>
+                      <H3>
+                        משימות שבועיות:
+                        <Button
+                          minimal
+                          icon={openWeekly ? 'chevron-down' : 'chevron-left'}
+                          onClick={toggleOpenWeekly}
+                        />
+                      </H3>
+                      <Collapse isOpen={openWeekly} keepChildrenMounted>
+                        {data.tasks.map((weeklyTask, idx) => (
+                          <Callout
+                            intent={Intent.PRIMARY}
+                            icon={null}
+                            key={idx}
+                          >
+                            <H4>{weeklyTask.title}</H4>
+                            {weeklyTask?.assignments && (
+                              <ul>
+                                {weeklyTask.assignments.map(
+                                  (assignment, jdx) => (
+                                    <TaskAssignment
+                                      key={`weekly-${idx}-task-${jdx}`}
+                                      assignment={assignment}
+                                    />
+                                  ),
+                                )}
+                              </ul>
+                            )}
+                          </Callout>
+                        ))}
+                      </Collapse>
+                    </>
                   )}
+                  {dayData?.tasks?.length > 0 ? (
+                    <>
+                      <H3>
+                        משימות ל
+                        {selectedDay === today
+                          ? 'היום'
+                          : weekDays.find((wd) => wd.value === selectedDay)
+                              .label}
+                      </H3>
 
-                  {dayData?.tasks?.map((task, idx) => (
-                    <Card key={`task-${idx}`}>
-                      {console.log({ task })}
-                      <H5>{task.title}</H5>
-                      {task.description && renderDescription(task.description)}
-                      {task.zoom && (
-                        <>
-                          <H6>פגישת זום:</H6>
-                          {task.zoom.map((zoom, zdx) => (
+                      <Card>
+                        <H5>בדיקת נוכחות</H5>
+                        <p>
+                          <AnchorButton
+                            href={dayData.presence}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            intent={Intent.PRIMARY}
+                          >
+                            לחצו כאן
+                          </AnchorButton>
+                        </p>
+                      </Card>
+
+                      {dayData.tasks.map((task, idx) => (
+                        <Card key={`task-${idx}`}>
+                          <H5>{task.title}</H5>
+                          {task.description &&
+                            renderDescription(task.description)}
+                          {task.zoom && (
                             <>
-                              <div key={`task-${idx}-zoom-${zdx}`}>
-                                {zoom.description}
-                                <br />
-                                בשעה: {zoom.time}
-                                <br />
-                                <AnchorButton
-                                  outlined
-                                  intent={Intent.PRIMARY}
-                                  href={zoom.link}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                >
-                                  לחצו כאן
-                                </AnchorButton>
-                                {zoom?.meeting?.id && (
-                                  <p>
-                                    <strong>ID ישיבה:</strong>{' '}
-                                    <Code>{zoom.meeting.id}</Code>{' '}
-                                    <Tooltip
-                                      content="העתק"
-                                      position={Position.TOP}
-                                    >
-                                      <CopyToClipboard
-                                        text={zoom.meeting.id}
-                                        onCopy={onCopy}
-                                      >
-                                        <Button
-                                          icon="duplicate"
-                                          small
-                                          minimal
-                                        />
-                                      </CopyToClipboard>
-                                    </Tooltip>
+                              <H6>פגישת זום:</H6>
+                              {task.zoom.map((zoom, zdx) => (
+                                <>
+                                  <div key={`task-${idx}-zoom-${zdx}`}>
+                                    {zoom.description}
                                     <br />
-                                    {zoom.meeting.password && (
-                                      <>
-                                        <strong>סיסמה:</strong>{' '}
-                                        <Code>{zoom.meeting.password}</Code>{' '}
+                                    בשעה: {zoom.time}
+                                    <br />
+                                    <AnchorButton
+                                      outlined
+                                      intent={Intent.PRIMARY}
+                                      href={zoom.link}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                    >
+                                      לחצו כאן
+                                    </AnchorButton>
+                                    {zoom?.meeting?.id && (
+                                      <p>
+                                        <strong>ID ישיבה:</strong>{' '}
+                                        <Code>{zoom.meeting.id}</Code>{' '}
                                         <Tooltip
                                           content="העתק"
                                           position={Position.TOP}
                                         >
                                           <CopyToClipboard
-                                            text={zoom.meeting.password}
+                                            text={zoom.meeting.id}
                                             onCopy={onCopy}
                                           >
                                             <Button
@@ -255,33 +237,60 @@ function App() {
                                             />
                                           </CopyToClipboard>
                                         </Tooltip>
-                                      </>
+                                        <br />
+                                        {zoom.meeting.password && (
+                                          <>
+                                            <strong>סיסמה:</strong>{' '}
+                                            <Code>{zoom.meeting.password}</Code>{' '}
+                                            <Tooltip
+                                              content="העתק"
+                                              position={Position.TOP}
+                                            >
+                                              <CopyToClipboard
+                                                text={zoom.meeting.password}
+                                                onCopy={onCopy}
+                                              >
+                                                <Button
+                                                  icon="duplicate"
+                                                  small
+                                                  minimal
+                                                />
+                                              </CopyToClipboard>
+                                            </Tooltip>
+                                          </>
+                                        )}
+                                      </p>
                                     )}
-                                  </p>
-                                )}
-                              </div>
+                                  </div>
+                                </>
+                              ))}
                             </>
-                          ))}
-                        </>
-                      )}
-                      {task?.assignments && (
-                        <>
-                          <H6>משימות:</H6>
-                          <ul>
-                            {task.assignments.map((assignment, jdx) => (
-                              <TaskAssignment
-                                key={`task-${idx}-assignment-${jdx}`}
-                                assignment={assignment}
-                              />
-                            ))}
-                          </ul>
-                        </>
-                      )}
-                    </Card>
-                  ))}
+                          )}
+                          {task?.assignments && (
+                            <>
+                              <H6>משימות:</H6>
+                              <ul>
+                                {task.assignments.map((assignment, jdx) => (
+                                  <TaskAssignment
+                                    key={`task-${idx}-assignment-${jdx}`}
+                                    assignment={assignment}
+                                  />
+                                ))}
+                              </ul>
+                            </>
+                          )}
+                        </Card>
+                      ))}
+                    </>
+                  ) : (
+                    <NonIdealState icon="clean" title="אין משימות להיום" />
+                  )}
                 </>
               ) : (
-                <NonIdealState icon="clean" title="אין מטלות להיום" />
+                <NonIdealState
+                  icon="calendar"
+                  title="יש לבחור תאריך כדי לראות את המשימות"
+                />
               )}
             </>
           )}
