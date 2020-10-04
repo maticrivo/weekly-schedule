@@ -133,7 +133,7 @@ function App() {
             <Spinner intent={Intent.PRIMARY} size={Spinner.SIZE_LARGE} />
           ) : (
             <>
-              {Object.keys(dayData).length > 0 ? (
+              {Object.keys(dayData || {}).length > 0 ? (
                 <>
                   {data?.tasks && (
                     <>
