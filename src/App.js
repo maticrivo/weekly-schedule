@@ -37,6 +37,10 @@ const weekDays = [
   { value: '29/9', label: 'יום שלישי 29/9' },
   { value: '30/9', label: 'יום רביעי 30/9' },
   { value: '1/10', label: 'יום חמישי 1/10' },
+  { value: '12/10', label: 'יום שני 12/10' },
+  { value: '13/10', label: 'יום שלישי 13/10' },
+  { value: '14/10', label: 'יום רביעי 14/10' },
+  { value: '15/10', label: 'יום חמישי 15/10' },
 ]
 
 function App() {
@@ -180,19 +184,21 @@ function App() {
                               .label}
                       </H3>
 
-                      <Card>
-                        <H5>בדיקת נוכחות</H5>
-                        <p>
-                          <AnchorButton
-                            href={dayData.presence}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            intent={Intent.PRIMARY}
-                          >
-                            לחצו כאן
-                          </AnchorButton>
-                        </p>
-                      </Card>
+                      {dayData.presence && (
+                        <Card>
+                          <H5>בדיקת נוכחות</H5>
+                          <p>
+                            <AnchorButton
+                              href={dayData.presence}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              intent={Intent.PRIMARY}
+                            >
+                              לחצו כאן
+                            </AnchorButton>
+                          </p>
+                        </Card>
+                      )}
 
                       {dayData.tasks.map((task, idx) => (
                         <Card key={`task-${idx}`}>

@@ -445,5 +445,237 @@
         ]
       }
     ]
+  },
+  "12/10": {
+    "presence": "https://docs.google.com/forms/d/e/1FAIpQLScRvdVurs5J3GLX54qSJDsRAD5MsfQwVJbJBwsvrApattTrzA/viewform?usp=sf_link",
+    "tasks": [
+      {
+        "title": "מולדת",
+        "zoom": [
+          {
+            "time": "09:00",
+            "link": "https://us04web.zoom.us/j/2641529302?pwd=T3hIeWdlcnkzYWxWRzlCSEtSNWRKdz09"
+          }
+        ]
+      },
+      {
+        "title": "גאומטריה",
+        "description": "התחילו בחוברת את נושא המצולעים.",
+        "assignments": ["עמודים 7-11 (עמוד 10 בלי שאלה 4)"],
+        "zoom": [
+          {
+            "description": "רשות - עזרה של רונית במשימות שניתנו.",
+            "time": "10:30",
+            "link": "https://us04web.zoom.us/j/2641529302?pwd=T3hIeWdlcnkzYWxWRzlCSEtSNWRKdz09"
+          }
+        ]
+      },
+      {
+        "title": "חינוך גופני",
+        "description": "מערכת שידורים לאומית",
+        "assignments": [
+          {
+            "link": {
+              "label": "אימון בנושא פיתוח מרכיבי כושר גופני",
+              "href": "https://www.youtube.com/watch?v=i1R7DBUSwNs"
+            }
+          }
+        ]
+      },
+      {
+        "title": "עברית",
+        "assignments": [
+          {
+            "link": {
+              "label": "סלמנדרה דף עבודה",
+              "href": "https://drive.google.com/file/d/162CoDhwf9zFuz7VAhbz-Zbf29lq5tTuD/view?usp=sharing"
+            }
+          },
+          { "mark": "יש לשלוח דף עבודה לבדיקה" }
+        ],
+        "zoom": [
+          {
+            "description": "מפגש כיתתי",
+            "time": "16:00",
+            "link": "https://edu-il.zoom.us/j/87031822628?pwd=Y2pNZW81VlpQb1dFUEZ6Yzljb1JBdz09"
+          }
+        ]
+      }
+    ]
+  },
+  "13/10": {
+    "presence": "https://docs.google.com/forms/d/e/1FAIpQLSdRMgvUt9o6nidI1eYeodDZFot6g7aPUf0JLQD5o-OuNl8Lyw/viewform?usp=sf_link",
+    "tasks": [
+      {
+        "title": "חשבון",
+        "description": "סדר ורצף בין מספרים. הסבר ותחילת עבודה משותפת בחוברת.",
+        "assignments": [
+          "המשך עבודה בחוברת עמודים 71-75",
+          { "mark": "לשלוח אלי את עמ' 74 לבדיקה למייל tali.itzhak@gmail.com" }
+        ],
+        "zoom": [
+          {
+            "time": "09:15",
+            "link": "https://us04web.zoom.us/j/2998248582?pwd=NXMrZ3NRRWVNMWplY2QyQVNSLzg1Zz09"
+          }
+        ]
+      },
+      {
+        "title": "מדעים",
+        "zoom": [
+          {
+            "time": "11:00",
+            "link": "https://us04web.zoom.us/j/73632303969?pwd=ZytRcjZRbkdQTWw2WURBbkRINEp4Zz09",
+            "meeting": {
+              "id": 73632303969,
+              "password": "7KbfmA"
+            }
+          }
+        ]
+      },
+      {
+        "title": "חשבון",
+        "description": "זום פרטני בחשבון עם רונית",
+        "zoom": [
+          {
+            "description": "עזרה של רונית במשימות של היום",
+            "time": "12:00",
+            "link": "https://us04web.zoom.us/j/2641529302?pwd=T3hIeWdlcnkzYWxWRzlCSEtSNWRKdz09"
+          }
+        ]
+      },
+      {
+        "title": "אננגלית",
+        "assignments": [
+          {
+            "link": {
+              "label": "קישור לגלים - האות Bb",
+              "href": "https://www.galim.org.il/english/unit/the-letter-b?lang=he"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "14/10": {
+    "presence": "https://docs.google.com/forms/d/e/1FAIpQLSfbWuVPhIZEvXUFCukR9HyPIatNq7h3SQle1Fh6Zj4tDrS4Ww/viewform?usp=sf_link",
+    "tasks": [
+      {
+        "title": "מפגש כיתתי",
+        "zoom": [
+          {
+            "time": "09:00",
+            "link": "https://edu-il.zoom.us/j/84496363325?pwd=NFFPdHhxVGIyKzhHaGlRblczZHpldz09",
+            "meeting": {
+              "id": 84496363325,
+              "password": "587556"
+            }
+          }
+        ]
+      },
+      {
+        "title": "עברית",
+        "zoom": [
+          {
+            "description": "פרטני רונית עברית זום",
+            "time": "10:30",
+            "link": "https://us04web.zoom.us/j/2641529302?pwd=T3hIeWdlcnkzYWxWRzlCSEtSNWRKdz09"
+          }
+        ],
+        "assignments": [
+          {
+            "link": {
+              "label": "משימת כתיבה על הסלמנדרה",
+              "href": "https://drive.google.com/file/d/1ZZkx7XTBzYSfoMMuz8-_zU7kwOfv9Vkm/view?usp=sharing"
+            }
+          },
+          "בבקשה לא להכין עד אחרי השיעור",
+          { "mark": "יש לשלוח את המשימה לבדיקה במייל" }
+        ]
+      },
+      {
+        "title": "מולדת",
+        "zoom": [
+          {
+            "time": "12:00",
+            "link": "https://us04web.zoom.us/j/2641529302?pwd=T3hIeWdlcnkzYWxWRzlCSEtSNWRKdz09"
+          }
+        ]
+      },
+      {
+        "title": "חינוך גופני",
+        "description": "מערכת שידורים לאומית",
+        "assignments": [
+          {
+            "link": {
+              "label": "אימון בנושא פיתוח זריזות ומהירות תגובה",
+              "href": "https://www.youtube.com/watch?v=S6aktEBqIGI"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "15/10": {
+    "presence": "https://docs.google.com/forms/d/e/1FAIpQLSf2mO4ROpONVq_4rMrqeHutCXi2ZihVWZUWbBpwVslTZJFtLA/viewform?usp=sf_link",
+    "tasks": [
+      {
+        "title": "עברית",
+        "zoom": [
+          {
+            "time": "09:00",
+            "link": "https://edu-il.zoom.us/j/87304583597?pwd=cEhrWThWVndQQXMrWEFPY3RyMktGUT09",
+            "meeting": {
+              "id": 87304583597,
+              "password": "702446"
+            }
+          }
+        ],
+        "assignments": ["ציפורים נודדות משימות יינתנו במהלך השיעור"]
+      },
+      {
+        "title": "חשבון",
+        "zoom": [
+          {
+            "time": "10:00",
+            "link": "https://us04web.zoom.us/j/2998248582?pwd=NXMrZ3NRRWVNMWplY2QyQVNSLzg1Zz09"
+          }
+        ],
+        "assignments": ["עמודים 76-79"]
+      },
+      {
+        "title": "חשבון",
+        "description": "זום פרטני בחשבון עם רונית",
+        "zoom": [
+          {
+            "description": "רשות - עזרה של רונית במשימות של היום",
+            "time": "11:00",
+            "link": "https://us04web.zoom.us/j/2641529302?pwd=T3hIeWdlcnkzYWxWRzlCSEtSNWRKdz09"
+          }
+        ]
+      },
+      {
+        "title": "מדעים",
+        "description": "משימה מתוקשבת",
+        "assignments": [
+          {
+            "link": {
+              "label": "תכונות חומרים",
+              "href": "https://lo.cet.ac.il/player/?task=e55fcd87-c146-466c-8630-9188d67762c7"
+            }
+          }
+        ]
+      },
+      {
+        "title": "חינוך גופני",
+        "zoom": [
+          {
+            "description": "שיעור חנ\"ג שכבתי",
+            "time": "12:00",
+            "link": "https://edu-il.zoom.us/j/81520403356?pwd=UjVBTzM2Y25nMU05cC8zbEhwUmZpQT09"
+          }
+        ]
+      }
+    ]
   }
 }
