@@ -677,5 +677,291 @@
         ]
       }
     ]
+  },
+  "18/10": {
+    "presence": "https://docs.google.com/forms/d/e/1FAIpQLSdOjLWnG9JIjsUGscJXu4cx_6xGUrlPbSyviq-KMx101QWUpQ/viewform?usp=sf_link",
+    "tasks": [
+      {
+        "title": "תיאטרון",
+        "zoom": [
+          {
+            "description": "היכרות עם רוני",
+            "time": "09:00",
+            "link": "https://us04web.zoom.us/j/5204739934?pwd=Y3FkRmcrZGJybGt0L08xSkVjUDhyUT09"
+          }
+        ]
+      },
+      {
+        "title": "עברית",
+        "zoom": [
+          {
+            "description": "בוקר טוב כיתה ג׳3",
+            "time": "10:00",
+            "link": "https://edu-il.zoom.us/j/89015244201?pwd=djZMM2tsMDRmZ00wKzg2NStKeVlJZz09",
+            "meeting": {
+              "id": 87304583597,
+              "password": "702446"
+            }
+          }
+        ],
+        "assignments": [
+          {
+            "link": {
+              "label": "אילו ציפורים דף עבודה",
+              "href": "https://drive.google.com/file/d/1nGACLw-62W4QfJxNcolwOlRHT8ItmVY_/view?usp=sharing"
+            }
+          },
+          { "mark": "לשלוח דף עבודה לבדיקה" }
+        ]
+      },
+      {
+        "title": "הצגת עבודות בעקבות ספר הקריאה",
+        "zoom": [
+          {
+            "time": "12:00",
+            "link": "https://edu-il.zoom.us/j/87694435188?pwd=SWdBRHViMEE3WFJFd0xENmVyYStiZz09",
+            "meeting": {
+              "id": 87694435188,
+              "password": "734190"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "19/10": {
+    "presence": "https://docs.google.com/forms/d/e/1FAIpQLSfRp8Pg2z-_Cotfsb6K3NLFBF7hYGrBpvsV1jT-vttbbez10Q/viewform?usp=sf_link",
+    "tasks": [
+      {
+        "title": "עברית",
+        "zoom": [
+          {
+            "description": "מפגש בוקר",
+            "time": "10:00",
+            "link": "https://edu-il.zoom.us/j/89304721573?pwd=cWNyQ0lRRW9ieUpMRWxoWmxkYVladz09",
+            "meeting": {
+              "id": 89304721573,
+              "password": "125783"
+            }
+          }
+        ],
+        "assignments": [
+          {
+            "link": {
+              "label": "חקר ציפורים: מצגת שיתופית",
+              "href": "https://docs.google.com/presentation/d/1daEbsXwSNXCCFGGhMXnJj3bpvf4cyGvbwVoQh-Nn2qw/edit?usp=sharing"
+            }
+          },
+          "עבודה: לבחור ציפור נודדת ולהכין לה ת.ז. - את העבודה יש להעלות למצגת. ניתן בזוגות לא לשכוח לכתוב שם על הדף במצגת"
+        ]
+      },
+      {
+        "title": "חשבון",
+        "description": "סדר ורצף בין מספרים",
+        "zoom": [
+          {
+            "description": "זום פרטני בחשבון עם רונית עזרה במשימות",
+            "time": "10:00",
+            "link": "https://us04web.zoom.us/j/73976433956?pwd=L3d0cmt3ZUU2S2xaWWZEM0FLTk1Odz09"
+          }
+        ],
+        "assignments": [
+          "עמודים 76-79",
+          { "mark": "לשלוח אלי את עמ' 77 לבדיקה למייל tali.itzhak@gmail.com" }
+        ]
+      },
+      {
+        "title": "חינוך גופני",
+        "description": "מערכת שידורים לאומית",
+        "assignments": [
+          {
+            "link": {
+              "label": "אימון בנושא תיאום עין יד",
+              "href": "https://www.youtube.com/watch?v=ayJU2sA-uiA"
+            }
+          }
+        ]
+      },
+      {
+        "title": "מולדת",
+        "zoom": [
+          {
+            "description": "זום עם רונית",
+            "time": "11:00",
+            "link": "https://us04web.zoom.us/j/79826249489?pwd=ckh1SE9ObnZaOENxN1RuZmNjVW9ldz09"
+          }
+        ]
+      }
+    ]
+  },
+  "20/10": {
+    "presence": "https://docs.google.com/forms/d/e/1FAIpQLSdAt7jkctGZuwaNl7NJJ7NCxuvPg9mkFFoYzlRhkWC2LsU_3A/viewform?usp=sf_link",
+    "tasks": [
+      {
+        "title": "גאומטריה",
+        "description": "משולשים",
+        "zoom": [
+          {
+            "time": "09:15",
+            "link": "https://edu-il.zoom.us/j/8197773592"
+          }
+        ],
+        "assignments": ["נעבוד יחד בעמודים 11-18"]
+      },
+      {
+        "title": "מדעים",
+        "zoom": [
+          {
+            "time": "11:00",
+            "link": "https://us04web.zoom.us/j/75182527310?pwd=YjFMSmJuREpySW9GRTRoK0QrS0JTdz09",
+            "meeting": {
+              "id": 75182527310,
+              "password": "6GHFFY"
+            }
+          }
+        ]
+      },
+      {
+        "title": "חשבון",
+        "description": "פרטני בחשבון עזרה במשימות",
+        "zoom": [
+          {
+            "time": "12:00",
+            "link": "https://us04web.zoom.us/j/79063805666?pwd=RTNrL0hndW5YdTJ0RWt5VkJINE83Zz09"
+          }
+        ]
+      },
+      {
+        "title": "אנגלית",
+        "zoom": [
+          {
+            "description": "להביא חוברת קליק 1",
+            "time": "13:00",
+            "link": "https://edu-il.zoom.us/j/83547273717?pwd=NWcxRHpOS2JjNjZPZWUyZDBYK1ZHQT09"
+          }
+        ]
+      }
+    ]
+  },
+  "21/10": {
+    "presence": "https://docs.google.com/forms/d/e/1FAIpQLSer0ASi9qh56ndsYHoep3ExxCY6wLy_W0xi9tuO5bySKWzT2w/viewform?usp=sf_link",
+    "tasks": [
+      {
+        "title": "עברית",
+        "zoom": [
+          {
+            "description": "מפגש בוקר",
+            "time": "09:00",
+            "link": "https://edu-il.zoom.us/j/86946794326?pwd=dzVWWFFlNlEwcVRyaHRZUUlpa3R3QT09"
+          }
+        ],
+        "assignments": [
+          {
+            "link": {
+              "label": "דף עבודה: יאיר נודד עם ציפורים",
+              "href": "https://drive.google.com/file/d/1ZuGZOmiU9XgKcxgjGEXUQmhc6XoRvryS/view?usp=sharing"
+            }
+          }
+        ]
+      },
+      {
+        "title": "עברית",
+        "description": "פרטני עם רונית",
+        "zoom": [
+          {
+            "description": "עזרה בדף העבודה של היום.",
+            "time": "10:00",
+            "link": "https://us04web.zoom.us/j/74410383406?pwd=KzdZM1R5bmcycGZ2Ukk5c3RTS3ZzUT09"
+          }
+        ]
+      },
+      {
+        "title": "מולדת",
+        "zoom": [
+          {
+            "time": "12:00",
+            "link": "https://us04web.zoom.us/j/79466831231?pwd=QUpqWW9nOUZMOVk4YWg0bzRjOGpkdz09"
+          }
+        ]
+      },
+      {
+        "title": "מורשת",
+        "assignments": [
+          "קראו בספר \"מפתחות שבין אדם לחברו\" עמוד 32 - \"החבר הטוב\"",
+          "ענו על השאלות במחברת"
+        ]
+      }
+    ]
+  },
+  "22/10": {
+    "presence": "https://docs.google.com/forms/d/e/1FAIpQLSer0ASi9qh56ndsYHoep3ExxCY6wLy_W0xi9tuO5bySKWzT2w/viewform?usp=sf_link",
+    "tasks": [
+      {
+        "title": "עברית",
+        "zoom": [
+          {
+            "description": "מפגש בוקר",
+            "time": "09:00",
+            "link": "https://edu-il.zoom.us/j/81905863763?pwd=eDhidFkzbm9kUkhVODdPZytyZEZPZz09",
+            "meeting": {
+              "id": 81905863763,
+              "password": "120928"
+            }
+          }
+        ],
+        "assignments": [
+          {
+            "link": {
+              "label": "אילו הייתי ציפור",
+              "href": "https://drive.google.com/file/d/1GCQi4bNEVNPny3x5sqRgiHnAL6Upg78I/view?usp=sharing"
+            }
+          },
+          { "mark": "לשלוח את דף העבודה לבדיקה" },
+          "משימת כתיבה: חפשו במנוע חיפוש מידע על הסתיו והכינו סיכום קצר על מאפייני העונה."
+        ]
+      },
+      {
+        "title": "חשבון",
+        "description": "עיגול מספרים",
+        "zoom": [
+          {
+            "time": "10:00",
+            "link": "https://edu-il.zoom.us/j/8197773592"
+          }
+        ]
+      },
+      {
+        "title": "חשבון",
+        "description": "פרטני עם רונית",
+        "zoom": [
+          {
+            "description": "עזרה במשימות",
+            "time": "11:00",
+            "link": "https://us04web.zoom.us/j/71545172205?pwd=WVlqLzFXUUwvMU5IcHRUZDVURy9qUT09"
+          }
+        ]
+      },
+      {
+        "title": "מדעים",
+        "description": "משימה מתוקשבת",
+        "assignments": [
+          {
+            "link": {
+              "label": "הפרדת תערובות",
+              "href": "https://science.cet.ac.il/science/matter/activity5.asp"
+            }
+          }
+        ]
+      },
+      {
+        "title": "חינוך גופני",
+        "zoom": [
+          {
+            "time": "12:00",
+            "link": "https://edu-il.zoom.us/j/81520403356?pwd=UjVBTzM2Y25nMU05cC8zbEhwUmZpQT09"
+          }
+        ]
+      }
+    ]
   }
 }
