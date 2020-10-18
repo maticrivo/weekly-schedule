@@ -687,7 +687,11 @@
           {
             "description": "היכרות עם רוני",
             "time": "09:00",
-            "link": "https://us04web.zoom.us/j/5204739934?pwd=Y3FkRmcrZGJybGt0L08xSkVjUDhyUT09"
+            "link": "https://us04web.zoom.us/j/5204739934?pwd=Y3FkRmcrZGJybGt0L08xSkVjUDhyUT09",
+            "meeting": {
+              "id": 5204739934,
+              "password": "653002"
+            }
           }
         ]
       },
