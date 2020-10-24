@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import dayjs from 'dayjs'
+import customParseFormat from 'dayjs/plugin/customParseFormat'
 import { Helmet } from 'react-helmet-async'
 import {
   H3,
@@ -28,6 +29,8 @@ import { CopyToClipboard } from 'react-copy-to-clipboard'
 import data from './data.json'
 import TaskAssignment from './TaskAssignment'
 import { AppToasterSuccess, AppToasterFail } from './AppToaster'
+
+dayjs.extend(customParseFormat)
 
 const weekDays = [
   { value: '21/9', label: 'יום שני 21/9' },
@@ -66,6 +69,21 @@ function App() {
   useEffect(() => {
     FocusStyleManager.onlyShowFocusOnTabs()
   }, [])
+
+  useEffect(() => {
+    let dateFound = weekDays.find((wd) => wd.value === selectedDay)
+    let attempt = 0
+    let d = dayjs(selectedDay, 'D/M')
+    let formattedDate = d.format('D/M')
+    while (!dateFound && attempt++ < 5) {
+      d = d.add(1, 'day')
+      formattedDate = d.format('D/M')
+      // eslint-disable-next-line no-loop-func
+      dateFound = weekDays.find((wd) => wd.value === formattedDate)
+    }
+    setSelectedDay(dateFound ? formattedDate : '')
+    setDayData(dateFound ? data?.[formattedDate] : null)
+  }, [selectedDay])
 
   const onDateChange = async (event) => {
     const selectDay = event.currentTarget.value
@@ -147,7 +165,7 @@ function App() {
             <Spinner intent={Intent.PRIMARY} size={Spinner.SIZE_LARGE} />
           ) : (
             <>
-              {Object.keys(dayData || {}).length > 0 ? (
+              {selectedDay ? (
                 <>
                   {data?.tasks && (
                     <>
@@ -164,7 +182,7 @@ function App() {
                           <Callout
                             intent={Intent.PRIMARY}
                             icon={null}
-                            key={idx}
+                            key={`weeklyTask-${idx}`}
                           >
                             <H4>{weeklyTask.title}</H4>
                             {weeklyTask?.assignments && (
