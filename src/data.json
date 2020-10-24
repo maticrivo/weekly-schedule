@@ -973,5 +973,360 @@
         ]
       }
     ]
+  },
+  "25/10": {
+    "presence": "https://docs.google.com/forms/d/e/1FAIpQLSefCa_jVmN_RvoIbxaM1I227d-RTkn0Dz-RIMzYayNu4kUoiA/viewform?usp=sf_link",
+    "tasks": [
+      {
+        "title": "עברית",
+        "description": "המשך סתיו - נא להצטייד בחוברת מילה טובה",
+        "zoom": [
+          {
+            "description": "מפגש בוקר",
+            "time": "09:00",
+            "link": "https://edu-il.zoom.us/j/81905863763?pwd=eDhidFkzbm9kUkhVODdPZytyZEZPZz09",
+            "meeting": {
+              "id": 84958418935,
+              "password": "387604"
+            }
+          }
+        ],
+        "assignments": [
+          {
+            "link": {
+              "label": "דפי עבודה",
+              "href": "https://drive.google.com/file/d/1hDaIsyZ1PfmG15El1qda-jN12fd-POZg/view?usp=sharing"
+            }
+          },
+          "יש להכין דפים 1-7 בלבד",
+          { "mark": "לשלוח לי דפים 3-4" }
+        ]
+      },
+      {
+        "title": "תיאטרון",
+        "description": "*קולאז'= אוסף של תמונות.",
+        "assignments": [
+          {
+            "link": {
+              "href": "https://drive.google.com/file/d/1mYBcOFMW2km3TlTYF5rE1ErKpKEjh6yj/view?usp=sharing",
+              "label": "משימה - \"תלמיד במסכה\""
+            }
+          }
+        ]
+      },
+      {
+        "title": "חשבון",
+        "description": "עיגול מספרים",
+        "assignments": [
+          "עמודים 85-87",
+          { "mark": "לשלוח אלי את עמ' 85 לבדיקה למייל tali.itzhak@gmail.com" }
+        ]
+      },
+      {
+        "title": "מבדקי קריאה",
+        "description": "נא להיכנס למפגש על פי השעות",
+        "zoom": [
+          {
+            "time": "10:30",
+            "link": "https://edu-il.zoom.us/j/85040399807?pwd=bGRIMWtQVkVFQlV6U29FODlwUU1KUT09"
+          }
+        ],
+        "assignments": [
+          {
+            "link": {
+              "href": "https://docs.google.com/document/d/1VKdOIhOZYyXdy7Jcs41T0CrGSR9k9AgM4_UyawBFD6s/edit",
+              "label": "רשימת מבדק קריאה"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "26/10": {
+    "presence": "https://docs.google.com/forms/d/e/1FAIpQLSc0xfKcaDtdKYnrsm3BYxkiGUNRv_If7QUJxxZ1ez9z-voxRw/viewform?usp=sf_link",
+    "tasks": [
+      {
+        "title": "חשבון",
+        "description": "עיגול מספרים",
+        "zoom": [
+          {
+            "description": "עם ג׳יזל - מקבוצה ב​: רז, יובל, יואל, נועה, אלה ק. אוליביה",
+            "time": "08:15",
+            "link": "https://us04web.zoom.us/j/8892395689?pwd=RkR2YVMva0s1RVExMjRnNTlLZkxwQT09"
+          },
+          {
+            "description": "עם רונית - רק קבוצה א",
+            "time": "10:00",
+            "link": "https://us04web.zoom.us/j/75946818869?pwd=Wm9uS2IzV3kyREJlZUtoR1FiSlcydz09"
+          },
+          {
+            "description": "עם ג׳יזל - מקבוצה ב: ​איתמר, עומר, עינב, גל, שחר, אלה ג.",
+            "time": "12:00",
+            "link": "https://us04web.zoom.us/j/8892395689?pwd=RkR2YVMva0s1RVExMjRnNTlLZkxwQT09"
+          }
+        ],
+        "assignments": ["עמודים 88-90", "רשות - עמודים 91-92"]
+      },
+      {
+        "title": "עברית",
+        "description": "כתיבת מכתב",
+        "zoom": [
+          {
+            "description": "מפגש כיתתי",
+            "time": "09:00",
+            "link": "https://us04web.zoom.us/j/73976433956?pwd=L3d0cmt3ZUU2S2xaWWZEM0FLTk1Odz09",
+            "meeting": {
+              "id": 84958418935,
+              "password": "387604"
+            }
+          }
+        ],
+        "assignments": [
+          {
+            "link": {
+              "label": "דפי עבודה",
+              "href": "https://drive.google.com/file/d/1hDaIsyZ1PfmG15El1qda-jN12fd-POZg/view?usp=sharing"
+            }
+          },
+          "יש להכין דפים 8-10",
+          { "mark": "לשלוח לבדיקה עמוד 9" }
+        ]
+      },
+      {
+        "title": "מולדת",
+        "description": "זום עם רונית",
+        "zoom": [
+          {
+            "description": "להביא ספר וחוברת",
+            "time": "11:00",
+            "link": "https://us04web.zoom.us/j/73508538250?pwd=STR0M3JpSUVxTlFZUDFKdFl5bjNBQT09"
+          }
+        ]
+      },
+      {
+        "title": "חינוך גופני",
+        "description": "מערכת שידורים לאומית",
+        "assignments": [
+          {
+            "link": {
+              "label": "חיזוק חגורת כתפיים, ידיים, בטן, גב, רגליים",
+              "href": "https://www.youtube.com/watch?v=QEYOaQFXzqU&t=48s"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "27/10": {
+    "presence": "https://docs.google.com/forms/d/e/1FAIpQLSfthd8GiPbfX2gVshgkT0bxPYsF8J7_7GBjMZKkeoUkavmoLg/viewform?usp=sf_link",
+    "tasks": [
+      {
+        "title": "גאומטריה",
+        "description": "מצולעים - מרובעים (*ציוד - טושים ומרקרים*)",
+        "zoom": [
+          {
+            "time": "09:15",
+            "description": "רק קבוצה א",
+            "link": "https://edu-il.zoom.us/j/8197773592"
+          },
+          {
+            "time": "12:00",
+            "description": "רק קבוצה ב",
+            "link": "https://us04web.zoom.us/j/78366974627?pwd=eE8vM1YwYkkwTVo0cXJUZS9EcitZQT09"
+          }
+        ],
+        "assignments": [
+          "עמומדים 19, 21, 22 (רק סעיף ב), 23, 24 (רק שאלה 5), 26",
+          "רשות - עמודים 27-28"
+        ]
+      },
+      {
+        "title": "מדעים",
+        "zoom": [
+          {
+            "time": "11:00",
+            "link": "https://us04web.zoom.us/j/76313062325?pwd=YWdjNUlQRWtyQWJPbSt6Y2cwMEdxZz09",
+            "meeting": {
+              "id": 13067632325
+            }
+          }
+        ]
+      },
+      {
+        "title": "אנגלית",
+        "assignments": [
+          "לצפות בסרטון ואז לעשות הדף צביעה לפי ההוראות בסרטון.",
+          {
+            "link": {
+              "href": "https://www.youtube.com/watch?v=mpjuWF4-qLs&t=76s",
+              "label": "YOUTUBE סרטון"
+            }
+          },
+          {
+            "link": {
+              "href": "https://drive.google.com/file/d/1za527pFOk-AY686zdhzgvb5QCO8odnyk/view?usp=sharing",
+              "label": "דף עבודה"
+            }
+          },
+          "לתרגל את האות Bb",
+          {
+            "link": {
+              "href": "https://www.liveworksheets.com/xd338100ad",
+              "label": "דף עבודה האות B"
+            }
+          },
+          {
+            "mark": "לשלוח אלי לבדיקה את דפי העבודה למייל biancarubin@gmail.com"
+          }
+        ]
+      }
+    ]
+  },
+  "28/10": {
+    "presence": "https://docs.google.com/forms/d/e/1FAIpQLSeW8iQ4L4qtZaoCEACEuv2sE1Q2HXqeYF1lWiFFrY5IHjzKDw/viewform?usp=sf_link",
+    "tasks": [
+      {
+        "title": "עברית",
+        "zoom": [
+          {
+            "description": "מפגש כיתתי",
+            "time": "09:00",
+            "link": "https://edu-il.zoom.us/j/84989355841?pwd=TDEvc2Q5aGpXQnFZbzRteCtsY041UT09",
+            "meeting": {
+              "id": 84958418935,
+              "password": "387604"
+            }
+          }
+        ],
+        "assignments": [
+          {
+            "link": {
+              "label": "דפי עבודה",
+              "href": "https://drive.google.com/file/d/1hDaIsyZ1PfmG15El1qda-jN12fd-POZg/view?usp=sharing"
+            }
+          },
+          "יש להכין דפים 11-16",
+          { "mark": "לשלוח לי עמוד 13" }
+        ]
+      },
+      {
+        "title": "עברית",
+        "description": "פרטני עם רונית",
+        "zoom": [
+          {
+            "description": "עזרה בדפי העבודה",
+            "time": "10:00",
+            "link": "https://us04web.zoom.us/j/78291157254?pwd=UjgzVE9ZUjBuZ3FRZW9QdEE2TXArQT09"
+          }
+        ]
+      },
+      {
+        "title": "מולדת",
+        "description": "יש להביא ספר וחוברת",
+        "zoom": [
+          {
+            "time": "12:00",
+            "link": "https://us04web.zoom.us/j/71525734519?pwd=am5xU1Z1enQ4ay9pSjJsaWpjYVUwZz09"
+          }
+        ]
+      },
+      {
+        "title": "חווה חקלאית",
+        "assignments": [
+          {
+            "link": {
+              "label": "שיעור חווה",
+              "href": "http://www.hava.ksedu.co.il/BRPortal/br/P102.jsp?arc=2495164"
+            }
+          }
+        ]
+      },
+      {
+        "title": "מורשת",
+        "description": "מעבר לשעון חורף",
+        "assignments": [
+          {
+            "link": {
+              "href": "https://il.brainpop.com/category_8/subcategory_113/subjects_2623/",
+              "label": "סרטון בבריינפופ"
+            }
+          },
+          {
+            "link": {
+              "href": "https://drive.google.com/file/d/1clrPb6MUEqVENrUsdCHHeyhpPC3rSc2D/view?usp=sharing",
+              "label": "איך יודעים אם מזיזים את שעון החורף קדימה או אחורה?"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "29/10": {
+    "presence": "https://docs.google.com/forms/d/e/1FAIpQLSdogX3UNRkkwxo_3XxV2EiejiLVmps0vrlFr_Udta-4T4f9LQ/viewform?usp=sf_link",
+    "tasks": [
+      {
+        "title": "עברית",
+        "description": "מפגש כיתתי",
+        "zoom": [
+          {
+            "description": "יום הזיכרון ליצחק רבין",
+            "time": "09:00",
+            "link": "https://edu-il.zoom.us/j/84989355841?pwd=TDEvc2Q5aGpXQnFZbzRteCtsY041UT09",
+            "meeting": {
+              "id": 84958418935,
+              "password": "387604"
+            }
+          }
+        ],
+        "assignments": [
+          {
+            "link": {
+              "label": "פעילות: כיתה וירטואלית",
+              "href": "https://drive.google.com/file/d/1jEYwrS0c-6vBqpWfWDji2J8a3EJS5WqZ/view?usp=sharing"
+            }
+          }
+        ]
+      },
+      {
+        "title": "חשבון",
+        "description": "חיבור בתחום הרבבה",
+        "zoom": [
+          {
+            "time": "10:00",
+            "link": "https://edu-il.zoom.us/j/8197773592"
+          },
+          {
+            "description": "פרטני עם רונית - עזרה במשימות",
+            "time": "11:00",
+            "link": "https://us04web.zoom.us/j/74495622336?pwd=N240TTNteWZvU2VCb0l5YTBqT2d1dz09"
+          }
+        ],
+        "assignments": [
+          "עמודים 97-102",
+          { "mark": "לשלוח אלי את עמ' 102 לבדיקה למייל tali.itzhak@gmail.com" }
+        ]
+      },
+      {
+        "title": "מדעים",
+        "description": "משימה מתוקשבת",
+        "assignments": [
+          {
+            "link": {
+              "label": "תכונה מבדילה",
+              "href": "https://www.galim.org.il/science/unit/%D7%AA%D7%9B%D7%95%D7%A0%D7%94-%D7%9E%D7%91%D7%93%D7%99%D7%9C%D7%94?lang=he"
+            }
+          }
+        ]
+      },
+      {
+        "title": "חינוך גופני",
+        "zoom": [
+          {
+            "time": "12:00",
+            "link": "https://edu-il.zoom.us/j/81520403356?pwd=UjVBTzM2Y25nMU05cC8zbEhwUmZpQT09"
+          }
+        ]
+      }
+    ]
   }
 }
