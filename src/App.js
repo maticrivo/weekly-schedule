@@ -33,27 +33,11 @@ import { AppToasterSuccess, AppToasterFail } from './AppToaster'
 dayjs.extend(customParseFormat)
 
 const weekDays = [
-  { value: '21/9', label: 'יום שני 21/9' },
-  { value: '22/9', label: 'יום שלישי 22/9' },
-  { value: '23/9', label: 'יום רביעי 23/9' },
-  { value: '24/9', label: 'יום חמישי 24/9' },
-  { value: '29/9', label: 'יום שלישי 29/9' },
-  { value: '30/9', label: 'יום רביעי 30/9' },
-  { value: '1/10', label: 'יום חמישי 1/10' },
-  { value: '12/10', label: 'יום שני 12/10' },
-  { value: '13/10', label: 'יום שלישי 13/10' },
-  { value: '14/10', label: 'יום רביעי 14/10' },
-  { value: '15/10', label: 'יום חמישי 15/10' },
-  { value: '18/10', label: 'יום ראשון 18/10' },
-  { value: '19/10', label: 'יום שני 19/10' },
-  { value: '20/10', label: 'יום שלישי 20/10' },
-  { value: '21/10', label: 'יום רביעי 21/10' },
-  { value: '22/10', label: 'יום חמישי 22/10' },
-  { value: '25/10', label: 'יום ראשון 25/10' },
-  { value: '26/10', label: 'יום שני 26/10' },
-  { value: '27/10', label: 'יום שלישי 27/10' },
-  { value: '28/10', label: 'יום רביעי 28/10' },
-  { value: '29/10', label: 'יום חמישי 29/10' },
+  { value: '10/1', label: 'יום ראשון 10/1' },
+  { value: '11/1', label: 'יום שני 11/1' },
+  { value: '12/1', label: 'יום שלישי 12/1' },
+  { value: '13/1', label: 'יום רביעי 13/1' },
+  { value: '14/1', label: 'יום חמישי 14/1' },
 ]
 
 function App() {
