@@ -151,7 +151,7 @@ function App() {
             <>
               {selectedDay ? (
                 <>
-                  {data?.tasks && (
+                  {data?.tasks?.length > 0 && (
                     <>
                       <H3>
                         משימות שבועיות:
