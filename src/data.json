@@ -26,6 +26,24 @@
         ]
       },
       {
+        "title": "עברית עם רונית",
+        "zoom": [
+          {
+            "description": "נושא השיעור: מאפייני המשל",
+            "time": "10:00",
+            "link": "https://us04web.zoom.us/j/72865148222?pwd=czYrM0M2WXRkeDFKNWRNdXhwREFrUT09"
+          }
+        ],
+        "assignments": [
+          {
+            "link": {
+              "label": "משימה באופק",
+              "href": "https://lo.cet.ac.il/player/?task=590e2ee7-e3bd-46c9-9ad2-0176abf51e1a"
+            }
+          }
+        ]
+      },
+      {
         "title": "עברית",
         "description": "זום פרטני עם רונית",
         "zoom": [
