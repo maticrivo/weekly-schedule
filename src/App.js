@@ -38,6 +38,11 @@ const weekDays = [
   { value: '12/1', label: 'יום שלישי 12/1' },
   { value: '13/1', label: 'יום רביעי 13/1' },
   { value: '14/1', label: 'יום חמישי 14/1' },
+  { value: '17/1', label: 'יום ראשון 17/1' },
+  { value: '18/1', label: 'יום שני 18/1' },
+  { value: '19/1', label: 'יום שלישי 19/1' },
+  { value: '20/1', label: 'יום רביעי 20/1' },
+  { value: '21/1', label: 'יום חמישי 21/1' },
 ]
 
 function App() {
