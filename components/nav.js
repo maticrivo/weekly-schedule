@@ -43,7 +43,7 @@ const Nav = () => {
               Signed in as <strong>{session.user.email}</strong>
             </span>
             <a
-              href={`/api/auth/signout`}
+              href={`/auth/signout`}
               onClick={(e) => {
                 e.preventDefault()
                 signout()
