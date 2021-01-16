@@ -6,27 +6,28 @@ import {
   InputGroup,
   Intent,
   NonIdealState,
-} from '@blueprintjs/core'
-import { signIn, useSession } from 'next-auth/client'
+} from "@blueprintjs/core";
+import { signIn, useSession } from "next-auth/client";
 
-import { useEffect } from 'react'
-import { useForm } from 'react-hook-form'
-import { useRouter } from 'next/router'
+import { useEffect } from "react";
+import { useForm } from "react-hook-form";
+import { useRouter } from "next/router";
 
 const SigninPage = () => {
-  const router = useRouter()
-  const [user, loading] = useSession()
-  const { register, handleSubmit, errors } = useForm()
+  const router = useRouter();
+  const [user, loading] = useSession();
+  const { register, handleSubmit, errors } = useForm();
 
   useEffect(() => {
     if (!loading && user) {
-      router.replace('/admin')
+      router.replace("/admin");
     }
-  }, [loading, user])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [loading, user]);
 
   const onSubmit = ({ username, password }) => {
-    signIn('credentials', { username, password })
-  }
+    signIn("credentials", { username, password });
+  };
 
   return (
     <NonIdealState icon="lock">
@@ -60,7 +61,7 @@ const SigninPage = () => {
         </Callout>
       )}
     </NonIdealState>
-  )
-}
+  );
+};
 
-export default SigninPage
+export default SigninPage;

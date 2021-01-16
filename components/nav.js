@@ -1,6 +1,6 @@
-import { signin, signout, useSession } from 'next-auth/client'
+import { signin, signout, useSession } from "next-auth/client";
 
-import styles from './nav.module.css'
+import styles from "./nav.module.css";
 
 /**
  * The approach used in this component shows how to built a sign in and sign out
@@ -8,26 +8,22 @@ import styles from './nav.module.css'
  * rendering, and avoids any flash incorrect content on initial page load.
  **/
 const Nav = () => {
-  const [session, loading] = useSession()
+  const [session, loading] = useSession();
 
   return (
     <nav>
       <noscript>
         <style>{`.nojs-show { opacity: 1; top: 0; }`}</style>
       </noscript>
-      <p
-        className={`nojs-show ${
-          !session && loading ? styles.loading : styles.loaded
-        }`}
-      >
+      <p className={`nojs-show ${!session && loading ? styles.loading : styles.loaded}`}>
         {!session && (
           <>
             <span className={styles.notSignedIn}>Not signed in</span>
             <a
               href={`/api/auth/signin`}
               onClick={(e) => {
-                e.preventDefault()
-                signin()
+                e.preventDefault();
+                signin();
               }}
             >
               <button className={styles.signinButton}>Sign in</button>
@@ -46,8 +42,8 @@ const Nav = () => {
             <a
               href={`/auth/signout`}
               onClick={(e) => {
-                e.preventDefault()
-                signout()
+                e.preventDefault();
+                signout();
               }}
             >
               <button className={styles.signoutButton}>Sign out</button>
@@ -56,7 +52,7 @@ const Nav = () => {
         )}
       </p>
     </nav>
-  )
-}
+  );
+};
 
-export default Nav
+export default Nav;

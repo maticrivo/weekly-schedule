@@ -1,31 +1,25 @@
-import {
-  AnchorButton,
-  Callout,
-  H2,
-  Intent,
-  NonIdealState,
-  ProgressBar,
-} from '@blueprintjs/core'
+import { AnchorButton, Callout, H2, Intent, NonIdealState, ProgressBar } from "@blueprintjs/core";
 
-import Header from '../../components/header'
-import Link from 'next/link'
-import { useEffect } from 'react'
-import { useRouter } from 'next/router'
-import useSWR from 'swr'
-import { useSession } from 'next-auth/client'
+import Header from "../../components/header";
+import Link from "next/link";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
+import useSWR from "swr";
+import { useSession } from "next-auth/client";
 
 const AdminPage = () => {
-  const router = useRouter()
-  const [user, loading] = useSession()
-  const { data, isValidating, error } = useSWR('/api/tasks')
+  const router = useRouter();
+  const [user, loading] = useSession();
+  const { data, isValidating, error } = useSWR("/api/tasks");
   useEffect(() => {
     if (!loading && !user) {
-      router.replace('/auth/signin')
+      router.replace("/auth/signin");
     }
-  }, [loading, user])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [loading, user]);
 
   if (!user) {
-    return null
+    return null;
   }
 
   return (
@@ -52,7 +46,7 @@ const AdminPage = () => {
         )}
       </div>
     </>
-  )
-}
+  );
+};
 
-export default AdminPage
+export default AdminPage;

@@ -1,18 +1,18 @@
-import { NonIdealState, Spinner } from '@blueprintjs/core'
+import { NonIdealState, Spinner } from "@blueprintjs/core";
 
-import { useSession } from 'next-auth/client'
+import { useSession } from "next-auth/client";
 
 const Layout = ({ children }) => {
-  const [, loading] = useSession()
+  const [, loading] = useSession();
 
   if (loading) {
     return (
       <NonIdealState>
         <Spinner />
       </NonIdealState>
-    )
+    );
   }
-  return children
-}
+  return children;
+};
 
-export default Layout
+export default Layout;

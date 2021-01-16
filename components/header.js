@@ -1,9 +1,9 @@
-import { Alignment, Navbar } from '@blueprintjs/core'
+import { Alignment, Navbar } from "@blueprintjs/core";
 
-import Head from 'next/head'
-import styles from './header.module.css'
+import Head from "next/head";
+import styles from "./header.module.css";
 
-const Header = ({ title = 'למידה מרחוק ג׳3' }) => {
+const Header = ({ title = "למידה מרחוק ג׳3" }) => {
   return (
     <>
       <Head>
@@ -18,7 +18,7 @@ const Header = ({ title = 'למידה מרחוק ג׳3' }) => {
         </Navbar>
       </header>
     </>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

@@ -1,36 +1,29 @@
-import {
-  Button,
-  FormGroup,
-  H2,
-  H4,
-  InputGroup,
-  Intent,
-  TextArea,
-} from '@blueprintjs/core'
+import { Button, FormGroup, H2, H4, InputGroup, Intent, TextArea } from "@blueprintjs/core";
 
-import Header from '../../components/header'
-import styles from './new.module.css'
-import { useEffect } from 'react'
-import { useForm } from 'react-hook-form'
-import { useRouter } from 'next/router'
-import { useSession } from 'next-auth/client'
+import Header from "../../components/header";
+import styles from "./new.module.css";
+import { useEffect } from "react";
+import { useForm } from "react-hook-form";
+import { useRouter } from "next/router";
+import { useSession } from "next-auth/client";
 
 const NewTaskPage = () => {
-  const router = useRouter()
-  const [user, loading] = useSession()
-  const { register, handleSubmit, errors } = useForm()
+  const router = useRouter();
+  const [user, loading] = useSession();
+  const { register, handleSubmit, errors } = useForm();
   useEffect(() => {
     if (!loading && !user) {
-      router.replace('/auth/signin')
+      router.replace("/auth/signin");
     }
-  }, [loading, user])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [loading, user]);
 
   const onSubmit = (data) => {
-    console.log({ data })
-  }
+    console.log({ data });
+  };
 
   if (!user) {
-    return null
+    return null;
   }
 
   return (
@@ -60,11 +53,7 @@ const NewTaskPage = () => {
           </FormGroup>
           <H4>ZOOM</H4>
           <FormGroup>
-            <Button
-              type="submit"
-              intent={Intent.PRIMARY}
-              className={styles.submit}
-            >
+            <Button type="submit" intent={Intent.PRIMARY} className={styles.submit}>
               שמירה
             </Button>
             <Button type="reset" onClick={router.back}>
@@ -74,7 +63,7 @@ const NewTaskPage = () => {
         </form>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default NewTaskPage
+export default NewTaskPage;

@@ -1,9 +1,9 @@
-import { Button, Intent, NonIdealState } from '@blueprintjs/core'
+import { Button, Intent, NonIdealState } from "@blueprintjs/core";
 
-import { useRouter } from 'next/router'
+import { useRouter } from "next/router";
 
 const NotFoundPage = () => {
-  const router = useRouter()
+  const router = useRouter();
   return (
     <NonIdealState
       icon="virus"
@@ -14,7 +14,7 @@ const NotFoundPage = () => {
         </Button>
       }
     />
-  )
-}
+  );
+};
 
-export default NotFoundPage
+export default NotFoundPage;

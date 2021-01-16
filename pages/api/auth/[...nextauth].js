@@ -1,25 +1,22 @@
-import NextAuth from 'next-auth'
-import Providers from 'next-auth/providers'
+import NextAuth from "next-auth";
+import Providers from "next-auth/providers";
 
-const secret = 'el-mas-grande-sigue-siendo-river-plate'
+const secret = "el-mas-grande-sigue-siendo-river-plate";
 
 const options = {
   providers: [
     Providers.Credentials({
-      name: 'Credentials',
+      name: "Credentials",
       credentials: {
-        username: { label: 'Username', type: 'text', placeholder: 'admin' },
-        password: { label: 'Password', type: 'password' },
+        username: { label: "Username", type: "text", placeholder: "admin" },
+        password: { label: "Password", type: "password" },
       },
       authorize: async (credentials) => {
-        if (
-          credentials.username !== 'admin' ||
-          credentials.password !== 'Gimel3'
-        ) {
-          return Promise.resolve(null)
+        if (credentials.username !== "admin" || credentials.password !== "Gimel3") {
+          return Promise.resolve(null);
         }
 
-        return Promise.resolve(true)
+        return Promise.resolve(true);
       },
     }),
   ],
@@ -39,9 +36,9 @@ const options = {
   },
 
   pages: {
-    signIn: '/auth/signin',
+    signIn: "/auth/signin",
     //signOut: '/api/auth/signout',
-    error: '/auth/signin', // Error code passed in query string as ?error=
+    error: "/auth/signin", // Error code passed in query string as ?error=
     //verifyRequest: '/api/auth/verify-request', // (used for check email message)
     //newUser: null // If set, new users will be directed here on first sign in
   },
@@ -49,8 +46,8 @@ const options = {
   // Additional options
   secret,
   debug: true, // Use this option to enable debug messages in the console
-}
+};
 
-const Auth = (req, res) => NextAuth(req, res, options)
+const Auth = (req, res) => NextAuth(req, res, options);
 
-export default Auth
+export default Auth;
