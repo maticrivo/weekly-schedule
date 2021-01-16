@@ -1,4 +1,5 @@
 import { NonIdealState, Spinner } from '@blueprintjs/core'
+
 import { useSession } from 'next-auth/client'
 
 const Layout = ({ children }) => {

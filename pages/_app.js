@@ -1,7 +1,8 @@
-import { Provider } from 'next-auth/client'
 import 'modern-normalize/modern-normalize.css'
 import '@blueprintjs/core/lib/css/blueprint.css'
 import '../styles.css'
+
+import { Provider } from 'next-auth/client'
 import { SWRConfig } from 'swr'
 import { fetcher } from '../lib/fetcher'
 

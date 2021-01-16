@@ -1,8 +1,3 @@
-import { useEffect } from 'react'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
-import { useSession } from 'next-auth/client'
-import useSWR from 'swr'
 import {
   AnchorButton,
   Callout,
@@ -13,8 +8,13 @@ import {
 } from '@blueprintjs/core'
 
 import Header from '../../components/header'
+import Link from 'next/link'
+import { useEffect } from 'react'
+import { useRouter } from 'next/router'
+import useSWR from 'swr'
+import { useSession } from 'next-auth/client'
 
-const Admin = () => {
+const AdminPage = () => {
   const router = useRouter()
   const [user, loading] = useSession()
   const { data, isValidating, error } = useSWR('/api/tasks')
@@ -55,4 +55,4 @@ const Admin = () => {
   )
 }
 
-export default Admin
+export default AdminPage

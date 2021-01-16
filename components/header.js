@@ -1,6 +1,6 @@
-import Head from 'next/head'
 import { Alignment, Navbar } from '@blueprintjs/core'
 
+import Head from 'next/head'
 import styles from './header.module.css'
 
 const Header = ({ title = 'למידה מרחוק ג׳3' }) => {
