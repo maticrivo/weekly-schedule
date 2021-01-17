@@ -18,3 +18,12 @@ body {
 .bp3-navbar-heading {
   margin-right: 0;
 }
+.bp3-button::before,
+.bp3-button > * {
+  margin-right: 0;
+  margin-left: 7px;
+}
+.bp3-button:empty::before,
+.bp3-button > :last-child {
+  margin-left: 0;
+}

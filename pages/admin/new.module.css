@@ -1,5 +1,7 @@
-.form {
-  max-width: 400px;
+.wrapper {
+  display: grid;
+  grid-template-columns: minmax(400px, auto) 1fr;
+  gap: 20px;
 }
 
 .submit {

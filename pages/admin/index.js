@@ -24,17 +24,17 @@ const AdminPage = () => {
 
   return (
     <>
-      <Header title="למידה מרחוק ג׳3 - ממשק ניהול" />
+      <Header title="למידה מרחוק ג'3 - ממשק ניהול" />
       <div className="container">
-        <H2>משימות</H2>
+        <H2>שיעורים</H2>
         {isValidating && <ProgressBar />}
         {!isValidating && !data?.length && (
           <NonIdealState
             icon="info-sign"
-            title="אין משימות במערכת"
+            title="אין שיעורים במערכת"
             action={
               <Link href="/admin/new" passHref>
-                <AnchorButton text="משימה חדשה" intent={Intent.PRIMARY} />
+                <AnchorButton text="שיעור חדש" intent={Intent.PRIMARY} />
               </Link>
             }
           />
