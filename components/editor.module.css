@@ -12,6 +12,11 @@
   text-align: right;
 }
 
-.quillPreview :global(.ql-editor) {
+.quillWrapper :global(.ql-editor) {
   padding: 0;
+}
+
+.quillWrapper :global(.ql-editor.ql-blank::before) {
+  left: 0;
+  right: 0;
 }

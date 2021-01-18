@@ -1,5 +1,3 @@
-import "quill/dist/quill.bubble.css";
-
 import styles from "./editor.module.css";
 import { useEffect } from "react";
 import { useFormContext } from "react-hook-form";
@@ -16,7 +14,7 @@ const modules = {
 
 const formats = ["bold", "italic", "underline", "list", "bullet", "link", "color", "background"];
 
-const Editor = ({ name }) => {
+const Editor = ({ name, disabled = false }) => {
   const { setValue, register } = useFormContext();
   const { quill, quillRef } = useQuill({
     modules,
@@ -25,6 +23,10 @@ const Editor = ({ name }) => {
     placeholder: "התחל לכתוב כאן את תוכן השיעור...",
   });
   useEffect(() => {
+    register(name);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  useEffect(() => {
     if (quill) {
       quill.on("text-change", () => {
         setValue(name, quill.getContents());
@@ -32,9 +34,10 @@ const Editor = ({ name }) => {
     }
   }, [name, quill, setValue]);
   useEffect(() => {
-    register(name);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    if (quill) {
+      quill.enable(!disabled);
+    }
+  }, [quill, disabled]);
 
   return (
     <div className={styles.quillWrapper}>

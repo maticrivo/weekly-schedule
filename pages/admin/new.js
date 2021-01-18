@@ -9,13 +9,16 @@ import {
   Intent,
   Tooltip,
 } from "@blueprintjs/core";
-import { FormProvider, useFieldArray, useForm } from "react-hook-form";
+import { Controller, FormProvider, useFieldArray, useForm } from "react-hook-form";
+import { useEffect, useState } from "react";
 
+import DateTimePicker from "../../components/date-time-picker";
 import Header from "../../components/header";
 import Preview from "../../components/preview";
+import { TimePicker } from "@blueprintjs/datetime";
 import dynamic from "next/dynamic";
+import { fetcher } from "../../lib/fetcher";
 import styles from "./new.module.css";
-import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { useSession } from "next-auth/client";
 
@@ -24,10 +27,11 @@ const Editor = dynamic(() => import("../../components/editor"), { ssr: false });
 const NewTaskPage = () => {
   const router = useRouter();
   const [user, loading] = useSession();
+  const [submitting, setSubmitting] = useState(false);
   const methods = useForm();
   const { fields, append, remove } = useFieldArray({
     control: methods.control,
-    name: "zoom",
+    name: "zooms",
   });
   useEffect(() => {
     if (!loading && !user) {
@@ -36,12 +40,19 @@ const NewTaskPage = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loading, user]);
 
-  const onSubmit = (data) => {
-    console.log({ data });
+  const onSubmit = async (data) => {
+    setSubmitting(true);
+    await fetcher("/api/classes", { method: "POST", body: JSON.stringify(data) });
+    setSubmitting(false);
+    router.push("/admin");
   };
 
   const onNewZoom = () => {
     append({ time: "", description: "", link: "" });
+  };
+
+  const onCancel = () => {
+    router.push("/admin");
   };
 
   if (!user) {
@@ -62,41 +73,72 @@ const NewTaskPage = () => {
                   id="title"
                   name="title"
                   inputRef={methods.register({ required: true })}
-                  intent={methods.errors?.title ? Intent.DANGER : null}
+                  intent={methods?.errors?.title ? Intent.DANGER : null}
+                  disabled={submitting}
                 />
               </FormGroup>
+              <FormGroup label="תאריך" labelFor="date">
+                <DateTimePicker name="date" disabled={submitting} />
+              </FormGroup>
               <FormGroup label="תוכן" labelFor="contents">
-                <Editor name="contents" />
+                <Editor name="contents" disabled={submitting} />
               </FormGroup>
               <Divider />
               <H4>
-                ZOOM{" "}
-                <Button icon="add" small minimal onClick={onNewZoom}>
+                זומים{" "}
+                <Button icon="add" small minimal onClick={onNewZoom} disabled={submitting}>
                   הוספת זום
                 </Button>
               </H4>
               {fields.map((field, index) => (
                 <Card key={field.id}>
-                  <FormGroup label="שעה" labelFor={`zoom-${field.id}-time`}>
+                  <FormGroup label="שעה" labelFor={`zooms-${field.id}-time`}>
+                    <div className="ltrWrapper">
+                      <Controller
+                        control={methods.control}
+                        name={`zooms[${index}].time`}
+                        defaultValue={methods.getValues("date")}
+                        rules={{ required: true }}
+                        render={({ onChange, value }) => (
+                          <TimePicker onChange={onChange} value={value} disabled={submitting} />
+                        )}
+                      />
+                    </div>
+                  </FormGroup>
+                  <FormGroup label="קישור" labelFor={`zooms-${field.id}-link`}>
                     <InputGroup
-                      id={`zoom-${field.id}-time`}
-                      name={`zoom[${index}].time`}
+                      id={`zooms-${field.id}-link`}
+                      name={`zooms[${index}].link`}
                       inputRef={methods.register({ required: true })}
-                      intent={methods.errors?.zoom?.[index]?.time ? Intent.DANGER : null}
-                      defaultValue={field.value}
+                      intent={methods?.errors?.zooms?.[index]?.link ? Intent.DANGER : null}
+                      defaultValue=""
+                      disabled={submitting}
                     />
                   </FormGroup>
-                  <FormGroup label="קישור" labelFor={`zoom-${field.id}-link`}>
+                  <FormGroup label="ID ישיבה" labelFor={`zooms-${field.id}-meetingId`}>
                     <InputGroup
-                      id={`zoom-${field.id}-link`}
-                      name={`zoom[${index}].link`}
-                      inputRef={methods.register({ required: true })}
-                      intent={methods.errors?.zoom?.[index]?.link ? Intent.DANGER : null}
-                      defaultValue={field.value}
+                      id={`zooms-${field.id}-meetingId`}
+                      name={`zooms[${index}].meetingId`}
+                      inputRef={methods.register()}
+                      intent={methods?.errors?.zooms?.[index]?.meetingId ? Intent.DANGER : null}
+                      defaultValue=""
+                      disabled={submitting}
                     />
                   </FormGroup>
-                  <FormGroup label="תוכן" labelFor={`zoom-${field.id}-description`}>
-                    <Editor name={`zoom[${index}].description`} />
+                  <FormGroup label="סיסמה" labelFor={`zooms-${field.id}-meetingPassword`}>
+                    <InputGroup
+                      id={`zooms-${field.id}-meetingPassword`}
+                      name={`zooms[${index}].meetingPassword`}
+                      inputRef={methods.register()}
+                      intent={
+                        methods?.errors?.zooms?.[index]?.meetingPassword ? Intent.DANGER : null
+                      }
+                      defaultValue=""
+                      disabled={submitting}
+                    />
+                  </FormGroup>
+                  <FormGroup label="תוכן" labelFor={`zooms-${field.id}-contents`}>
+                    <Editor name={`zooms[${index}].contents`} disabled={submitting} />
                   </FormGroup>
                   <Tooltip content="מחיקת פגישת זום">
                     <Button
@@ -105,16 +147,22 @@ const NewTaskPage = () => {
                       outlined
                       intent={Intent.DANGER}
                       onClick={() => remove(index)}
+                      disabled={submitting}
                     />
                   </Tooltip>
                 </Card>
               ))}
               <Divider />
               <FormGroup>
-                <Button type="submit" intent={Intent.PRIMARY} className={styles.submit}>
+                <Button
+                  type="submit"
+                  intent={Intent.PRIMARY}
+                  className={styles.submit}
+                  loading={submitting}
+                >
                   שמור
                 </Button>
-                <Button type="reset" onClick={router.back}>
+                <Button type="reset" onClick={onCancel} disabled={submitting}>
                   ביטול
                 </Button>
               </FormGroup>

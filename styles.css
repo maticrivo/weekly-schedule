@@ -14,6 +14,12 @@ body {
   padding: 0 15px;
 }
 
+.ltrWrapper {
+  display: inline-block;
+  direction: ltr;
+  text-align: left;
+}
+
 /* overwrite blueprint css */
 .bp3-navbar-heading {
   margin-right: 0;
@@ -26,4 +32,28 @@ body {
 .bp3-button:empty::before,
 .bp3-button > :last-child {
   margin-left: 0;
+}
+
+/* overwrite quill-editor css */
+.ql-editor {
+  direction: rtl;
+  text-align: right;
+  padding: 0;
+}
+.ql-editor ol,
+.ql-editor ul {
+  padding-left: 0;
+  padding-right: 1.5em;
+}
+.ql-editor ol li:not(.ql-direction-rtl),
+.ql-editor ul li:not(.ql-direction-rtl) {
+  padding-left: 0;
+}
+.ql-editor ol > li,
+.ql-editor ul > li {
+  list-style-type: inherit;
+}
+.ql-editor ol > li:before,
+.ql-editor ul > li::before {
+  content: "";
 }

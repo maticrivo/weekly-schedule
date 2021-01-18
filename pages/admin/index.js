@@ -10,7 +10,7 @@ import { useSession } from "next-auth/client";
 const AdminPage = () => {
   const router = useRouter();
   const [user, loading] = useSession();
-  const { data, isValidating, error } = useSWR("/api/tasks");
+  const { data, isValidating, error } = useSWR("/api/classes");
   useEffect(() => {
     if (!loading && !user) {
       router.replace("/auth/signin");

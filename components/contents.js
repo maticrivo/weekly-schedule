@@ -1,6 +1,3 @@
-import "quill/dist/quill.bubble.css";
-
-import clsx from "clsx";
 import styles from "./editor.module.css";
 import { useEffect } from "react";
 import { useQuill } from "react-quilljs";
@@ -15,7 +12,7 @@ const Contents = ({ contents }) => {
   }, [contents, quill]);
 
   return (
-    <div className={clsx(styles.quillWrapper, styles.quillPreview)}>
+    <div className={styles.quillWrapper}>
       <div ref={quillRef} />
     </div>
   );

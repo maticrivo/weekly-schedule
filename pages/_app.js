@@ -1,5 +1,7 @@
 import "modern-normalize/modern-normalize.css";
 import "@blueprintjs/core/lib/css/blueprint.css";
+import "@blueprintjs/datetime/lib/css/blueprint-datetime.css";
+import "quill/dist/quill.bubble.css";
 import "../styles.css";
 
 import { Provider } from "next-auth/client";
