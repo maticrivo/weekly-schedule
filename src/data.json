@@ -546,11 +546,22 @@
         ]
       },
       {
+        "title": "חשבון",
+        "zoom": [
+          {
+            "description": "מספרים בתחום הרבבה: כפל בעשרות ובמאות שלמות",
+            "time": "10:00",
+            "link": "https://edu-il.zoom.us/j/8197773592"
+          }
+        ],
+        "assignments": ["עבודה בעמודים 129-134"]
+      },
+      {
         "title": "עברית עם רונית",
         "zoom": [
           {
             "description": "נושא השיעור: המשך משלים",
-            "time": "10:00",
+            "time": "11:00",
             "link": "https://us04web.zoom.us/j/78065633893?pwd=SXh2alhCSUNBOHZPcWcrL2N0QzFqQT09"
           }
         ],
@@ -563,17 +574,6 @@
             }
           }
         ]
-      },
-      {
-        "title": "חשבון",
-        "zoom": [
-          {
-            "description": "מספרים בתחום הרבבה: כפל בעשרות ובמאות שלמות",
-            "time": "11:00",
-            "link": "https://edu-il.zoom.us/j/8197773592"
-          }
-        ],
-        "assignments": ["עבודה בעמודים 129-134"]
       },
       {
         "title": "עברית",
