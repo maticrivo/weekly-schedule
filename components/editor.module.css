@@ -1,0 +1,17 @@
+.quillWrapper {
+  direction: ltr;
+  text-align: left;
+}
+
+.quillWrapper :global(.ql-container) {
+  background-color: #fff;
+}
+
+.quillWrapper :global(.ql-container .ql-editor) {
+  direction: rtl;
+  text-align: right;
+}
+
+.quillPreview :global(.ql-editor) {
+  padding: 0;
+}

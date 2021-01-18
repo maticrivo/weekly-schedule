@@ -1,5 +1,9 @@
 import { Card, H5 } from "@blueprintjs/core";
+
+import dynamic from "next/dynamic";
 import { useWatch } from "react-hook-form";
+
+const Contents = dynamic(() => import("./contents"), { ssr: false });
 
 const Preview = ({ control }) => {
   const title = useWatch({
@@ -7,12 +11,20 @@ const Preview = ({ control }) => {
     name: "title",
     defaultValue: "",
   });
+  const contents = useWatch({
+    control,
+    name: "contents",
+    defaultValue: {},
+  });
 
   return (
-    <Card>
+    <div>
       <H5>תצוגה מקדימה</H5>
-      <div>{title}</div>
-    </Card>
+      <Card>
+        <H5>{title}</H5>
+        <Contents contents={contents} />
+      </Card>
+    </div>
   );
 };
 
