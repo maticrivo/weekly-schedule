@@ -132,12 +132,12 @@ function App() {
   return (
     <>
       <Helmet>
-        <title>למידה מרחוק ג׳-3</title>
+        <title>למידה מרחוק ג'-3</title>
       </Helmet>
       <Navbar fixedToTop className={Classes.RTL}>
         <div className="container">
           <Navbar.Group align={Alignment.RIGHT}>
-            <Navbar.Heading>למידה מרחוק ג׳-3</Navbar.Heading>
+            <Navbar.Heading>למידה מרחוק ג'-3</Navbar.Heading>
           </Navbar.Group>
           <Navbar.Group align={Alignment.LEFT}>
             <HTMLSelect
