@@ -1,4 +1,4 @@
-import { db, query } from "../../lib/db";
+import { db, query } from "../../../lib/db";
 
 import dayjs from "dayjs";
 
@@ -22,7 +22,7 @@ const handler = async (req, res) => {
           ])
           .query((r) => {
             let sql =
-              "INSERT INTO zooms (class_id, contents, link, meeting_id, meeting_password, timestamp) VALUES (?)";
+              "INSERT INTO zooms (classId, contents, link, meetingId, meetingPassword, timestamp) VALUES (?)";
             let multiInsert = [];
             for (let i = 0; i < body.zooms.length; i++) {
               const zoom = body.zooms[i];

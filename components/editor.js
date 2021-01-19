@@ -5,6 +5,7 @@ import { useQuill } from "react-quilljs";
 
 const modules = {
   toolbar: [
+    [{ header: 1 }, { header: 2 }],
     ["bold", "italic", "underline"],
     [{ color: [] }, { background: [] }],
     [{ list: "ordered" }, { list: "bullet" }],
@@ -12,10 +13,25 @@ const modules = {
   ],
 };
 
-const formats = ["bold", "italic", "underline", "list", "bullet", "link", "color", "background"];
+const formats = [
+  "header",
+  "bold",
+  "italic",
+  "underline",
+  "list",
+  "bullet",
+  "link",
+  "color",
+  "background",
+];
 
-const Editor = ({ name, placeholder = "התחל לכתוב כאן את תוכן השיעור...", disabled = false }) => {
-  const { setValue, register } = useFormContext();
+const Editor = ({
+  name,
+  initial = null,
+  placeholder = "התחל לכתוב כאן את תוכן השיעור...",
+  disabled = false,
+}) => {
+  const { setValue, getValues, register } = useFormContext();
   const { quill, quillRef } = useQuill({
     modules,
     formats,
@@ -32,12 +48,20 @@ const Editor = ({ name, placeholder = "התחל לכתוב כאן את תוכן 
         setValue(name, quill.getContents());
       });
     }
-  }, [name, quill, setValue]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [name, quill]);
   useEffect(() => {
     if (quill) {
       quill.enable(!disabled);
+      quill.setContents(initial);
     }
-  }, [quill, disabled]);
+  }, [quill, disabled, initial]);
+  useEffect(() => {
+    if (quill) {
+      quill.setContents(getValues(name));
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [quill, name]);
 
   return (
     <div className={styles.quillWrapper}>

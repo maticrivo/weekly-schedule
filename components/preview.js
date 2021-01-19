@@ -12,6 +12,7 @@ import {
 } from "@blueprintjs/core";
 
 import { CopyToClipboard } from "react-copy-to-clipboard";
+import { Fragment } from "react";
 import dayjs from "dayjs";
 import dynamic from "next/dynamic";
 import { useWatch } from "react-hook-form";
@@ -53,16 +54,15 @@ const Preview = ({ control }) => {
           <>
             <H6>פגישות זום:</H6>
             {zooms.map((zoom, zdx) => (
-              <>
-                <div key={`zoom-${zdx}`}>
-                  <p>בשעה: {dayjs(zoom.time).format("HH:mm")}</p>
-                  {console.log("AAAAA", zoom.contents)}
+              <Fragment key={`zoom-${zdx}`}>
+                <div>
                   {zoom.contents && (
                     <>
                       <Contents contents={zoom.contents} />
                       <br />
                     </>
                   )}
+                  <p>בשעה: {dayjs(zoom.time).format("HH:mm")}</p>
                   <AnchorButton
                     outlined
                     intent={Intent.PRIMARY}
@@ -95,7 +95,7 @@ const Preview = ({ control }) => {
                   )}
                 </div>
                 {zdx < zooms.length - 1 && <Divider />}
-              </>
+              </Fragment>
             ))}
           </>
         )}
