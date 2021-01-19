@@ -6,7 +6,7 @@ const handler = async (req, res) => {
   try {
     switch (req.method) {
       case "GET":
-        const results = await query("SELECT * FROM classes");
+        const results = await query("SELECT * FROM `classes` ORDER BY `timestamp` DESC");
 
         return res.status(200).json(results);
 
@@ -38,24 +38,9 @@ const handler = async (req, res) => {
             }
             return [sql, multiInsert];
           })
-          // .query((r) => {
-          //   if (body?.zooms?.length) {
-          //     let values = [];
-          //     const insertQuery =
-          //       "INSERT INTO zooms (class_id, contents, link, meeting_id, meeting_password, timestamp) VALUES ?;";
-          //     body.zooms.forEach((zoom) => {
-          //       values.push([
-          //         ,
-          //       ]);
-          //     });
-          //     return [insertQuery, values];
-          //   }
-          //   return null;
-          // })
           .rollback((e) => console.error(e))
           .commit();
-        console.log({ trx });
-        // await query(`INSERT INTO classes ()`);
+
         return res.status(200).json({ body: JSON.parse(req.body) });
 
       default:

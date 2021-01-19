@@ -28,7 +28,6 @@ const DateTimePicker = ({ name, ...props }) => {
         formatDate={formatDate}
         parseDate={parseDate}
         canClearSelection={false}
-        maxDate={new Date()}
         timePrecision={TimePrecision.MINUTE}
         timePickerProps={{
           showArrowButtons: true,

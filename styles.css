@@ -33,6 +33,13 @@ body {
 .bp3-button > :last-child {
   margin-left: 0;
 }
+.bp3-running-text table th,
+table.bp3-html-table th,
+.bp3-running-text table td,
+table.bp3-html-table td {
+  text-align: right;
+  vertical-align: middle;
+}
 
 /* overwrite quill-editor css */
 .ql-editor {

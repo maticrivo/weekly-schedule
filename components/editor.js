@@ -14,13 +14,13 @@ const modules = {
 
 const formats = ["bold", "italic", "underline", "list", "bullet", "link", "color", "background"];
 
-const Editor = ({ name, disabled = false }) => {
+const Editor = ({ name, placeholder = "התחל לכתוב כאן את תוכן השיעור...", disabled = false }) => {
   const { setValue, register } = useFormContext();
   const { quill, quillRef } = useQuill({
     modules,
     formats,
     theme: "bubble",
-    placeholder: "התחל לכתוב כאן את תוכן השיעור...",
+    placeholder,
   });
   useEffect(() => {
     register(name);

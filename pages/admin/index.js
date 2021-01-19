@@ -1,7 +1,19 @@
-import { AnchorButton, Callout, H2, Intent, NonIdealState, ProgressBar } from "@blueprintjs/core";
+import {
+  AnchorButton,
+  Button,
+  ButtonGroup,
+  Callout,
+  H2,
+  HTMLTable,
+  Intent,
+  NonIdealState,
+  ProgressBar,
+  Tooltip,
+} from "@blueprintjs/core";
 
 import Header from "../../components/header";
 import Link from "next/link";
+import dayjs from "dayjs";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import useSWR from "swr";
@@ -27,6 +39,9 @@ const AdminPage = () => {
       <Header title="למידה מרחוק ג'3 - ממשק ניהול" />
       <div className="container">
         <H2>שיעורים</H2>
+        <Link href="/admin/new" passHref>
+          <AnchorButton icon="add" text="הוספת שיעור" small />
+        </Link>
         {isValidating && <ProgressBar />}
         {!isValidating && !data?.length && (
           <NonIdealState
@@ -38,6 +53,35 @@ const AdminPage = () => {
               </Link>
             }
           />
+        )}
+        {!isValidating && data?.length && (
+          <HTMLTable>
+            <thead>
+              <tr>
+                <th>שיעור</th>
+                <th>תאריך ושעה</th>
+                <th />
+              </tr>
+            </thead>
+            <tbody>
+              {data.map((row) => (
+                <tr key={row.id}>
+                  <td>{row.title}</td>
+                  <td>{dayjs(row.timestamp * 1000).format("DD/MM/YYYY HH:mm")}</td>
+                  <td>
+                    <ButtonGroup minimal>
+                      <Tooltip content="עריכה">
+                        <Button icon="edit" small />
+                      </Tooltip>
+                      <Tooltip content="מחיקה">
+                        <Button icon="trash" intent={Intent.DANGER} small />
+                      </Tooltip>
+                    </ButtonGroup>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </HTMLTable>
         )}
         {error && (
           <Callout intent={Intent.DANGER} icon={null}>

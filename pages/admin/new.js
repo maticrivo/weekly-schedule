@@ -138,7 +138,11 @@ const NewTaskPage = () => {
                     />
                   </FormGroup>
                   <FormGroup label="תוכן" labelFor={`zooms-${field.id}-contents`}>
-                    <Editor name={`zooms[${index}].contents`} disabled={submitting} />
+                    <Editor
+                      name={`zooms[${index}].contents`}
+                      disabled={submitting}
+                      placeholder="התחל לכתוב כאן את תוכן הזום..."
+                    />
                   </FormGroup>
                   <Tooltip content="מחיקת פגישת זום">
                     <Button
