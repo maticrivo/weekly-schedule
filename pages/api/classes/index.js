@@ -1,45 +1,43 @@
-import { db, query } from "../../../lib/db";
-
 import dayjs from "dayjs";
+import { getKnex } from "../../../lib/db";
 
 const handler = async (req, res) => {
   try {
+    const knex = getKnex();
     switch (req.method) {
       case "GET":
-        const results = await query("SELECT * FROM `classes` ORDER BY `timestamp` DESC");
+        const results = await knex
+          .select("*")
+          .from("classes")
+          .orderBy([{ column: "timestamp", order: "desc" }]);
 
         return res.status(200).json(results);
 
       case "POST":
         const body = JSON.parse(req.body);
 
-        const trx = await db.transaction();
-        await trx
-          .query("INSERT INTO classes (title, contents, timestamp) VALUES (?, ?, ?);", [
-            body.title,
-            JSON.stringify(body.contents),
-            dayjs(body.date).unix(),
-          ])
-          .query((r) => {
-            let sql =
-              "INSERT INTO zooms (classId, contents, link, meetingId, meetingPassword, timestamp) VALUES (?)";
-            let multiInsert = [];
-            for (let i = 0; i < body.zooms.length; i++) {
-              const zoom = body.zooms[i];
-              let arr = [
-                r.insertId,
-                JSON.stringify(zoom.contents),
-                zoom.link,
-                zoom.meetingId,
-                zoom.meetingPassword,
-                dayjs(zoom.time).unix(),
-              ];
-              multiInsert.push(arr);
-            }
-            return [sql, multiInsert];
-          })
-          .rollback((e) => console.error(e))
-          .commit();
+        await knex.transaction(async (trx) => {
+          const ids = await trx
+            .insert(
+              {
+                title: body.title,
+                contents: JSON.stringify(body.contents),
+                timestamp: dayjs(body.date).unix(),
+              },
+              "id"
+            )
+            .into("classes");
+
+          const zooms = body.zooms.map((z) => ({
+            classId: ids[0],
+            contents: JSON.stringify(z.contents),
+            link: z.link,
+            meetingId: z.meetingId,
+            meetingPassword: z.meetingPassword,
+            timestamp: dayjs(z.time).unix(),
+          }));
+          await trx.insert(zooms).into("zooms");
+        });
 
         return res.status(200).json({ body: JSON.parse(req.body) });
 

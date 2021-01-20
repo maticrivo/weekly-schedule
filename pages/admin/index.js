@@ -10,11 +10,12 @@ import {
   ProgressBar,
   Tooltip,
 } from "@blueprintjs/core";
+import { useEffect, useState } from "react";
 
 import Header from "../../components/header";
 import Link from "next/link";
 import dayjs from "dayjs";
-import { useEffect } from "react";
+import { fetcher } from "../../lib/fetcher";
 import { useRouter } from "next/router";
 import useSWR from "swr";
 import { useSession } from "next-auth/client";
@@ -22,13 +23,22 @@ import { useSession } from "next-auth/client";
 const AdminPage = () => {
   const router = useRouter();
   const [user, loading] = useSession();
-  const { data, isValidating, error } = useSWR("/api/classes");
+  const [deleting, setDeleting] = useState(null);
+  const { data, isValidating, error, mutate } = useSWR("/api/classes");
   useEffect(() => {
     if (!loading && !user) {
       router.replace("/auth/signin");
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loading, user]);
+
+  const onDelete = async (evt) => {
+    const id = Number(evt.currentTarget.dataset.id);
+    setDeleting(id);
+    await fetcher(`/api/classes/${id}`, { method: "DELETE" });
+    mutate(data.filter((d) => d.id !== id));
+    setDeleting(false);
+  };
 
   if (!user) {
     return null;
@@ -70,13 +80,26 @@ const AdminPage = () => {
                   <td>{dayjs(row.timestamp * 1000).format("DD/MM/YYYY HH:mm")}</td>
                   <td>
                     <ButtonGroup minimal>
-                      <Tooltip content="עריכה">
+                      <Tooltip content="עריכה" disabled={deleting}>
                         <Link href={`/admin/edit/${row.id}`} passHref>
-                          <AnchorButton icon="edit" intent={Intent.PRIMARY} small />
+                          <AnchorButton
+                            icon="edit"
+                            intent={Intent.PRIMARY}
+                            small
+                            disabled={deleting}
+                          />
                         </Link>
                       </Tooltip>
-                      <Tooltip content="מחיקה">
-                        <Button icon="trash" intent={Intent.DANGER} small />
+                      <Tooltip content="מחיקה" disabled={deleting}>
+                        <Button
+                          icon="trash"
+                          intent={Intent.DANGER}
+                          onClick={onDelete}
+                          small
+                          data-id={row.id}
+                          disabled={deleting}
+                          loading={deleting === row.id}
+                        />
                       </Tooltip>
                     </ButtonGroup>
                   </td>

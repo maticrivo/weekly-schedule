@@ -18,7 +18,14 @@ import styles from "./class-form.module.css";
 
 const Editor = dynamic(() => import("./editor"), { ssr: false });
 
-const ClassForm = ({ onSubmit, onCancel, submitting = false, initialValues = {} }) => {
+const ClassForm = ({
+  onSubmit,
+  onCancel,
+  onDelete,
+  submitting = false,
+  deleting = false,
+  initialValues = {},
+}) => {
   const methods = useForm({ defaultValues: initialValues });
   const { fields, append, remove } = useFieldArray({
     control: methods.control,
@@ -131,16 +138,22 @@ const ClassForm = ({ onSubmit, onCancel, submitting = false, initialValues = {} 
             </Card>
           ))}
           <Divider />
-          <FormGroup>
-            <Button
-              type="submit"
-              intent={Intent.PRIMARY}
-              className={styles.submit}
-              loading={submitting}
-            >
-              שמור
+          <FormGroup className={styles.buttonWrapper}>
+            <Button type="submit" intent={Intent.PRIMARY} disabled={deleting} loading={submitting}>
+              שמירה
             </Button>
-            <Button type="reset" onClick={onCancel} disabled={submitting}>
+            {onDelete && (
+              <Button
+                type="button"
+                intent={Intent.DANGER}
+                onClick={onDelete}
+                disabled={submitting}
+                loading={deleting}
+              >
+                מחיקה
+              </Button>
+            )}
+            <Button type="reset" onClick={onCancel} disabled={submitting || deleting}>
               ביטול
             </Button>
           </FormGroup>

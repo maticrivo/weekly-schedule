@@ -52,10 +52,10 @@ const Preview = ({ control }) => {
         <Contents contents={contents} />
         {zooms.length > 0 && (
           <>
-            <H6>פגישות זום:</H6>
             {zooms.map((zoom, zdx) => (
               <Fragment key={`zoom-${zdx}`}>
                 <div>
+                  <H6>פגישת זום:</H6>
                   {zoom.contents && (
                     <>
                       <Contents contents={zoom.contents} />

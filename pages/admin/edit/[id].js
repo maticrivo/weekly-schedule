@@ -13,7 +13,10 @@ const EditClassPage = () => {
   const router = useRouter();
   const [user, loading] = useSession();
   const [submitting, setSubmitting] = useState(false);
-  const { data, isValidating } = useSWR(() => router.query.id && `/api/classes/${router.query.id}`);
+  const [deleting, setDeleting] = useState(false);
+  const { data, isValidating, revalidate } = useSWR(
+    () => router.query.id && `/api/classes/${router.query.id}`
+  );
   const [initialValues, setInitialValues] = useState(null);
 
   useEffect(() => {
@@ -49,6 +52,15 @@ const EditClassPage = () => {
       method: "PUT",
       body: JSON.stringify(values),
     });
+    await revalidate();
+    router.push("/admin");
+  };
+
+  const onDelete = async () => {
+    setDeleting(true);
+    await fetcher(`/api/classes/${router.query.id}`, {
+      method: "DELETE",
+    });
     router.push("/admin");
   };
 
@@ -73,7 +85,9 @@ const EditClassPage = () => {
           <ClassForm
             onSubmit={onSubmit}
             onCancel={onCancel}
+            onDelete={onDelete}
             submitting={submitting}
+            deleting={deleting}
             initialValues={initialValues}
           />
         )}
