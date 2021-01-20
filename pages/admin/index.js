@@ -71,7 +71,9 @@ const AdminPage = () => {
                   <td>
                     <ButtonGroup minimal>
                       <Tooltip content="עריכה">
-                        <Button icon="edit" small />
+                        <Link href={`/admin/edit/${row.id}`} passHref>
+                          <AnchorButton icon="edit" intent={Intent.PRIMARY} small />
+                        </Link>
                       </Tooltip>
                       <Tooltip content="מחיקה">
                         <Button icon="trash" intent={Intent.DANGER} small />

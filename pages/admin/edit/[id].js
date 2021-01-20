@@ -30,6 +30,7 @@ const EditClassPage = () => {
         contents: data.contents ? JSON.parse(data.contents) : null,
         date: dayjs(data.timestamp * 1000).toDate(),
         zooms: data.zooms.map((zoom) => ({
+          id: zoom.id,
           time: dayjs(zoom.timestamp * 1000).toDate(),
           link: zoom.link,
           meetingId: zoom.meetingId,
@@ -41,10 +42,13 @@ const EditClassPage = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data, isValidating]);
 
-  const onSubmit = async (data) => {
+  const onSubmit = async (values) => {
+    console.log({ values });
     setSubmitting(true);
-    await fetcher("/api/classes", { method: "POST", body: JSON.stringify(data) });
-    setSubmitting(false);
+    await fetcher(`/api/classes/${router.query.id}`, {
+      method: "PUT",
+      body: JSON.stringify(values),
+    });
     router.push("/admin");
   };
 

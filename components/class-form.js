@@ -23,10 +23,11 @@ const ClassForm = ({ onSubmit, onCancel, submitting = false, initialValues = {} 
   const { fields, append, remove } = useFieldArray({
     control: methods.control,
     name: "zooms",
+    keyName: "key",
   });
 
   const onNewZoom = () => {
-    append({ time: "", link: "", meetingId: "", meetingPassword: "", contents: {} });
+    append({ id: -1, time: "", link: "", meetingId: "", meetingPassword: "", contents: {} });
   };
 
   return (
@@ -57,7 +58,14 @@ const ClassForm = ({ onSubmit, onCancel, submitting = false, initialValues = {} 
             </Button>
           </H4>
           {fields.map((field, index) => (
-            <Card key={field.id}>
+            <Card key={field.key}>
+              {console.log({ field })}
+              <input
+                type="hidden"
+                name={`zooms[${index}].id`}
+                ref={methods.register()}
+                value={field.id || -1}
+              />
               <FormGroup label="שעה" labelFor={`zooms-${field.id}-time`}>
                 <div className="ltrWrapper">
                   <Controller
