@@ -46,7 +46,6 @@ const EditClassPage = () => {
   }, [data, isValidating]);
 
   const onSubmit = async (values) => {
-    console.log({ values });
     setSubmitting(true);
     await fetcher(`/api/classes/${router.query.id}`, {
       method: "PUT",

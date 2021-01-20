@@ -66,7 +66,6 @@ const ClassForm = ({
           </H4>
           {fields.map((field, index) => (
             <Card key={field.key}>
-              {console.log({ field })}
               <input
                 type="hidden"
                 name={`zooms[${index}].id`}
@@ -87,7 +86,6 @@ const ClassForm = ({
                 </div>
               </FormGroup>
               <FormGroup label="קישור" labelFor={`zooms-${field.id}-link`}>
-                {console.log({ fields })}
                 <InputGroup
                   id={`zooms-${field.id}-link`}
                   name={`zooms[${index}].link`}
