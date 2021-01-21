@@ -6,6 +6,7 @@ import Header from "../../components/header";
 import { fetcher } from "../../lib/fetcher";
 import { useRouter } from "next/router";
 import { useSession } from "next-auth/client";
+import { normalizeData } from "../../lib/utils";
 
 const NewClassPage = () => {
   const router = useRouter();
@@ -20,8 +21,9 @@ const NewClassPage = () => {
   }, [loading, user]);
 
   const onSubmit = async (data) => {
+    const normalizedData = normalizeData(data);
     setSubmitting(true);
-    await fetcher("/api/classes", { method: "POST", body: JSON.stringify(data) });
+    await fetcher("/api/classes", { method: "POST", body: JSON.stringify(normalizedData) });
     router.push("/admin");
   };
 

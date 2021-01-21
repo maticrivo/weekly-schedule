@@ -59,7 +59,6 @@ const Preview = ({ control }) => {
                   {zoom.contents ? (
                     <>
                       <Contents contents={zoom.contents} />
-                      <br />
                     </>
                   ) : null}
                   <p>בשעה: {dayjs(zoom.time).format("HH:mm")}</p>

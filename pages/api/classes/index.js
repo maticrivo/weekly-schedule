@@ -14,7 +14,7 @@ const handler = async (req, res) => {
         return res.status(200).json(results);
 
       case "POST":
-        const body = JSON.parse(req.body);
+        const { zooms = [], ...body } = JSON.parse(req.body);
 
         await knex.transaction(async (trx) => {
           const ids = await trx
@@ -28,15 +28,17 @@ const handler = async (req, res) => {
             )
             .into("classes");
 
-          const zooms = body.zooms.map((z) => ({
-            classId: ids[0],
-            contents: JSON.stringify(z.contents),
-            link: z.link,
-            meetingId: z.meetingId,
-            meetingPassword: z.meetingPassword,
-            timestamp: dayjs(z.time).unix(),
-          }));
-          await trx.insert(zooms).into("zooms");
+          if (zooms.length > 0) {
+            const normalizedZooms = zooms.map((z) => ({
+              classId: ids[0],
+              contents: JSON.stringify(z.contents),
+              link: z.link,
+              meetingId: z.meetingId,
+              meetingPassword: z.meetingPassword,
+              timestamp: dayjs(z.time).unix(),
+            }));
+            await trx.insert(normalizedZooms).into("zooms");
+          }
         });
 
         return res.status(200).json({ body: JSON.parse(req.body) });

@@ -8,6 +8,7 @@ import { fetcher } from "../../../lib/fetcher";
 import { useRouter } from "next/router";
 import useSWR from "swr";
 import { useSession } from "next-auth/client";
+import { normalizeData } from "../../../lib/utils";
 
 const EditClassPage = () => {
   const router = useRouter();
@@ -45,11 +46,12 @@ const EditClassPage = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data, isValidating]);
 
-  const onSubmit = async (values) => {
+  const onSubmit = async (data) => {
+    const normalizedData = normalizeData(data);
     setSubmitting(true);
     await fetcher(`/api/classes/${router.query.id}`, {
       method: "PUT",
-      body: JSON.stringify(values),
+      body: JSON.stringify(normalizedData),
     });
     await revalidate();
     router.push("/admin");
