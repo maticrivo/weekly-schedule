@@ -55,11 +55,11 @@ const SigninPage = () => {
           כניסה
         </Button>
       </form>
-      {router?.query?.error && (
+      {router?.query?.error ? (
         <Callout icon={null} intent={Intent.DANGER}>
           שם משתמש או סיסמא שגויים
         </Callout>
-      )}
+      ) : null}
     </NonIdealState>
   );
 };

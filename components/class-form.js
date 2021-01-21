@@ -140,7 +140,7 @@ const ClassForm = ({
             <Button type="submit" intent={Intent.PRIMARY} disabled={deleting} loading={submitting}>
               שמירה
             </Button>
-            {onDelete && (
+            {onDelete ? (
               <Button
                 type="button"
                 intent={Intent.DANGER}
@@ -150,7 +150,7 @@ const ClassForm = ({
               >
                 מחיקה
               </Button>
-            )}
+            ) : null}
             <Button type="reset" onClick={onCancel} disabled={submitting || deleting}>
               ביטול
             </Button>

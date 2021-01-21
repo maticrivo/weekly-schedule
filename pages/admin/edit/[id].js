@@ -80,7 +80,7 @@ const EditClassPage = () => {
       <Header title="למידה מרחוק ג'3 - עריכת שיעור" />
       <div className="container">
         <H2>עריכת שיעור</H2>
-        {initialValues && (
+        {initialValues ? (
           <ClassForm
             onSubmit={onSubmit}
             onCancel={onCancel}
@@ -89,7 +89,7 @@ const EditClassPage = () => {
             deleting={deleting}
             initialValues={initialValues}
           />
-        )}
+        ) : null}
       </div>
     </>
   );

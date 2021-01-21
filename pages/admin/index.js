@@ -58,8 +58,8 @@ const AdminPage = () => {
             <Link href="/admin/new" passHref>
               <AnchorButton icon="add" text="הוספת שיעור" small />
             </Link>
-            {isValidating && <ProgressBar />}
-            {!isValidating && !data?.length && (
+            {isValidating ? <ProgressBar /> : null}
+            {!isValidating && !data?.length ? (
               <NonIdealState
                 icon="info-sign"
                 title="אין שיעורים במערכת"
@@ -69,8 +69,8 @@ const AdminPage = () => {
                   </Link>
                 }
               />
-            )}
-            {!isValidating && data?.length && (
+            ) : null}
+            {!isValidating && data?.length ? (
               <HTMLTable>
                 <thead>
                   <tr>
@@ -113,7 +113,7 @@ const AdminPage = () => {
                   ))}
                 </tbody>
               </HTMLTable>
-            )}
+            ) : null}
           </>
         )}
       </div>

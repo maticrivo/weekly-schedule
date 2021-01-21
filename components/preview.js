@@ -50,18 +50,18 @@ const Preview = ({ control }) => {
       <Card>
         <H5>{title}</H5>
         <Contents contents={contents} />
-        {zooms.length > 0 && (
+        {zooms.length > 0 ? (
           <>
             {zooms.map((zoom, zdx) => (
               <Fragment key={`zoom-${zdx}`}>
                 <div>
                   <H6>פגישת זום:</H6>
-                  {zoom.contents && (
+                  {zoom.contents ? (
                     <>
                       <Contents contents={zoom.contents} />
                       <br />
                     </>
-                  )}
+                  ) : null}
                   <p>בשעה: {dayjs(zoom.time).format("HH:mm")}</p>
                   <AnchorButton
                     outlined
@@ -72,7 +72,7 @@ const Preview = ({ control }) => {
                   >
                     לחצו כאן
                   </AnchorButton>
-                  {zoom?.meetingId && (
+                  {zoom?.meetingId ? (
                     <p>
                       <strong>ID ישיבה:</strong> <Code>{zoom.meetingId}</Code>{" "}
                       <Tooltip content="העתק" position={Position.TOP}>
@@ -81,7 +81,7 @@ const Preview = ({ control }) => {
                         </CopyToClipboard>
                       </Tooltip>
                       <br />
-                      {zoom.meetingPassword && (
+                      {zoom.meetingPassword ? (
                         <>
                           <strong>סיסמה:</strong> <Code>{zoom.meetingPassword}</Code>{" "}
                           <Tooltip content="העתק" position={Position.TOP}>
@@ -90,15 +90,15 @@ const Preview = ({ control }) => {
                             </CopyToClipboard>
                           </Tooltip>
                         </>
-                      )}
+                      ) : null}
                     </p>
-                  )}
+                  ) : null}
                 </div>
-                {zdx < zooms.length - 1 && <Divider />}
+                {zdx < zooms.length - 1 ? <Divider /> : null}
               </Fragment>
             ))}
           </>
-        )}
+        ) : null}
       </Card>
     </div>
   );
