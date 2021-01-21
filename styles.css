@@ -14,8 +14,11 @@ body {
   padding: 0 15px;
 }
 
-.ltrWrapper {
+.inline-block {
   display: inline-block;
+}
+
+.ltrWrapper {
   direction: ltr;
   text-align: left;
 }
@@ -42,10 +45,21 @@ table.bp3-html-table td {
 }
 
 /* overwrite quill-editor css */
+.ql-container {
+  background-color: #fff;
+}
+/* .ql-container .ql-editor {
+  direction: rtl;
+  text-align: right;
+} */
 .ql-editor {
   direction: rtl;
   text-align: right;
   padding: 0;
+}
+.ql-editor.ql-blank::before {
+  left: 0;
+  right: 0;
 }
 .ql-editor ol,
 .ql-editor ul {
@@ -63,4 +77,10 @@ table.bp3-html-table td {
 .ql-editor ol > li:before,
 .ql-editor ul > li::before {
   content: "";
+}
+.ql-bubble .ql-editor h5 {
+  font-size: 16px;
+}
+.ql-bubble .ql-editor h6 {
+  font-size: 14px;
 }

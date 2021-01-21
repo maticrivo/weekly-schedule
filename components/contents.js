@@ -1,4 +1,5 @@
-import styles from "./editor.module.css";
+import clsx from "clsx";
+import styles from "./contents.module.css";
 import { useEffect } from "react";
 import { useQuill } from "react-quilljs";
 
@@ -12,7 +13,7 @@ const Contents = ({ contents }) => {
   }, [contents, quill]);
 
   return (
-    <div className={styles.quillWrapper}>
+    <div className={clsx("ltrWrapper", styles.wrapper)}>
       <div ref={quillRef} />
     </div>
   );

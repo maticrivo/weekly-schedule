@@ -1,11 +1,10 @@
-import styles from "./editor.module.css";
 import { useEffect } from "react";
 import { useFormContext } from "react-hook-form";
 import { useQuill } from "react-quilljs";
 
 const modules = {
   toolbar: [
-    [{ header: 1 }, { header: 2 }],
+    [{ header: [5, 6, false] }],
     ["bold", "italic", "underline"],
     [{ color: [] }, { background: [] }],
     [{ list: "ordered" }, { list: "bullet" }],
@@ -64,7 +63,7 @@ const Editor = ({
   }, [quill, name]);
 
   return (
-    <div className={styles.quillWrapper}>
+    <div className="ltrWrapper">
       <div ref={quillRef} />
     </div>
   );

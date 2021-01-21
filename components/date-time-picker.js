@@ -23,7 +23,7 @@ const DateTimePicker = ({ name, ...props }) => {
   });
 
   return (
-    <div className={"ltrWrapper"}>
+    <div className="ltrWrapper inline-block">
       <DateInput
         formatDate={formatDate}
         parseDate={parseDate}

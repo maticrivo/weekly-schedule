@@ -4,8 +4,9 @@ import {
   Card,
   Code,
   Divider,
+  H3,
+  H4,
   H5,
-  H6,
   Intent,
   Position,
   Tooltip,
@@ -48,20 +49,16 @@ const Preview = ({ control }) => {
     <div>
       <H5>תצוגה מקדימה</H5>
       <Card>
-        <H5>{title}</H5>
-        <Contents contents={contents} />
+        <H3>{title}</H3>
+        {contents ? <Contents contents={contents} /> : null}
         {zooms.length > 0 ? (
           <>
             {zooms.map((zoom, zdx) => (
               <Fragment key={`zoom-${zdx}`}>
                 <div>
-                  <H6>פגישת זום:</H6>
-                  {zoom.contents ? (
-                    <>
-                      <Contents contents={zoom.contents} />
-                    </>
-                  ) : null}
+                  <H4>פגישת זום:</H4>
                   <p>בשעה: {dayjs(zoom.time).format("HH:mm")}</p>
+                  {zoom.contents ? <Contents contents={zoom.contents} /> : null}
                   <AnchorButton
                     outlined
                     intent={Intent.PRIMARY}

@@ -73,7 +73,7 @@ const ClassForm = ({
                 value={field.id || -1}
               />
               <FormGroup label="שעה" labelFor={`zooms-${field.id}-time`}>
-                <div className="ltrWrapper">
+                <div className="ltrWrapper inline-block">
                   <Controller
                     control={methods.control}
                     name={`zooms[${index}].time`}

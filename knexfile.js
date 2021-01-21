@@ -6,5 +6,5 @@ module.exports = {
     password: process.env.MYSQL_PASSWORD,
     database: process.env.MYSQL_DATABASE,
   },
-  debug: true,
+  debug: process.env.MYSQL_DEBUG,
 };
