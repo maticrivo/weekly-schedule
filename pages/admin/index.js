@@ -24,6 +24,7 @@ const AdminPage = () => {
   const router = useRouter();
   const [user, loading] = useSession();
   const [deleting, setDeleting] = useState(null);
+  const [duplicating, setDuplicating] = useState(null);
   const { data, isValidating, error, mutate } = useSWR("/api/classes");
   useEffect(() => {
     if (!loading && !user) {
@@ -38,6 +39,13 @@ const AdminPage = () => {
     await fetcher(`/api/classes/${id}`, { method: "DELETE" });
     mutate(data.filter((d) => d.id !== id));
     setDeleting(false);
+  };
+
+  const onDuplicate = async (evt) => {
+    const id = Number(evt.currentTarget.dataset.id);
+    setDuplicating(id);
+    const res = await fetcher(`/api/classes/${id}`, { method: "POST" });
+    router.push(`/admin/edit/${res.id}`);
   };
 
   if (!user) {
@@ -71,7 +79,7 @@ const AdminPage = () => {
               />
             ) : null}
             {!isValidating && data?.length ? (
-              <HTMLTable>
+              <HTMLTable interactive striped>
                 <thead>
                   <tr>
                     <th>שיעור</th>
@@ -86,24 +94,35 @@ const AdminPage = () => {
                       <td>{dayjs(row.timestamp * 1000).format("DD/MM/YYYY HH:mm")}</td>
                       <td>
                         <ButtonGroup minimal>
-                          <Tooltip content="עריכה" disabled={deleting}>
+                          <Tooltip content="ערוך" disabled={deleting || duplicating}>
                             <Link href={`/admin/edit/${row.id}`} passHref>
                               <AnchorButton
                                 icon="edit"
                                 intent={Intent.PRIMARY}
                                 small
-                                disabled={deleting}
+                                disabled={deleting || duplicating}
                               />
                             </Link>
                           </Tooltip>
-                          <Tooltip content="מחיקה" disabled={deleting}>
+                          <Tooltip content="העתק" disabled={deleting || duplicating}>
+                            <Button
+                              icon="duplicate"
+                              intent={Intent.SUCCESS}
+                              onClick={onDuplicate}
+                              small
+                              data-id={row.id}
+                              disabled={deleting || duplicating}
+                              loading={duplicating === row.id}
+                            />
+                          </Tooltip>
+                          <Tooltip content="מחק" disabled={deleting || duplicating}>
                             <Button
                               icon="trash"
                               intent={Intent.DANGER}
                               onClick={onDelete}
                               small
                               data-id={row.id}
-                              disabled={deleting}
+                              disabled={deleting || duplicating}
                               loading={deleting === row.id}
                             />
                           </Tooltip>

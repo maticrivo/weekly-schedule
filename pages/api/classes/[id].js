@@ -1,5 +1,5 @@
-import { getKnex } from "../../../lib/db";
 import dayjs from "dayjs";
+import { getKnex } from "../../../lib/db";
 
 const handler = async (req, res) => {
   const id = req.query.id;
@@ -85,6 +85,38 @@ const handler = async (req, res) => {
         });
 
         return res.status(200).json(body);
+
+      case "POST":
+        const zooms = await knex.select("*").from("zooms").where({ classId: id });
+
+        const newClassId = await knex.transaction(async (trx) => {
+          const ids = await trx
+            .insert(
+              {
+                title: classData.title,
+                contents: classData.contents,
+                timestamp: classData.timestamp,
+              },
+              "id"
+            )
+            .into("classes");
+
+          if (zooms.length > 0) {
+            const normalizedZooms = zooms.map((z) => ({
+              classId: ids[0],
+              contents: z.contents,
+              link: z.link,
+              meetingId: z.meetingId,
+              meetingPassword: z.meetingPassword,
+              timestamp: z.timestamp,
+            }));
+            await trx.insert(normalizedZooms).into("zooms");
+          }
+
+          return ids[0];
+        });
+
+        return res.status(200).json({ id: newClassId });
 
       case "DELETE":
         await knex.transaction(async (trx) => {
