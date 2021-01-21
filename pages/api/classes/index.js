@@ -7,9 +7,11 @@ const handler = async (req, res) => {
     switch (req.method) {
       case "GET":
         const results = await knex
-          .select("*")
+          .select("classes.*", knex.raw("GROUP_CONCAT(zooms.timestamp) AS zooms"))
           .from("classes")
-          .orderBy([{ column: "timestamp", order: "desc" }]);
+          .leftJoin("zooms", "classes.id", "zooms.classId")
+          .groupBy("classes.id", "zooms.classId")
+          .orderBy([{ column: "classes.timestamp", order: "desc" }]);
 
         return res.status(200).json(results);
 
