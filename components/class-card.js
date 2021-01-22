@@ -32,15 +32,25 @@ const ClassCard = ({ title, contents, zooms }) => {
     <section className={styles.classWrapper}>
       <Card>
         <H3>{title}</H3>
-        {contents ? <Contents contents={contents} /> : null}
+        {contents ? (
+          <Contents contents={typeof contents === "string" ? JSON.parse(contents) : contents} />
+        ) : null}
         {zooms.length > 0 ? (
           <>
             {zooms.map((zoom, zdx) => (
               <Fragment key={`zoom-${zdx}`}>
                 <div>
                   <H4>פגישת זום:</H4>
-                  <p>בשעה: {dayjs(zoom.time).format("HH:mm")}</p>
-                  {zoom.contents ? <Contents contents={zoom.contents} /> : null}
+                  <p>בשעה: {dayjs(zoom.time || zoom.timestamp * 1000).format("HH:mm")}</p>
+                  {zoom.contents ? (
+                    <Contents
+                      contents={
+                        typeof zoom.contents === "string"
+                          ? JSON.parse(zoom.contents)
+                          : zoom.contents
+                      }
+                    />
+                  ) : null}
                   <AnchorButton
                     outlined
                     intent={Intent.PRIMARY}

@@ -15,7 +15,8 @@ const handler = async (req, res) => {
                   .where("timestamp", ">=", Number(start))
                   .where("timestamp", "<=", Number(end))
               : null
-          );
+          )
+          .orderBy("timestamp");
 
         for (let i in classes) {
           classes[i].zooms = await knex
