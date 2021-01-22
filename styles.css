@@ -1,0 +1,87 @@
+html,
+body,
+#__next {
+  height: 100%;
+}
+
+body {
+  direction: rtl;
+  text-align: right;
+  background-color: #f5f8fa;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.ltrWrapper {
+  direction: ltr;
+  text-align: left;
+}
+
+/* overwrite blueprint css */
+.bp3-navbar-heading {
+  margin-right: 0;
+}
+.bp3-button::before,
+.bp3-button > * {
+  margin-right: 0;
+  margin-left: 7px;
+}
+.bp3-button:empty::before,
+.bp3-button > :last-child {
+  margin-left: 0;
+}
+.bp3-running-text table th,
+table.bp3-html-table th,
+.bp3-running-text table td,
+table.bp3-html-table td {
+  text-align: right;
+  vertical-align: middle;
+}
+
+/* overwrite quill-editor css */
+.ql-container {
+  background-color: #fff;
+}
+/* .ql-container .ql-editor {
+  direction: rtl;
+  text-align: right;
+} */
+.ql-editor {
+  direction: rtl;
+  text-align: right;
+  padding: 0;
+}
+.ql-editor.ql-blank::before {
+  left: 0;
+  right: 0;
+}
+.ql-editor ol,
+.ql-editor ul {
+  padding-left: 0;
+  padding-right: 1.5em;
+}
+.ql-editor ol li:not(.ql-direction-rtl),
+.ql-editor ul li:not(.ql-direction-rtl) {
+  padding-left: 0;
+}
+.ql-editor ol > li,
+.ql-editor ul > li {
+  list-style-type: inherit;
+}
+.ql-editor ol > li:before,
+.ql-editor ul > li::before {
+  content: "";
+}
+.ql-bubble .ql-editor h5 {
+  font-size: 16px;
+}
+.ql-bubble .ql-editor h6 {
+  font-size: 14px;
+}

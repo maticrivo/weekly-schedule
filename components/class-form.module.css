@@ -1,0 +1,9 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: minmax(400px, auto) 1fr;
+  gap: 20px;
+}
+
+.buttonWrapper button {
+  margin-left: 10px;
+}
