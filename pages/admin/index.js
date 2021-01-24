@@ -11,6 +11,7 @@ import {
   ProgressBar,
   Tooltip,
 } from "@blueprintjs/core";
+import { MONTHS, WEEKDAYS_LONG, WEEKDAYS_SHORT } from "../../lib/utils";
 import { useEffect, useMemo, useState } from "react";
 
 import { DateInput } from "@blueprintjs/datetime";
@@ -142,6 +143,12 @@ const AdminPage = () => {
                           }}
                           value={searchDate}
                           placeholder="חיפוש תאריך..."
+                          dayPickerProps={{
+                            locale: "he",
+                            months: MONTHS,
+                            weekdaysLong: WEEKDAYS_LONG,
+                            weekdaysShort: WEEKDAYS_SHORT,
+                          }}
                         />
                       </td>
                       <td colSpan={2} />

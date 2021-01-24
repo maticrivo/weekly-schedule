@@ -1,4 +1,5 @@
 import { DateInput, TimePrecision } from "@blueprintjs/datetime";
+import { MONTHS, WEEKDAYS_LONG, WEEKDAYS_SHORT } from "../lib/utils";
 import { useController, useFormContext } from "react-hook-form";
 
 import dayjs from "dayjs";
@@ -36,6 +37,12 @@ const DateTimePicker = ({ name, ...props }) => {
         value={value}
         popoverProps={{
           popoverClassName: "ltrWrapper",
+        }}
+        dayPickerProps={{
+          locale: "he",
+          months: MONTHS,
+          weekdaysLong: WEEKDAYS_LONG,
+          weekdaysShort: WEEKDAYS_SHORT,
         }}
         {...props}
       />

@@ -1,6 +1,7 @@
 import "dayjs/locale/he";
 
 import { Alignment, H3, Intent, NavbarGroup, NonIdealState, Spinner } from "@blueprintjs/core";
+import { MONTHS, WEEKDAYS_LONG, WEEKDAYS_SHORT } from "../lib/utils";
 
 import ClassCard from "../components/class-card";
 import { DateInput } from "@blueprintjs/datetime";
@@ -47,6 +48,12 @@ const IndexPage = () => {
             }}
             value={selectedDate.toDate()}
             highlightCurrentDay
+            dayPickerProps={{
+              locale: "he",
+              months: MONTHS,
+              weekdaysLong: WEEKDAYS_LONG,
+              weekdaysShort: WEEKDAYS_SHORT,
+            }}
           />
         </NavbarGroup>
       </Header>
