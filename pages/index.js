@@ -1,6 +1,14 @@
 import "dayjs/locale/he";
 
-import { Alignment, H3, Intent, NavbarGroup, NonIdealState, Spinner } from "@blueprintjs/core";
+import {
+  Alignment,
+  H3,
+  Intent,
+  NavbarGroup,
+  NonIdealState,
+  PopoverPosition,
+  Spinner,
+} from "@blueprintjs/core";
 import { MONTHS, WEEKDAYS_LONG, WEEKDAYS_SHORT } from "../lib/utils";
 
 import ClassCard from "../components/class-card";
@@ -45,6 +53,7 @@ const IndexPage = () => {
             onChange={onChangeSelectedDate}
             popoverProps={{
               popoverClassName: "ltrWrapper",
+              position: PopoverPosition.BOTTOM,
             }}
             value={selectedDate.toDate()}
             highlightCurrentDay
