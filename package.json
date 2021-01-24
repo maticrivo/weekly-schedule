@@ -24,10 +24,10 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@blueprintjs/core": "^3.36.0",
-    "@blueprintjs/datetime": "^3.20.0",
+    "@blueprintjs/core": "^3.38.0",
+    "@blueprintjs/datetime": "^3.20.2",
     "clsx": "^1.1.1",
-    "dayjs": "^1.10.3",
+    "dayjs": "^1.10.4",
     "isomorphic-unfetch": "^3.1.0",
     "knex": "^0.21.16",
     "modern-normalize": "^1.0.0",
