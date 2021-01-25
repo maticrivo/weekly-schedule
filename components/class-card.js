@@ -58,7 +58,7 @@ const ClassCard = ({ title, contents, zooms }) => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    לחצו כאן
+                    כניסה לזום
                   </AnchorButton>
                   {zoom?.meetingId ? (
                     <p>
