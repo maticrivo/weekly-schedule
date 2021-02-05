@@ -12,7 +12,10 @@ const options = {
         password: { label: "Password", type: "password" },
       },
       authorize: async (credentials) => {
-        if (credentials.username !== "admin" || credentials.password !== "Gimel3") {
+        if (
+          credentials.username !== "admin" ||
+          credentials.password !== process.env.ADMIN_PASSWORD
+        ) {
           return Promise.resolve(null);
         }
 
