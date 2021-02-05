@@ -36,7 +36,10 @@ const IndexPage = () => {
   });
 
   const onChangeSelectedDate = (d) => {
-    setSelectedDate(dayjs(d));
+    if (!d) {
+      return null;
+    }
+    return setSelectedDate(dayjs(d));
   };
 
   return (
@@ -57,6 +60,9 @@ const IndexPage = () => {
             }}
             value={selectedDate.toDate()}
             highlightCurrentDay
+            showActionsBar
+            todayButtonText="היום"
+            clearButtonText={null}
             dayPickerProps={{
               locale: "he",
               months: MONTHS,

@@ -105,106 +105,103 @@ const AdminPage = () => {
               <AnchorButton icon="add" text="הוספת שיעור" small />
             </Link>
             {isValidating ? <ProgressBar /> : null}
-            {!isValidating && !filteredData?.length ? (
-              <NonIdealState
-                icon="info-sign"
-                title="אין שיעורים במערכת"
-                action={
-                  <Link href="/admin/new" passHref>
-                    <AnchorButton text="שיעור חדש" intent={Intent.PRIMARY} />
-                  </Link>
-                }
-              />
-            ) : null}
-            {!isValidating && filteredData?.length ? (
-              <>
-                <HTMLTable interactive striped>
-                  <thead>
-                    <tr>
-                      <th>שיעור</th>
-                      <th>תאריך ושעה</th>
-                      <th>שעות זומים</th>
-                      <th />
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
+            {!isValidating ? (
+              <HTMLTable interactive striped>
+                <thead>
+                  <tr>
+                    <th>שיעור</th>
+                    <th>תאריך ושעה</th>
+                    <th>שעות זומים</th>
+                    <th />
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <InputGroup placeholder="חפש שיעור..." onChange={onSearch} />
+                    </td>
+                    <td>
+                      <DateInput
+                        formatDate={formatDate}
+                        parseDate={parseDate}
+                        canClearSelection
+                        onChange={setSearchDate}
+                        popoverProps={{
+                          popoverClassName: "ltrWrapper",
+                        }}
+                        value={searchDate}
+                        placeholder="חיפוש תאריך..."
+                        highlightCurrentDay
+                        showActionsBar
+                        todayButtonText="היום"
+                        clearButtonText="ביטול"
+                        dayPickerProps={{
+                          locale: "he",
+                          months: MONTHS,
+                          weekdaysLong: WEEKDAYS_LONG,
+                          weekdaysShort: WEEKDAYS_SHORT,
+                        }}
+                      />
+                    </td>
+                    <td colSpan={2} />
+                  </tr>
+                  {filteredData.map((row) => (
+                    <tr key={row.id}>
+                      <td>{row.title}</td>
+                      <td>{dayjs(row.timestamp * 1000).format("DD/MM/YYYY HH:mm")}</td>
                       <td>
-                        <InputGroup placeholder="חפש שיעור..." onChange={onSearch} />
+                        {row?.zooms
+                          ?.split(",")
+                          ?.map((t) => dayjs(Number(t) * 1000).format("HH:mm"))
+                          ?.join(", ")}
                       </td>
                       <td>
-                        <DateInput
-                          formatDate={formatDate}
-                          parseDate={parseDate}
-                          canClearSelection
-                          onChange={setSearchDate}
-                          popoverProps={{
-                            popoverClassName: "ltrWrapper",
-                          }}
-                          value={searchDate}
-                          placeholder="חיפוש תאריך..."
-                          dayPickerProps={{
-                            locale: "he",
-                            months: MONTHS,
-                            weekdaysLong: WEEKDAYS_LONG,
-                            weekdaysShort: WEEKDAYS_SHORT,
-                          }}
-                        />
+                        <ButtonGroup minimal>
+                          <Tooltip content="ערוך" disabled={deleting || duplicating}>
+                            <Link href={`/admin/edit/${row.id}`} passHref>
+                              <AnchorButton
+                                icon="edit"
+                                intent={Intent.PRIMARY}
+                                small
+                                disabled={deleting || duplicating}
+                              />
+                            </Link>
+                          </Tooltip>
+                          <Tooltip content="העתק" disabled={deleting || duplicating}>
+                            <Button
+                              icon="duplicate"
+                              intent={Intent.SUCCESS}
+                              onClick={onDuplicate}
+                              small
+                              data-id={row.id}
+                              disabled={deleting || duplicating}
+                              loading={duplicating === row.id}
+                            />
+                          </Tooltip>
+                          <Tooltip content="מחק" disabled={deleting || duplicating}>
+                            <Button
+                              icon="trash"
+                              intent={Intent.DANGER}
+                              onClick={onDelete}
+                              small
+                              data-id={row.id}
+                              disabled={deleting || duplicating}
+                              loading={deleting === row.id}
+                            />
+                          </Tooltip>
+                        </ButtonGroup>
                       </td>
-                      <td colSpan={2} />
                     </tr>
-                    {filteredData.map((row) => (
-                      <tr key={row.id}>
-                        <td>{row.title}</td>
-                        <td>{dayjs(row.timestamp * 1000).format("DD/MM/YYYY HH:mm")}</td>
-                        <td>
-                          {console.log(row.zooms)}
-                          {row?.zooms
-                            ?.split(",")
-                            ?.map((t) => dayjs(Number(t) * 1000).format("HH:mm"))
-                            ?.join(", ")}
-                        </td>
-                        <td>
-                          <ButtonGroup minimal>
-                            <Tooltip content="ערוך" disabled={deleting || duplicating}>
-                              <Link href={`/admin/edit/${row.id}`} passHref>
-                                <AnchorButton
-                                  icon="edit"
-                                  intent={Intent.PRIMARY}
-                                  small
-                                  disabled={deleting || duplicating}
-                                />
-                              </Link>
-                            </Tooltip>
-                            <Tooltip content="העתק" disabled={deleting || duplicating}>
-                              <Button
-                                icon="duplicate"
-                                intent={Intent.SUCCESS}
-                                onClick={onDuplicate}
-                                small
-                                data-id={row.id}
-                                disabled={deleting || duplicating}
-                                loading={duplicating === row.id}
-                              />
-                            </Tooltip>
-                            <Tooltip content="מחק" disabled={deleting || duplicating}>
-                              <Button
-                                icon="trash"
-                                intent={Intent.DANGER}
-                                onClick={onDelete}
-                                small
-                                data-id={row.id}
-                                disabled={deleting || duplicating}
-                                loading={deleting === row.id}
-                              />
-                            </Tooltip>
-                          </ButtonGroup>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </HTMLTable>
-              </>
+                  ))}
+                  {!filteredData?.length ? (
+                    <tr>
+                      <td colSpan={4}>
+                        <NonIdealState title="לא נמצא שיעורים" />
+                      </td>
+                    </tr>
+                  ) : null}
+                </tbody>
+              </HTMLTable>
             ) : null}
           </>
         )}
