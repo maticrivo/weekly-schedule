@@ -16,7 +16,7 @@ const App = ({ Component, pageProps }) => {
         value={{
           fetcher,
           refreshInterval: 0,
-          revalidateOnFocus: false,
+          revalidateOnFocus: true,
         }}
       >
         <Component {...pageProps} />
