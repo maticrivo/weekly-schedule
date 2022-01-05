@@ -16,7 +16,8 @@ const EditClassPage = () => {
   const [submitting, setSubmitting] = useState(false);
   const [deleting, setDeleting] = useState(false);
   const { data, isValidating, revalidate } = useSWR(
-    () => router.query.id && `/api/classes/${router.query.id}`
+    () => router.query.id && `/api/classes/${router.query.id}`,
+    { revalidateOnFocus: false, revalidateOnReconnect: false }
   );
   const [initialValues, setInitialValues] = useState(null);
 
