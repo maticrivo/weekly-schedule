@@ -92,7 +92,7 @@ const AdminPage = () => {
 
   return (
     <>
-      <Header title="למידה מרחוק ג'3 - ממשק ניהול" />
+      <Header title="למידה מרחוק ד'3 - ממשק ניהול" />
       <div className="container">
         {error ? (
           <Callout intent={Intent.DANGER} icon={null}>

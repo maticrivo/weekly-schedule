@@ -3,7 +3,7 @@ import { Alignment, Navbar } from "@blueprintjs/core";
 import Head from "next/head";
 import styles from "./header.module.css";
 
-const Header = ({ children, title = "למידה מרחוק ג'3" }) => {
+const Header = ({ children, title = "למידה מרחוק ד'3" }) => {
   return (
     <>
       <Head>

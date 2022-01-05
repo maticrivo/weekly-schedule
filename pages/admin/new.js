@@ -37,7 +37,7 @@ const NewClassPage = () => {
 
   return (
     <>
-      <Header title="למידה מרחוק ג'3 - הוספת שיעור חדש" />
+      <Header title="למידה מרחוק ד'3 - הוספת שיעור חדש" />
       <div className="container">
         <H2>שיעור חדש</H2>
         <ClassForm onSubmit={onSubmit} onCancel={onCancel} submitting={submitting} />

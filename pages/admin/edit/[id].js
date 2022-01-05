@@ -79,7 +79,7 @@ const EditClassPage = () => {
 
   return (
     <>
-      <Header title="למידה מרחוק ג'3 - עריכת שיעור" />
+      <Header title="למידה מרחוק ד'3 - עריכת שיעור" />
       <div className="container">
         <H2>עריכת שיעור</H2>
         {initialValues ? (

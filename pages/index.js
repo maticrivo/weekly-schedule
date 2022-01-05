@@ -44,7 +44,7 @@ const IndexPage = () => {
 
   return (
     <>
-      <Header title="למידה מרחוק ג'3">
+      <Header title="למידה מרחוק ד'3">
         <NavbarGroup align={Alignment.LEFT}>
           <DateInput
             inputProps={{
