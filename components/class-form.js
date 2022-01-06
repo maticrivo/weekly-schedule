@@ -34,7 +34,14 @@ const ClassForm = ({
   });
 
   const onNewZoom = () => {
-    append({ id: -1, time: "", link: "", meetingId: "", meetingPassword: "", contents: {} });
+    append({
+      id: -1,
+      time: methods.getValues().date,
+      link: "",
+      meetingId: "",
+      meetingPassword: "",
+      contents: {},
+    });
   };
 
   return (
@@ -43,12 +50,18 @@ const ClassForm = ({
         <form onSubmit={methods.handleSubmit(onSubmit)}>
           <H4>מידע בסיסי</H4>
           <FormGroup label="כותרת" labelFor="title">
-            <InputGroup
-              id="title"
+            <Controller
               name="title"
-              inputRef={methods.register({ required: true })}
-              intent={methods?.errors?.title ? Intent.DANGER : null}
-              disabled={submitting}
+              control={methods.control}
+              rules={{ required: true }}
+              render={({ field, fieldState }) => (
+                <InputGroup
+                  id="title"
+                  intent={fieldState.error ? Intent.DANGER : null}
+                  disabled={submitting}
+                  {...field}
+                />
+              )}
             />
           </FormGroup>
           <FormGroup label="תאריך" labelFor="date">
@@ -64,61 +77,71 @@ const ClassForm = ({
               הוספת זום
             </Button>
           </H4>
-          {fields.map((field, index) => (
-            <Card key={field.key}>
+          {fields.map((f, idx) => (
+            <Card key={f.key}>
               <input
                 type="hidden"
-                name={`zooms[${index}].id`}
-                ref={methods.register()}
-                value={field.id || -1}
+                name={`zooms[${idx}].id`}
+                value={f.id || -1}
+                {...methods.register(`zooms[${idx}].id`)}
               />
-              <FormGroup label="שעה" labelFor={`zooms-${field.id}-time`}>
+              <FormGroup label="שעה" labelFor={`zooms-${f.id}-time`}>
                 <div className="ltrWrapper inline-block">
                   <Controller
                     control={methods.control}
-                    name={`zooms[${index}].time`}
-                    defaultValue={field.time || methods.getValues("date")}
+                    name={`zooms[${idx}].time`}
                     rules={{ required: true }}
-                    render={({ onChange, value }) => (
-                      <TimePicker onChange={onChange} value={value} disabled={submitting} />
-                    )}
+                    render={({ field }) => <TimePicker disabled={submitting} {...field} />}
                   />
                 </div>
               </FormGroup>
-              <FormGroup label="קישור" labelFor={`zooms-${field.id}-link`}>
-                <InputGroup
-                  id={`zooms-${field.id}-link`}
-                  name={`zooms[${index}].link`}
-                  inputRef={methods.register({ required: true })}
-                  intent={methods?.errors?.zooms?.[index]?.link ? Intent.DANGER : null}
-                  defaultValue={field.link || ""}
-                  disabled={submitting}
+              <FormGroup label="קישור" labelFor={`zooms-${f.id}-link`}>
+                <Controller
+                  name={`zooms[${idx}].link`}
+                  control={methods.control}
+                  rules={{ required: true }}
+                  render={({ field, fieldState }) => (
+                    <InputGroup
+                      id={`zooms-${field.id}-link`}
+                      intent={fieldState.error ? Intent.DANGER : null}
+                      disabled={submitting}
+                      {...field}
+                    />
+                  )}
                 />
               </FormGroup>
-              <FormGroup label="ID ישיבה" labelFor={`zooms-${field.id}-meetingId`}>
-                <InputGroup
-                  id={`zooms-${field.id}-meetingId`}
-                  name={`zooms[${index}].meetingId`}
-                  inputRef={methods.register()}
-                  intent={methods?.errors?.zooms?.[index]?.meetingId ? Intent.DANGER : null}
-                  defaultValue={field.meetingId || ""}
-                  disabled={submitting}
+              <FormGroup label="ID ישיבה" labelFor={`zooms-${f.id}-meetingId`}>
+                <Controller
+                  name={`zooms[${idx}].meetingId`}
+                  control={methods.control}
+                  render={({ field, fieldState }) => (
+                    <InputGroup
+                      id={`zooms-${field.id}-meetingId`}
+                      intent={fieldState.error ? Intent.DANGER : null}
+                      disabled={submitting}
+                      {...field}
+                    />
+                  )}
                 />
               </FormGroup>
-              <FormGroup label="סיסמה" labelFor={`zooms-${field.id}-meetingPassword`}>
-                <InputGroup
-                  id={`zooms-${field.id}-meetingPassword`}
-                  name={`zooms[${index}].meetingPassword`}
-                  inputRef={methods.register()}
-                  intent={methods?.errors?.zooms?.[index]?.meetingPassword ? Intent.DANGER : null}
-                  defaultValue={field.meetingPassword || ""}
-                  disabled={submitting}
+              <FormGroup label="סיסמה" labelFor={`zooms-${f.id}-meetingPassword`}>
+                <Controller
+                  name={`zooms[${idx}].meetingPassword`}
+                  control={methods.control}
+                  render={({ field, fieldState }) => (
+                    <InputGroup
+                      id={`zooms-${field.id}-meetingPassword`}
+                      intent={fieldState.error ? Intent.DANGER : null}
+                      disabled={submitting}
+                      {...field}
+                    />
+                  )}
                 />
               </FormGroup>
-              <FormGroup label="תוכן" labelFor={`zooms-${field.id}-contents`}>
+              <FormGroup label="תוכן" labelFor={`zooms-${f.id}-contents`}>
                 <Editor
-                  name={`zooms[${index}].contents`}
-                  initial={field.contents}
+                  name={`zooms[${idx}].contents`}
+                  initial={f.contents}
                   disabled={submitting}
                   placeholder="התחל לכתוב כאן את תוכן הזום..."
                 />
@@ -129,7 +152,7 @@ const ClassForm = ({
                   small
                   outlined
                   intent={Intent.DANGER}
-                  onClick={() => remove(index)}
+                  onClick={() => remove(idx)}
                   disabled={submitting}
                 />
               </Tooltip>

@@ -6,7 +6,7 @@ import Header from "../../../components/header";
 import dayjs from "dayjs";
 import { fetcher } from "../../../lib/fetcher";
 import { useRouter } from "next/router";
-import useSWR from "swr";
+import useSWR, { useSWRConfig } from "swr";
 import { useSession } from "next-auth/client";
 import { normalizeData } from "../../../lib/utils";
 
@@ -15,7 +15,8 @@ const EditClassPage = () => {
   const [user, loading] = useSession();
   const [submitting, setSubmitting] = useState(false);
   const [deleting, setDeleting] = useState(false);
-  const { data, isValidating, revalidate } = useSWR(
+  const { mutate } = useSWRConfig();
+  const { data, isValidating } = useSWR(
     () => router.query.id && `/api/classes/${router.query.id}`,
     { revalidateOnFocus: false, revalidateOnReconnect: false }
   );
@@ -54,7 +55,7 @@ const EditClassPage = () => {
       method: "PUT",
       body: JSON.stringify(normalizedData),
     });
-    await revalidate();
+    await mutate(`/api/classes/${router.query.id}`);
     router.push("/admin");
   };
 

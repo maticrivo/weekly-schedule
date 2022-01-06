@@ -10,13 +10,13 @@ import {
 import { signIn, useSession } from "next-auth/client";
 
 import { useEffect } from "react";
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 import { useRouter } from "next/router";
 
 const SigninPage = () => {
   const router = useRouter();
   const [user, loading] = useSession();
-  const { register, handleSubmit, errors } = useForm();
+  const { control, handleSubmit } = useForm();
 
   useEffect(() => {
     if (!loading && user) {
@@ -34,21 +34,34 @@ const SigninPage = () => {
       <H1>כניסה לממשק ניהול</H1>
       <form onSubmit={handleSubmit(onSubmit)}>
         <FormGroup label="שם משתמש" labelFor="username">
-          <InputGroup
-            id="username"
+          <Controller
             name="username"
-            inputRef={register({ required: true })}
-            placeholder=""
-            intent={errors?.username ? Intent.DANGER : null}
+            control={control}
+            rules={{ required: true }}
+            render={({ field, fieldState }) => (
+              <InputGroup
+                id="username"
+                placeholder=""
+                intent={fieldState.error ? Intent.DANGER : null}
+                {...field}
+              />
+            )}
           />
         </FormGroup>
         <FormGroup label="סיסמה" labelFor="password">
-          <InputGroup
-            id="password"
-            type="password"
+          <Controller
             name="password"
-            inputRef={register({ required: true })}
-            intent={errors?.password ? Intent.DANGER : null}
+            control={control}
+            rules={{ required: true }}
+            render={({ field, fieldState }) => (
+              <InputGroup
+                id="password"
+                type="password"
+                placeholder=""
+                intent={fieldState.error ? Intent.DANGER : null}
+                {...field}
+              />
+            )}
           />
         </FormGroup>
         <Button type="submit" intent={Intent.PRIMARY}>
