@@ -21,8 +21,8 @@ const handler = async (req, res) => {
       case "PUT":
         const body = JSON.parse(req.body);
         const { title, contents, date } = body;
-        const updateZooms = body?.zooms?.filter((z) => z.id !== "-1") || [];
-        const insertZooms = body?.zooms?.filter((z) => z.id === "-1") || [];
+        const updateZooms = body?.zooms?.filter((z) => z.id !== -1) || [];
+        const insertZooms = body?.zooms?.filter((z) => z.id === -1) || [];
         let deleteZoomsIds = [];
 
         const currentZooms = await knex.select("*").from("zooms").where({ classId: id });
